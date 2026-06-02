@@ -1,14 +1,17 @@
 # WRO2026_FE_Quesovamos
-Introduction
+
+
+
+# Introduction
 (car pic)
 
 Welcome to the official GitHub repository for Team Quesovamos from Panama, participating in the WRO San Miguelito regionals of 2026. This repository will be home to resources like our project's code, as well as the materials and components used for building said project.
 
-Meet the team
+# Meet the team
 
 Team Quesovamos is made up by three unlikely friends, united by their shared ambition to step out of their comfort zone and try something new. This is our first time working with Github, BrickLink, and many other unfamiliar software. Even if we don't achieve anything major in the following competition, we'll strive to use what we learned to do a better job in the years to come and go above and beyond what we were capable of doing this time around.
 
-Roles:
+# Roles
 
 Romina Mora: Car builder
 
@@ -17,49 +20,51 @@ Caylee Rios: Programmer
 Christopher Romero: Documentator, Car builder
 
 
-  Car dimensions
+ Car dimensions
 
 
   Car pictures (labeled)
 
-MOBILITY MANAGEMENT
+# MOBILITY MANAGEMENT
+
+ Chassis
 
 
-Chassis
 
-
-
-Driving base
+ Driving base
 
 
 
 Electronics carrier plate
 
 
-MOTORIZATION
+# MOTORIZATION
 
 
-Steering mechanism
+ Steering mechanism
 
 
-POWER SENSE AND MANAGEMENT
-
-power supply and diagrams
+ POWER SENSE AND MANAGEMENT
 
 
-controller
 
 
-sensors
+ power supply and diagrams
 
 
-cameras
+ controller
+
+
+ sensors
+
+
+ cameras
 
 
 Schematics
 
 
-PROGRAMMING
+# PROGRAMMING
 
 
 software development
@@ -72,10 +77,8 @@ obstacle challenge
 Obstacle program flowchart
 
 
-MEASUREMENTS PROCESSING
+# MEASUREMENTS PROCESSING
 
-
-gyro heading
 
 
 Image Processing
@@ -89,30 +92,27 @@ Processing the parking lot
 
 
 
-Processing the obstacles
+ Processing the obstacles
+
+
+ Processing the lines
 
 
 
-Processing the lines
-
-
-
-Steering Decision
-
+ Steering Decision
 
 
 Steering formula:
 
 
-
-Parking
-
+ Parking
 
 
-Assembly
+
+ Assembly
 
 
-Bill of Materials
+# Bill of Materials
 
 
 Electronics
@@ -121,13 +121,17 @@ Electronics
 Structural elements
 
 
-Assembly instructions
+ Assembly instructions
+
+
 
 
 Car Performance Videos
 
 
-Resources
+
+
+# Resources
 
 
 
