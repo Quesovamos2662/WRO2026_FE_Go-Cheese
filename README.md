@@ -22,15 +22,16 @@ Christopher Romero: Documentator, Car builder
 
 # MOBILITY MANAGEMENT
 
- Driving base
+
+## Driving base
 
  Our driving base and chassis are made up completely out of lego, specifically out of the official Lego Mindstorms EV3 Kit. Even though Lego projects bring up small stability and structural issues sometimes, we decided to build in this way for our ease of use and because structural inefficiencies are easy to detect and correct.
 
 
- Car dimensions
+## Car dimensions
 
 
-  Car pictures (labeled)
+## Car pictures (labeled)
 
  
 
@@ -38,98 +39,98 @@ Christopher Romero: Documentator, Car builder
 # MOTORIZATION
 
 
- Steering mechanism
+ ## Steering mechanism
 
  
 Our project uses a simple Ackerman steering mechanism. Since this our first time competing, we did not want to use an overly complicated steering mechanism; hence why we didn't use something like a steering servo, which we believed to be more complex.
 
- POWER SENSE AND MANAGEMENT
+## POWER SENSE AND MANAGEMENT
 
 
 
 
- power supply and diagrams
+ ## power supply and diagrams
 
 
- controller
+## controller
 
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/8f9bc277-206b-4b7d-9ec0-ca584912c328" />
 
 
 For our controller, we used a standard EV3 Lego Mindstorms Brick. Because of this, it also serves as a battery for all of the sensors that our robot utilises.
 
- sensors
+## sensors
 
  <img width="287" height="176" alt="image" src="https://github.com/user-attachments/assets/a7a2ab79-1aaf-453d-97e2-00a93791542a" />
 
 In the sensors department, we settled on utilising ultrasonic sensors to their full extent. Since we had to make up for not having a camera, we mounted three ultrasonic sensors onto our robot; one on its left, another on its right, and, finally, one at its front. The purpose of these sensors are to quickly detect any obstacles and walls around our car, making it so that it can frequently correct its route and efficiently complete laps.
 
 
-Schematics
+## Schematics
 
 
 # PROGRAMMING
 
-ysoftware development
+## software development
 
 
-obstacle challenge
+## obstacle challenge
 
 
 
-Obstacle program flowchart
+## Obstacle program flowchart
 
 
 # MEASUREMENTS PROCESSING
 
 
 
-Image Processing
+## Image Processing
 
 
-Processing the walls
-
-
-
-Processing the parking lot
+## Processing the walls
 
 
 
- Processing the obstacles
-
-
- Processing the lines
+## Processing the parking lot
 
 
 
- Steering Decision
+## Processing the obstacles
 
 
-Steering formula:
-
-
- Parking
+ ## Processing the lines
 
 
 
- Assembly
+ ## Steering Decision
+
+
+## Steering formula:
+
+
+## Parking
+
+
+
+## Assembly
 
 
 # Bill of Materials
 
 
-Electronics
+## Electronics
 
 
-Structural elements
+## Structural elements
 
 
- Assembly instructions
+## Assembly instructions
 
 
 
 
-Car Performance Videos
+## Car Performance Videos
 
 
 
