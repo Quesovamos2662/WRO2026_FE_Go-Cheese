@@ -1,15 +1,15 @@
-# WRO2026_FE_Quesovamos
+# WRO2026_FE_QuesoVamos
 
 
 
 # Introduction
 (car pic)
 
-Welcome to the official GitHub repository for Team Quesovamos from Panama, participating in the WRO San Miguelito regionals of 2026. This repository will be home to resources like our project's code, as well as the materials and components used for building said project.
+Welcome to the official GitHub repository for Team QuesoVamos from Panama, participating in the WRO San Miguelito regionals of 2026. This repository will be home to resources like our project's code, as well as the materials and components used for building said project.
 
 # Meet the team
 
-Team Quesovamos is made up by three unlikely friends, united by their shared ambition to step out of their comfort zone and try something new. This is our first time working with Github, BrickLink, and many other unfamiliar software. Even if we don't achieve anything major in the following competition, we'll strive to use what we learned to do a better job in the years to come and go above and beyond what we were capable of doing this time around.
+Team QuesoVamos is made up by three unlikely friends, united by their shared ambition to step out of their comfort zone and try something new. This is our first time working with Github, BrickLink, and many other unfamiliar software. Even if we don't achieve anything major in the following competition, we'll strive to use what we learned to do a better job in the years to come and go above and beyond what we were capable of doing this time around.
 
 # Roles
 
