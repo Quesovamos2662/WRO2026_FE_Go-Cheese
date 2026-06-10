@@ -110,6 +110,9 @@ In the sensors department, we settled on utilising ultrasonic sensors to their f
 
 ## Obstacle challenge
 
+During the obstacle challenge, we use our car's ultrasonic and infrared sensors to detect walls and obstacles nearby. When the sensors detect something, the car will steer clear of it and keep driving forward. Because our robot can also detect the walls of the track, it will know when to turn in order to complete laps,
+
+This process repeats until all laps are completed and the race ends, when the robot will turn itself off.
 
 
 ## Obstacle program flowchart
