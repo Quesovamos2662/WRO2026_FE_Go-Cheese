@@ -52,7 +52,7 @@ Weight: ~73.61g (0.07361kg)
 
 <img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/a6aa0007-fd3b-4add-a3f9-a1b560aa55e0" />
 
-We used exclusively Lego motors when building our car; one large, and one medium. We used these because they would naturally run well with our purely Lego structure and our EV3 brick. 
+We used exclusively Lego motors when building our car; one large, and one medium. We used these because they would naturally be ccmpatible with our purely Lego structure and our EV3 brick, and also because they offer a good measure of speed without sacrificing any of our car's stability.
 
 We wanted to install an externally sourced motor system (CQRobot Encoder Motor 12V 330RPM with a gear axle shaft), but we soon realized that the system was incompatible with our project's structure. Because of that and their easy-to-handle nature, we chose to use Lego motors for our car. 
 
