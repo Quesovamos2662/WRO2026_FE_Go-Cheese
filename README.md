@@ -32,11 +32,11 @@ Christopher Romero: Documentator, Car builder
 
 Length: ~19cm (190mm)
 
-Height:
+Height: 9.5cm (95mm)
 
 Width: ~13cm (130mm)
 
-Weight: 
+Weight: ~73.61g (0.07361kg)
 
 ## Car pictures (labeled)
 
@@ -55,9 +55,11 @@ Our project uses a simple Ackerman steering mechanism. Since this our first time
 
 
 
-
  ## power supply and diagrams
 
+Everything on our car is on the same voltage level. Thanks to this, our EV3 brick can serve as a battery for all of the electrical components in use.
+
+Our ultrasonic sensors use approximately 3.3V each, and our infrared sensor uses the same amount. Our brick can supply power to all of these at once thanks to its 9V output.
 
 ## controller
 
