@@ -65,13 +65,13 @@ Our project uses a simple Ackerman steering mechanism. Since this our first time
 
 
 
- ## power supply and diagrams
+ ## Power supply explanation and diagram
 
 Everything on our car is on the same voltage level. Thanks to this, our EV3 brick can serve as a battery for all of the electrical components in use.
 
 Our ultrasonic sensors use approximately 3.3V each, and our infrared sensor uses the same amount. Our brick can supply power to all of these at once thanks to its 9V output.
 
-## controller
+## Controller
 
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/8f9bc277-206b-4b7d-9ec0-ca584912c328" />
 
@@ -81,7 +81,7 @@ For our controller, we used a standard EV3 Lego Mindstorms Brick. Because of thi
 It sports a flash memory of 16 MB, has 64 MB of RAM, And is able to output any voltage value in between 0V and 9V.
 
 
-## sensors
+## Sensors
 
  ## Ultrasonic
 
@@ -105,10 +105,10 @@ In the sensors department, we settled on utilising ultrasonic sensors to their f
 
 # PROGRAMMING
 
-## software development
+## Software development
 
 
-## obstacle challenge
+## Obstacle challenge
 
 
 
