@@ -30,7 +30,7 @@ Christopher Romero: Documentator, Car builder
 
 ## Car dimensions
 
-Length: ~19cm (190mm)
+Length: ~28cm (280mm)
 
 Height: 9.5cm (95mm)
 
