@@ -1,6 +1,6 @@
 # WRO2026_FE_QuesoVamos
 
-# Team QuesoVamos — WRO Future Engineers 2026
+
 [banner + team photo]
 
 ## Meet the Team    
