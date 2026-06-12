@@ -34,7 +34,7 @@ But an all-LEGO build introduces limitations. These come in the form of the plas
 ### Motor selection & torque reasoning (~500 chars) 
 
 
-Our vehicle uses two LEGO Mindstorms EV3 motors — one large and one medium — connected directly to the EV3 brick via ports A and B. Both motors were chosen for their native compatibility with the EV3 ecosystem and their ability to provide reliable speed and torque without requiring external drivers or voltage regulators.
+Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium. These are connected directly to the EV3 brick via ports A and B. Both motors were chosen for their native compatibility with the EV3 ecosystem and their ability to provide reliable speed and torque without requiring external drivers or voltage regulators.
 
 The large motor, used for moving back and forth, has a top speed of 170 RPM, a running and stall torque of 20Nxcm and 40 Nxcm respectively, an operating voltage of 9V, and a weight of 76g. For a Lego component, these specs are very respectable and are just what we were looking for in our robot.
 
