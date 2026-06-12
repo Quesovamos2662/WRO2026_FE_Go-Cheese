@@ -25,9 +25,11 @@ Weight: ~73.61g (0.07361kg)
 ### Driving base & chassis             (~500 chars)
 
 Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This decision was driven by several practical and technical factors.
-First, LEGO components offer native compatibility with the EV3 brick, eliminating integration overhead for mounting sensors and motors. Second, the modular nature of LEGO allows structural issues — such as flex under load or misalignment in the steering mechanism — to be identified and corrected rapidly during testing, without requiring new parts or fabrication tools.
-We acknowledge that an all-LEGO build introduces limitations: the plastic frame has measurable flex at higher speeds, and connection points can loosen after repeated impacts. To mitigate this, we reinforced critical joints in the steering linkage and kept our operating speed within a range where chassis flex does not significantly affect sensor readings or directional stability.
-The chassis follows a front-wheel steering, rear-wheel drive layout, which pairs naturally with our Ackermann steering geometry and keeps the drive motor's weight over the rear axle for traction.
+First, LEGO components offer native compatibility with the EV3 brick, eliminating integration overhead for mounting sensors and motors. Second, the modular nature of LEGO allows structural issues to be identified and corrected rapidly during testing, without requiring new parts or fabrication tools.
+
+But an all-LEGO build introduces limitations. These come in the form of the plastic frame having measurable flex at higher speeds, and connection points being able to loosen if the frame withstands powerful impacts. Despite these possible shortcomings, we still believed that we could make our car work, so we chose to build in this manner.
+
+
 
 ### Motor selection & torque reasoning (~500 chars) 
 
@@ -41,7 +43,7 @@ Finally, the medium motor, which we decided to use for steering, has a top speed
 
 ### Steering mechanism (Ackermann)     (~400 chars)
 
-Our robot uses a simple Ackermann steering mechanism to achieve stable and controlled turning. Since this is our first time competing in the WRO, we decided to not make things harder on ourselves by using a more complex steering system. For this reason, we did not implement a servo-based steering mechanism, as we considered it more difficult to build, and troubleshoot with our current experience
+Our robot uses a simple Ackermann steering mechanism to achieve stable and controlled turning. Since this is our first time competing in the WRO, we decided to not make things harder on ourselves by using a more complex steering system. For this reason, we did not implement a servo-based steering mechanism, as we considered it more difficult to build, and troubleshoot with our current experience.
 
 ← AMPLIAR
 ### Chassis iterations                 (~300 chars)  ← FALTA (Lamina mandara el previous iteration)
