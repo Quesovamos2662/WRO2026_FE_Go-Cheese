@@ -24,8 +24,9 @@ Weight: ~73.61g (0.07361kg)
 ## 1. Mobility & Mechanical Design     [Criterion 1]
 ### Driving base & chassis             (~500 chars)
 
-Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This decision was driven by several practical and technical factors.
-First, LEGO components offer native compatibility with the EV3 brick, eliminating integration overhead for mounting sensors and motors. Second, the modular nature of LEGO allows structural issues to be identified and corrected rapidly during testing, without requiring new parts or fabrication tools.
+Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This was decided beacuse of several technical factors we took into consideration.
+
+First, LEGO components offer native compatibility with the EV3 brick, which alleviates the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing while not needing any externally sourced or 3D printed pieces.
 
 But an all-LEGO build introduces limitations. These come in the form of the plastic frame having measurable flex at higher speeds, and connection points being able to loosen if the frame withstands powerful impacts. Despite these possible shortcomings, we still believed that we could make our car work, so we chose to build in this manner.
 
@@ -34,7 +35,7 @@ But an all-LEGO build introduces limitations. These come in the form of the plas
 ### Motor selection & torque reasoning (~500 chars) 
 
 
-Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium. These are connected directly to the EV3 brick via ports A and B. Both motors were chosen for their native compatibility with the EV3 ecosystem and their ability to provide reliable speed and torque without requiring external drivers or voltage regulators.
+Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium. These are connected directly to the EV3 brick via ports A and B. Both motors were chosen for their native compatibility with the rest of out components and their ability to provide reliable speed and torque on their own.
 
 The large motor, used for moving back and forth, has a top speed of 170 RPM, a running and stall torque of 20Nxcm and 40 Nxcm respectively, an operating voltage of 9V, and a weight of 76g. For a Lego component, these specs are very respectable and are just what we were looking for in our robot.
 
