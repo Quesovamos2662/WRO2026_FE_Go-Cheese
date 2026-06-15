@@ -29,7 +29,9 @@
 - [Performance Videos](#performance-videos)
 - [Resources](#resources)
 
-[banner + team photo]
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/cc7e381c-3780-4d41-937c-902d1a14cbda" />
+
+ + team photo]
 
 ## Meet the Team    
 Welcome to the official GitHub repository for Team QuesoVamos from Panama, participating in the WRO 2026 San Miguelito Regional in the Future Engineers category, Open Challenge.
