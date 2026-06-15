@@ -29,7 +29,7 @@
 - [Performance Videos](#performance-videos)
 - [Resources](#resources)
 
-![Uploading image.png…]()
+<img width="693" height="390" alt="image" src="https://github.com/user-attachments/assets/ba8f6db2-428f-499c-a519-c0c3845c166f" />
 
 
 ## Meet the Team    
