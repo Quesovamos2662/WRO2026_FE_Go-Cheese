@@ -111,7 +111,7 @@ well within the brick's output capacity, which means we never experienced
 power-related failures during testing.
 
 ### Wiring diagram                     
-si no lo tenemos es culpa de christopher
+<img width="1179" height="921" alt="image" src="https://github.com/user-attachments/assets/0c54e260-57a8-4732-9128-77bd9b496c59" />
 
 ### Sensor selection & placement    
 
@@ -306,8 +306,9 @@ front wheels and change the vehicle's heading before the wall was reached.
 Raising the threshold to 55 cm gave the robot enough advance warning to 
 complete the steering maneuver before reaching the corner wall.
 
-## 5. Reproducibility                  [Criterion 5]
-### Bill of Materials                  (~200 chars)
+## 5. Reproducibility        
+
+### Bill of Materials                  
 
 Electronic Materials
 
@@ -316,11 +317,14 @@ Electronic Materials
 - X1 Lego Mindstorms EV3 Medium Motor
 - X3 Lego Mindstorms EV3 Ultrasonic Sensor
 - 
-### Build instructions                 (~300 chars)  ← FALTA
+### Build instructions                 
 
 ## Vehicle Photos
+
 ## Team Photos
+
 ## Performance Videos
+
 ## Resources
 
 
