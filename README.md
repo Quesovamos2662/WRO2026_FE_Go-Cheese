@@ -12,17 +12,22 @@ Even if we do not achieve something huge in this competition, our goal is to ste
 
 ## Robot Overview     
 
-Length: ~28cm (280mm)
+Our vehicle is a four-wheeled autonomous robot built entirely from LEGO 
+Mindstorms EV3 components. It uses three ultrasonic sensors for 
+navigation, a large motor for drive, and a medium motor for Ackermann 
+steering. Below are its physical dimensions in its final configuration.
 
-Height: ~9.5cm (95mm)
-
-Width: ~13cm (130mm)
-
-Weight: ~73.61g (0.07361kg)
-
-(~200 chars — specs rápidos)
-
----
+| Specification | Value |
+|---|---|
+| Length | ~28 cm (280 mm) |
+| Height | ~9.5 cm (95 mm) |
+| Width | ~13 cm (130 mm) |
+| Weight | ~73.61 g (0.07361 kg) |
+| Controller | LEGO Mindstorms EV3 Brick |
+| Drive motor | EV3 Large Motor (OUTPUT_B) |
+| Steering motor | EV3 Medium Motor (OUTPUT_A) |
+| Sensors | 3x Ultrasonic (INPUT_1, 2, 3) |
+| Language | Python 3 — ev3dev2 |
 
 ## 1. Mobility & Mechanical Design   
 ### Driving base & chassis            
@@ -110,7 +115,12 @@ and recovery maneuvers. Running all five components simultaneously stays
 well within the brick's output capacity, which means we never experienced 
 power-related failures during testing.
 
-### Wiring diagram                     
+### Wiring diagram  
+
+The diagram below shows how all sensors and motors connect to the EV3 
+brick. Ultrasonic sensors plug into sensor ports 1, 2, and 3, while the 
+medium and large motors connect to motor ports A and B respectively. All 
+connections use standard LEGO Mindstorms cables with no external wiring.
 <img width="1179" height="921" alt="image" src="https://github.com/user-attachments/assets/0c54e260-57a8-4732-9128-77bd9b496c59" />
 
 ### Sensor selection & placement    
