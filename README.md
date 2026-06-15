@@ -46,26 +46,109 @@ Finally, the medium motor, which we decided to use for steering, has a top speed
 
 ### Steering mechanism (Ackermann)   
 
-Our robot uses a simple Ackermann steering mechanism to achieve stable and controlled turning. Since this is our first time competing in the WRO, we decided to not make things harder on ourselves by using a more complex steering system. For this reason, we did not implement a servo-based steering mechanism, as we considered it more difficult to build, and troubleshoot with our current experience.
+Our robot uses an Ackermann steering mechanism on the front axle, which 
+is controlled by the EV3 medium motor. In this type of steering, the two 
+front wheels turn at different angles when the robot takes a turn — the 
+inner wheel turns more sharply than the outer one. This is important 
+because both wheels are tracing different sized arcs at the same time, 
+and if they were forced to turn at the same angle, they would drag and 
+scrub against the ground instead of rolling cleanly. Ackermann geometry 
+solves this by giving each wheel the correct angle for the arc it needs 
+to follow.
 
-← AMPLIAR
-### Chassis iterations                 (~300 chars)  ← FALTA (Lamina mandara el previous iteration)
+We chose this steering system because the WRO track has four corners per 
+lap, and we needed our robot to take them consistently and without losing 
+control. A simpler steering setup would have caused the wheels to resist 
+the turn, which could have thrown off our robot's path and made our sensor 
+readings less reliable.
 
-## 2. Power & Sensor Architecture      [Criterion 2]
-### Power supply & EV3 brick specs     (~300 chars)
+The medium motor controls the steering through short timed pulses in the 
+code. Instead of using a sensor to track the exact wheel angle, the motor 
+pushes the steering for a set amount of time and then returns it toward 
+center. This kept our system simple and avoided adding extra sensors to 
+our build. The push and return times were adjusted during testing until 
+we found values that gave us clean, consistent turns without 
+over-steering.
 
-For our controller, we used a standard EV3 Lego Mindstorms Brick. We decided on using this Brick as our controller because it can also serves as a battery for all of the sensors and components that our robot utilises.
+### Chassis iterations               
 
-It sports a flash memory of 16 MB, has 64 MB of RAM, is able to output any voltage value in between 0V and 9V, and has a rechargable battery with a maximum capacity of 2000 mAh
+Our robot went through one major structural redesign between its first 
+and final version.
 
-### Wiring diagram                     [imagen + tabla de puertos]  ← FALTA
-### Sensor selection & placement       (~600 chars) 
+In the original design, the EV3 brick was mounted vertically at the 
+center of the chassis, with the sensor ports facing sideways. The two 
+ultrasonic sensors were placed at the rear of the robot, pointing 
+outward to the sides. This layout made the robot significantly taller 
+and placed most of its weight near the back, which made it unstable 
+during turns and caused the front wheels to lose grip on the track 
+surface. The rear sensor placement also created a large blind spot at 
+the front of the robot, since there was no sensor covering what was 
+directly ahead.
 
-In the sensors department, we settled on utilising ultrasonic sensors to their full extent. Since we had to make up for not having a camera, we mounted three ultrasonic sensors on either side and on the front of our car. These will make sure to detect any nearby walls or obstacles, making our robot able to correct its route on the fly.
+For the final version, we rebuilt the chassis with the EV3 brick mounted 
+horizontally, which lowered the center of gravity and made the robot more 
+compact and stable. The ultrasonic sensors were moved to the sides of the 
+chassis at mid-height to better align with the track walls, and a third 
+sensor was added facing forward to eliminate the front blind spot. The 
+overall structure became shorter and wider, which improved stability 
+during both straight runs and cornering.
 
-We also decided on choosing ultrasonic sensors because of their ease of calibration and efficiency. They are more intuitive to adjust than Lego EV3 infrared sensors and have almost no competition in terms of efficiency and accuracy.
+## 2. Power & Sensor Architecture   
 
-### Sensor calibration                 (~200 chars)  ← FALTA
+For our controller and power supply, we used a standard LEGO Mindstorms 
+EV3 Brick. We chose this brick because it works as both the brain and the 
+battery of our robot, meaning all of our sensors and motors draw power 
+directly from it without needing any external power source or voltage 
+regulators.
+
+The brick has 16 MB of flash memory, 64 MB of RAM, and outputs between 
+0V and 9V depending on the component connected. Its rechargeable battery 
+has a maximum capacity of 2000 mAh. To give an idea of how that capacity 
+is used, our three ultrasonic sensors consume approximately 3.3V each at 
+low current, and our two motors consume the most power during movement 
+and recovery maneuvers. Running all five components simultaneously stays 
+well within the brick's output capacity, which means we never experienced 
+power-related failures during testing.
+
+### Wiring diagram                     
+si no lo tenemos es culpa de christopher
+
+### Sensor selection & placement    
+
+For our sensor setup, we decided to use three ultrasonic sensors — one 
+on the left side, one on the right side, and one at the front of the 
+robot. Since we do not have a camera, these sensors are responsible for 
+all of our robot's awareness of its surroundings.
+
+We chose ultrasonic sensors over other options like infrared sensors 
+because they are more reliable at measuring distance accurately and are 
+less affected by lighting conditions or surface color. They are also more 
+straightforward to calibrate, since their output is a direct distance 
+reading in centimeters rather than a relative proximity value.
+
+The left and right sensors are mounted at mid-chassis height on each 
+side, facing perpendicular to the direction of travel. This placement 
+allows them to detect the track walls consistently as the robot moves 
+forward. The front sensor is mounted at the front of the chassis facing 
+forward, and is responsible for detecting upcoming walls and triggering 
+corner navigation. Its placement at the front of the vehicle gives the 
+algorithm the maximum possible reaction distance before reaching a wall.
+
+### Sensor calibration              
+
+Our ultrasonic sensors do not require manual calibration in the 
+traditional sense, since they output distance readings in centimeters 
+directly. Instead, calibration for our robot meant finding the right 
+threshold values through physical testing on a mock track.
+
+For the side sensors, we tested different WARN distances until we found 
+20 cm as the value that gave the robot enough time to correct without 
+overcorrecting on straight sections. For the front sensor, we tested 
+values between 35 cm and 60 cm before settling on 55 cm as the distance 
+that consistently allowed the robot to begin turning before reaching the 
+corner wall. These values are defined as constants at the top of our 
+code and can be adjusted if the robot is used on a track with different 
+wall spacing.
 
 ## 3. Software Architecture            
 
@@ -83,10 +166,66 @@ Lap completion is tracked by counting corners: every time the front sensor trans
 
 faltan dos 
 
-### Obstacle & corner handling         (~400 chars)  ← FALTA
+### Obstacle & corner handling   
+
+The main loop of our program evaluates four conditions on every cycle, 
+in order of priority:
+
+**P1 — Crash recovery:** This is the highest priority condition and it 
+always fires, even during a steering cooldown. If any sensor reads below 
+its crash threshold — front at 25 cm or either side at 6 cm — the robot 
+stops immediately, reverses while counter-steering to swing the nose away 
+from the wall, and then steers back toward the locked turn direction to 
+re-enter the correct lane.
+
+**P2 — Right wall closing:** If the right sensor reads below 20 cm and 
+no crash condition is active, the robot steers left while continuing to 
+move forward.
+
+**P3 — Left wall closing:** If the left sensor reads below 20 cm and no 
+crash condition is active, the robot steers right while continuing to 
+move forward.
+
+**P4 — Front wall approaching:** If the front sensor reads below 55 cm, 
+the robot steers using the locked turn direction (TURN_DIR). If this is 
+the first corner the robot has encountered and TURN_DIR has not been set 
+yet, the robot picks the side with more open space and locks that 
+direction for the rest of the run.
+
+To avoid the robot overcorrecting repeatedly, a cooldown of 0.50 seconds 
+is applied after every P2, P3, and P4 correction. P1 always bypasses 
+this cooldown. Additionally, all sensor readings are passed through a 
+median-of-3 filter every cycle to reduce false triggers caused by noise 
+or reflections.
 
 
-### Tuning process                     (~300 chars)  ← FALTA
+### Tuning process                     
+
+The distance thresholds and timing values in our code were not chosen 
+arbitrarily — they were the result of repeated physical testing on a 
+mock track built to approximate the WRO layout.
+
+Our first issue was that the robot was entering corners too late. With 
+the front sensor warn threshold set to 35 cm, the robot did not have 
+enough time to begin turning before it reached the wall, which caused it 
+to clip the outer corner consistently. We gradually raised the threshold 
+in 5 cm increments during testing until we reached 55 cm, which gave the 
+robot enough advance warning to complete the turn cleanly.
+
+Our second issue was oscillation on straight sections. In our first 
+version of the loop, a correction fired every single cycle whenever a 
+sensor read below its warn threshold. This caused the robot to zigzag 
+continuously down the straight sections instead of holding a steady 
+path. We solved this by introducing a 0.50 second cooldown after every 
+correction, which gave the robot time to evaluate whether the correction 
+had worked before firing another one.
+
+Finally, the recovery behavior during back_up() was tuned after we 
+noticed that the robot would sometimes reverse into the opposite wall 
+after a crash. We adjusted the counter-steer direction during the 
+reverse phase so the nose swings away from the wall that was hit, and 
+added a second steering pulse in cases where the robot times out during 
+recovery.
 
 ## 4. Engineering Decisions           
 
