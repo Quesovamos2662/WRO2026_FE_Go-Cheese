@@ -370,15 +370,17 @@ complete parts list is available in models/part-list.pdf.
 ### Build instructions                 
 
 ## Vehicle Photos
----|---|
+
+| Front | Back |
+|:---:|:---:|
 | ![Front](v-photos/front.jpeg) | ![Back](v-photos/back.jpeg) |
 
 | Left | Right |
-|---|---|
+|:---:|:---:|
 | ![Left](v-photos/left.jpeg) | ![Right](v-photos/right.jpeg) |
 
 | Top | Bottom |
-|---|---|
+|:---:|:---:|
 | ![Top](v-photos/top.jpeg) | ![Bottom](v-photos/bottom.jpeg) |
 
 
