@@ -65,7 +65,7 @@ steering. Below are its physical dimensions in its final configuration.
 
 Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This was decided beacuse of several technical factors we took into consideration.
 
-First, LEGO components offer native compatibility with the EV3 brick, which alleviates the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing while not needing any externally sourced or 3D printed pieces.
+First, LEGO components offer native compatibility with the EV3 brick, which reduces the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing while not needing any externally sourced or 3D printed pieces.
 
 But an all-LEGO build introduces limitations. These come in the form of the plastic frame having measurable flex at higher speeds, and connection points being able to loosen if the frame withstands powerful impacts. Despite these possible shortcomings, we still believed that we could make our car work, so we chose to build in this manner.
 
@@ -84,7 +84,7 @@ Finally, the medium motor, which we decided to use for steering, has a top speed
 
 Our robot uses an Ackermann steering mechanism on the front axle, which 
 is controlled by the EV3 medium motor. In this type of steering, the two 
-front wheels turn at different angles when the robot takes a turn — the 
+front wheels turn at different angles when the robot takes a turn. The 
 inner wheel turns more sharply than the outer one. This is important 
 because both wheels are tracing different sized arcs at the same time, 
 and if they were forced to turn at the same angle, they would drag and 
@@ -142,9 +142,14 @@ The brick has 16 MB of flash memory, 64 MB of RAM, and outputs between
 has a maximum capacity of 2000 mAh. To give an idea of how that capacity 
 is used, our three ultrasonic sensors consume approximately 3.3V each at 
 low current, and our two motors consume the most power during movement 
-and recovery maneuvers. Running all five components simultaneously stays 
-well within the brick's output capacity, which means we never experienced 
-power-related failures during testing.
+and recovery maneuvers. Running all five components simultaneously stays well within the brick's 
+output capacity. However, during early testing sessions we experienced 
+several unexpected shutdowns mid-run, not due to hardware failure, but 
+because we neglected to fully charge the battery before testing. This 
+taught us to treat battery management as part of our testing routine, and 
+we made it a standard practice to verify battery level on the EV3 display 
+before every run. After adopting this habit, we did not experience any 
+further power interruptions during testing.
 
 ### Wiring diagram  
 
@@ -153,9 +158,10 @@ brick. Ultrasonic sensors plug into sensor ports 1, 2, and 3, while the
 medium and large motors connect to motor ports A and B respectively. All 
 connections use standard LEGO Mindstorms cables with no external wiring.
 ![Wiring diagram](schemes/wiring_diagram_QV.jpeg)
+
 ### Sensor selection & placement    
 
-For our sensor setup, we decided to use three ultrasonic sensors — one 
+For our sensor setup, we decided to use three ultrasonic sensors: one 
 on the left side, one on the right side, and one at the front of the 
 robot. Since we do not have a camera, these sensors are responsible for 
 all of our robot's awareness of its surroundings.
