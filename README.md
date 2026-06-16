@@ -19,7 +19,7 @@
   - [Sensor calibration](#sensor-calibration)
 - [3. Software Architecture](#3-software-architecture)
   - [Algorithm description](#algorithm-description)
-  - [Flowcharts](#flowchart)
+  - [Flowchart](#flowchart)
   - [Obstacle & corner handling](#obstacle--corner-handling)
   - [Tuning process](#tuning-process)
 - [4. Engineering Decisions](#4-engineering-decisions)
@@ -210,7 +210,12 @@ Lap completion is tracked by counting corners: every time the front sensor trans
 
 ### Flowchart                         
 
-faltan dos 
+The following flowchart illustrates the priority-based logic our program 
+follows on every cycle. The robot continuously checks four conditions in 
+order. If any condition is met, it acts and restarts the loop. If none 
+are met, it drives straight and stays centered until the next cycle.
+
+![Program flowchart](img/flowchart_QV.png)
 
 ### Obstacle & corner handling   
 
