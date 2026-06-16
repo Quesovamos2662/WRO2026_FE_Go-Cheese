@@ -228,7 +228,7 @@ follows on every cycle. The robot continuously checks four conditions in
 order. If any condition is met, it acts and restarts the loop. If none 
 are met, it drives straight and stays centered until the next cycle.
 
-![Program flowchart](img/race_flowchart_QV%20(3).png)
+![Program flowchart](img/WRO_navigation_flowchart.png)
 
 > **Note:** This flowchart was generated with the assistance of AI tools 
 > based entirely on our own code logic. The structure, priorities, and 
