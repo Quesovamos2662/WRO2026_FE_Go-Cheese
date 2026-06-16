@@ -200,13 +200,26 @@ wall spacing.
 
 ### Algorithm description
 
-The vehicle's navigation software is written in Python 3 using the ev3dev2 library, and runs directly on the EV3 brick. The program follows a *priority-based threshold algorithm* — on every loop iteration, the robot reads all three ultrasonic sensors and reacts according to a strict hierarchy of conditions.
+The vehicle's navigation software is written in Python 3 using the ev3dev2 
+library, and runs directly on the EV3 brick. Instead of using a camera or 
+color sensors, our robot relies entirely on distance readings from its three 
+ultrasonic sensors to make decisions. The program checks four conditions 
+every cycle, in order of urgency, and reacts to whichever one applies first.
 
-The core logic works as follows: the robot drives forward continuously while constantly polling the left (INPUT_1), front (INPUT_2), and right (INPUT_3) ultrasonic sensors. Each sensor has two distance thresholds — a *WARN* threshold that triggers a gentle steering correction while still moving, and a *CRASH* threshold that triggers a full stop and recovery sequence. Side sensors warn at 20 cm and crash at 6 cm. The front sensor warns at 55 cm and crashes at 25 cm.
+Once the robot completes three laps, or once 99 seconds have passed 
+since the run started, the program stops the motors automatically. 
+The time limit works as a timed parking mechanism — after testing 
+multiple full runs, we found that 99 seconds consistently brings 
+the robot back close to its starting position after finishing the 
+required laps.
 
 A key feature of the algorithm is *turn direction locking* (TURN_DIR). The first time the robot naturally navigates a corner (front wall detected at warn range), it records whether it steered left or right and locks that direction for the entire run. Since all four corners of a WRO track share the same handedness, this guarantees that every subsequent corner and every recovery always steers the robot back into the correct lane.
 
-Lap completion is tracked by counting corners: every time the front sensor transitions from below CORNER_ENTRY_DIST (70 cm) back above CORNER_EXIT_DIST (90 cm), one corner is counted. After every 4 corners, one lap is registered. The robot stops automatically after 3 laps.
+To keep track of laps, the program counts corners. Every time the front 
+sensor goes from detecting a wall closer than 70 cm to reading open space 
+again above 90 cm, the program registers that a corner was passed. Once 
+4 corners are counted, one full lap is complete. After 3 laps, the robot 
+stops automatically.
 
 ### Flowchart                         
 
@@ -226,22 +239,22 @@ are met, it drives straight and stays centered until the next cycle.
 The main loop of our program evaluates four conditions on every cycle, 
 in order of priority:
 
-**P1 — Crash recovery:** This is the highest priority condition and it 
+**P1: Crash recovery:** This is the highest priority condition and it 
 always fires, even during a steering cooldown. If any sensor reads below 
-its crash threshold — front at 25 cm or either side at 6 cm — the robot 
+its crash threshold — front at 25 cm or either side at 6 cm: the robot 
 stops immediately, reverses while counter-steering to swing the nose away 
 from the wall, and then steers back toward the locked turn direction to 
 re-enter the correct lane.
 
-**P2 — Right wall closing:** If the right sensor reads below 20 cm and 
+**P2: Right wall closing:** If the right sensor reads below 20 cm and 
 no crash condition is active, the robot steers left while continuing to 
 move forward.
 
-**P3 — Left wall closing:** If the left sensor reads below 20 cm and no 
+**P3: Left wall closing:** If the left sensor reads below 20 cm and no 
 crash condition is active, the robot steers right while continuing to 
 move forward.
 
-**P4 — Front wall approaching:** If the front sensor reads below 55 cm, 
+**P4: Front wall approaching:** If the front sensor reads below 55 cm, 
 the robot steers using the locked turn direction (TURN_DIR). If this is 
 the first corner the robot has encountered and TURN_DIR has not been set 
 yet, the robot picks the side with more open space and locks that 
@@ -275,12 +288,11 @@ path. We solved this by introducing a 0.50 second cooldown after every
 correction, which gave the robot time to evaluate whether the correction 
 had worked before firing another one.
 
-Finally, the recovery behavior during back_up() was tuned after we 
-noticed that the robot would sometimes reverse into the opposite wall 
-after a crash. We adjusted the counter-steer direction during the 
-reverse phase so the nose swings away from the wall that was hit, and 
-added a second steering pulse in cases where the robot times out during 
-recovery.
+The 99 second run time limit was also the result of physical testing. 
+We timed several complete runs and measured where the robot ended up 
+after each one. We adjusted the timer until the robot stopped 
+consistently close to its starting position, which we used as our 
+parking point.
 
 ## 4. Engineering Decisions           
 
@@ -290,6 +302,12 @@ Every major component choice our team made involved weighing alternatives
 against our constraints as first-time competitors with limited experience 
 and a fixed timeline. This section documents the reasoning behind our most 
 significant decisions.
+
+Instead of using a sensor to detect the starting zone for parking, 
+we chose a time-based approach. After running the robot multiple times 
+and measuring how long a full three-lap run took, we set a 99 second 
+limit that reliably stops the robot near its starting position. This 
+was simpler to implement and worked consistently during our tests.
 
 *EV3 over Arduino*
 
