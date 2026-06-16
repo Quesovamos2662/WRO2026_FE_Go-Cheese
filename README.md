@@ -217,6 +217,10 @@ are met, it drives straight and stays centered until the next cycle.
 
 ![Program flowchart](img/race_flowchart_QV%20(3).png)
 
+> **Note:** This flowchart was generated with the assistance of AI tools 
+> based entirely on our own code logic. The structure, priorities, and 
+> decisions shown reflect our program exactly as written by our team.
+
 ### Obstacle & corner handling   
 
 The main loop of our program evaluates four conditions on every cycle, 
