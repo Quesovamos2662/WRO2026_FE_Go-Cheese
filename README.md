@@ -134,9 +134,7 @@ regulators.
 
 The brick has 16 MB of flash memory, 64 MB of RAM, and outputs between 
 0V and 9V depending on the component connected. Its rechargeable battery 
-has a maximum capacity of 2000 mAh. To decompose our power usage, our three ultrasonic sensors consume approximately 3.3V each at 
-low current, and our two motors consume the most power during movement 
-and recovery maneuvers. Running all five components simultaneously stays well within the brick's 
+has a maximum capacity of 2000 mAh. To decompose our power usage, our three ultrasonic sensors consume approximately 3.3V each at low current, and our two motors consume the most power during movement and recovery maneuvers. Running all five components simultaneously stays well within the brick's 
 output capacity. However, during early testing sessions we experienced 
 several unexpected shutdowns mid-run, not due to hardware failure, but 
 because we neglected to fully charge the battery before testing. This 
@@ -158,7 +156,7 @@ connections use standard LEGO Mindstorms cables with no external wiring.
 For our sensor setup, we decided to use three ultrasonic sensors: one 
 on the left side, one on the right side, and one at the front of the 
 robot. Since we do not have a camera, these sensors are responsible for 
-all of our robot's awareness of its surroundings.
+all of our robot's awareness.
 
 We chose ultrasonic sensors over other options like infrared sensors 
 because they are more reliable at measuring distance accurately and are 
@@ -167,19 +165,13 @@ straightforward to calibrate, since their output is a direct distance
 reading in centimeters rather than a relative proximity value.
 
 The left and right sensors are mounted at mid-chassis height on each 
-side, facing perpendicular to the direction of travel. This placement 
-allows them to detect the track walls consistently as the robot moves 
-forward. The front sensor is mounted at the front of the chassis facing 
-forward, and is responsible for detecting upcoming walls and triggering 
-corner navigation. Its placement at the front of the vehicle gives the 
-algorithm the maximum possible reaction distance before reaching a wall.
+side. This placement allows them to detect the track walls consistently as the robot moves forward. The front sensor is mounted at the front of the chassis and faces forward. It is responsible for detecting upcoming walls and triggering 
+corner navigation. 
+
 
 ### Sensor calibration              
 
-Our ultrasonic sensors do not require manual calibration in the 
-traditional sense, since they output distance readings in centimeters 
-directly. Instead, calibration for our robot meant finding the right 
-threshold values through physical testing on a mock track.
+Our ultrasonic sensors do not require manual calibration in the traditional sense, since they output distance readings in centimeters directly. Instead, calibration for our robot meant finding the right threshold values through physical testing on a mock track.
 
 For the side sensors, we tested different WARN distances until we found 
 20 cm as the value that gave the robot enough time to correct without 
