@@ -43,10 +43,7 @@ Even if we do not achieve something huge in this competition, our goal is to ste
 
 ## Robot Overview     
 
-Our vehicle is a four-wheeled autonomous robot built entirely from LEGO 
-Mindstorms EV3 components. It uses three ultrasonic sensors for 
-navigation, a large motor for drive, and a medium motor for Ackermann 
-steering. Below are its physical dimensions in its final configuration.
+Our vehicle is a robot built entirely from LEGO Mindstorms EV3 components. It uses three ultrasonic sensors for object detection, and a large and medium motor for Ackerman steering and drive. Below are its physical dimensions in its final configuration.
 
 | Specification | Value |
 |---|---|
@@ -65,7 +62,7 @@ steering. Below are its physical dimensions in its final configuration.
 
 Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This was decided beacuse of several technical factors we took into consideration.
 
-First, LEGO components offer native compatibility with the EV3 brick, which reduces the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing while not needing any externally sourced or 3D printed pieces.
+First, LEGO components offer native compatibility with the EV3 brick, which reduces the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing. Additionally, Lego builds don't need any external parts or pieces, as there is almost always an official Lego piece that does the job you need.
 
 But an all-LEGO build introduces limitations. These come in the form of the plastic frame having measurable flex at higher speeds, and connection points being able to loosen if the frame withstands powerful impacts. Despite these possible shortcomings, we still believed that we could make our car work, so we chose to build in this manner.
 
@@ -73,7 +70,7 @@ But an all-LEGO build introduces limitations. These come in the form of the plas
 
 ### Motor selection & torque reasoning 
 
-Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium. These are connected directly to the EV3 brick via ports A and B. Both motors were chosen for their native compatibility with the rest of out components and their ability to provide reliable speed and torque on their own.
+Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium. These are connected directly to the EV3 brick via ports A and B. Both motors were chosen for their natural compatibility with the rest of our components and their ability to provide reliable speed and torque on their own.
 
 The large motor, used for moving back and forth, has a top speed of 170 RPM, a running and stall torque of 20Nxcm and 40 Nxcm respectively, an operating voltage of 9V, and a weight of 76g. For a Lego component, these specs are very respectable and are just what we were looking for in our robot.
 
@@ -94,17 +91,16 @@ to follow.
 
 We chose this steering system because the WRO track has four corners per 
 lap, and we needed our robot to take them consistently and without losing 
-control. A simpler steering setup would have caused the wheels to resist 
-the turn, which could have thrown off our robot's path and made our sensor 
-readings less reliable.
+control. 
+
+
 
 The medium motor controls the steering through short timed pulses in the 
 code. Instead of using a sensor to track the exact wheel angle, the motor 
 pushes the steering for a set amount of time and then returns it toward 
 center. This kept our system simple and avoided adding extra sensors to 
-our build. The push and return times were adjusted during testing until 
-we found values that gave us clean, consistent turns without 
-over-steering.
+our build.
+
 
 ### Chassis iterations               
 
@@ -114,7 +110,7 @@ and final version.
 In the original design, the EV3 brick was mounted vertically at the 
 center of the chassis, with the sensor ports facing sideways. The two 
 ultrasonic sensors were placed at the rear of the robot, pointing 
-outward to the sides. This layout made the robot significantly taller 
+outward to the sides. This made the robot significantly taller 
 and placed most of its weight near the back, which made it unstable 
 during turns and caused the front wheels to lose grip on the track 
 surface. The rear sensor placement also created a large blind spot at 
@@ -122,12 +118,11 @@ the front of the robot, since there was no sensor covering what was
 directly ahead.
 
 For the final version, we rebuilt the chassis with the EV3 brick mounted 
-horizontally, which lowered the center of gravity and made the robot more 
+horizontally, which made the robot more 
 compact and stable. The ultrasonic sensors were moved to the sides of the 
 chassis at mid-height to better align with the track walls, and a third 
-sensor was added facing forward to eliminate the front blind spot. The 
-overall structure became shorter and wider, which improved stability 
-during both straight runs and cornering.
+sensor was added facing forward to eliminate the front blind spot.
+
 
 ## 2. Power & Sensor Architecture   
 
@@ -139,8 +134,7 @@ regulators.
 
 The brick has 16 MB of flash memory, 64 MB of RAM, and outputs between 
 0V and 9V depending on the component connected. Its rechargeable battery 
-has a maximum capacity of 2000 mAh. To give an idea of how that capacity 
-is used, our three ultrasonic sensors consume approximately 3.3V each at 
+has a maximum capacity of 2000 mAh. To decompose our power usage, our three ultrasonic sensors consume approximately 3.3V each at 
 low current, and our two motors consume the most power during movement 
 and recovery maneuvers. Running all five components simultaneously stays well within the brick's 
 output capacity. However, during early testing sessions we experienced 
