@@ -448,6 +448,13 @@ extension
 
 ## Performance Videos
 
+The following video shows our robot completing an autonomous run on the 
+WRO Future Engineers open challenge track. The robot navigates using its 
+three ultrasonic sensors, correcting its path in real time and counting 
+corners to complete the required laps.
+
+- [Open Challenge — Full Run](https://youtube.com/shorts/XFzVK4C4KQ8)
+
 ## Resources
 - [ev3dev2 documentation](https://ev3dev-lang.readthedocs.io)
 - [WRO Future Engineers 2026 rules](https://wro-association.org)
