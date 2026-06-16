@@ -215,7 +215,7 @@ follows on every cycle. The robot continuously checks four conditions in
 order. If any condition is met, it acts and restarts the loop. If none 
 are met, it drives straight and stays centered until the next cycle.
 
-![Program flowchart](img/flowchart_QV.png)
+![Program flowchart](img/race_flowchart_QV%20(3).png)
 
 ### Obstacle & corner handling   
 
