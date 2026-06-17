@@ -126,7 +126,7 @@ because we neglected to fully charge the battery before testing. This taught us 
 ### Wiring diagram  
 
 The diagram below shows how all sensors and motors connect to the EV3 brick. Ultrasonic sensors plug into sensor ports 1, 2, and 3, while the medium and large motors connect to motor ports A and respectively. All connections use standard LEGO Mindstorms cables with no external wiring.
-![Wiring diagram](schemes/wiring_diagram_QV.jpeg)
+![Wiring diagram](schemes/wiring_diagram_GC.jpeg)
 
 ### Sensor selection & placement    
 
