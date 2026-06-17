@@ -281,16 +281,42 @@ complete the steering maneuver before reaching the corner wall.
 
 ### Bill of Materials
 
+Perfecto, entonces el Bill of Materials de arriba está bien tal como está. Quita esa sección de "Camera and Vision" entera ya que no aplica y no necesitan aclarar nada que no exista — simplemente no se menciona.
+Versión final, lista para pegar:
+markdown## Bill of Materials
+
 ### Electronics
 
-| Component | Model | Quantity | Purpose |
+| Component | Model / Part Number | Quantity | Purpose |
 |---|---|---|---|
-| EV3 Intelligent Brick | LEGO Mindstorms 45500 | 1 | Main controller & power supply |
-| Large Motor | LEGO Mindstorms 45502 | 1 | Drive — rear wheels (OUTPUT_B) |
-| Medium Motor | LEGO Mindstorms 45503 | 1 | Steering — front axle (OUTPUT_A) |
-| Ultrasonic Sensor | LEGO Mindstorms EV3 45504 | 2 | Left (INPUT_1) & front (INPUT_2) |
-| Ultrasonic Sensor | LEGO Mindstorms NXT 9846 | 1 | Right wall detection (INPUT_3) |
-| EV3 Rechargeable Battery | LEGO 45501 | 1 | Power source |
+| EV3 Intelligent Brick | LEGO Mindstorms EV3 45500 | 1 | Main controller, display, and power supply |
+| Large Motor | LEGO Mindstorms EV3 45502 | 1 | Drive — rear axle (OUTPUT_B) |
+| Medium Motor | LEGO Mindstorms EV3 45503 | 1 | Steering — front axle (OUTPUT_A) |
+| Ultrasonic Sensor | LEGO Mindstorms EV3 45504 | 2 | Left and front wall detection |
+| Ultrasonic Sensor | LEGO Mindstorms NXT 9846 | 1 | Right wall detection |
+| EV3 Rechargeable Battery | LEGO 45501 | 1 | Power source, 2000 mAh |
+| Sensor connector cables | LEGO Mindstorms EV3 | var. | Connects ultrasonic sensors to brick |
+| Motor connector cables | LEGO Mindstorms EV3 | var. | Connects motors to brick |
+| microSD card | Generic | 1 | Stores ev3dev OS and program files |
+| USB cable | LEGO Mindstorms EV3 | 1 | Code upload from computer to brick |
+
+### Structural Elements
+
+| Component | Source | Quantity | Purpose |
+|---|---|---|---|
+| LEGO Mindstorms EV3 Expansion Set | 45560, 853 pcs | 1 set | Primary source of structural parts |
+| Technic beams (various lengths) | Included in 45560 | var. | Chassis frame and motor mounts |
+| Connector pegs and pins | Included in 45560 | var. | Joins beams and axle assemblies |
+| Bushings and spacers | Included in 45560 | var. | Reduces friction on rotating axles |
+| Cross-axles (various lengths) | Included in 45560 | var. | Drive shaft and steering linkage |
+| Gears | Included in 45560 | var. | Steering mechanism transmission |
+| Wheels with tires | Included in 45560 | 4 | Front steering wheels and rear drive wheels |
+| Steering knuckles | Included in 45560 | 2 | Front axle Ackermann steering joints |
+| Angle connectors | Included in 45560 | var. | Sensor mounting brackets |
+
+The complete and detailed parts breakdown, including exact piece counts 
+per build stage, is available as a PDF in `models/finalrobot.pdf`, and 
+the full 3D model file is available in `models/finalrobot.io.zip`.
 
 ### Structural elements
 
