@@ -350,9 +350,9 @@ the left sensor placement.
 
 1. Install ev3dev on a microSD card following the official guide at 
 [ev3dev.org](https://www.ev3dev.org/docs/getting-started/)
-2. Copy `src/OC_v6.py` to the EV3 brick via SSH or the VS Code ev3dev 
+2. Copy `src/pidWITHstop.py` to the EV3 brick via SSH or the VS Code ev3dev 
 extension
-3. Run the program: `python3 OC_v6.py`
+3. Run the program: `python3 pidWITHstop.py`
 4. Place the robot on the track and press the center button to begin
 
 ## Vehicle Photos
@@ -373,7 +373,7 @@ extension
 ## Team Photos
 
 ### Group photo
-![Team QuesoVamos](t-photos/group%20image%20QV.jpg)
+![Team GoCheese](t-photos/group%20image%20QV.jpg)
 
 ### Individual photos
 | Romina | Caylee | Christopher |
