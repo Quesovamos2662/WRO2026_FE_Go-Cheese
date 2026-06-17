@@ -110,6 +110,13 @@ compact and stable. The ultrasonic sensors were moved to the sides of the
 chassis at mid-height to better align with the track walls, and a third 
 sensor was added facing forward to eliminate the front blind spot.
 
+| Old chassis | New chassis |
+|:---:|:---:|
+| ![Old front](v-photos/front_old.jpg) | ![New front](v-photos/front.jpeg) |
+| ![Old back](v-photos/back_old.jpg) | ![New back](v-photos/back.jpeg) |
+| ![Old left](v-photos/left_old.jpg) | ![New left](v-photos/left.jpeg) |
+| ![Old right](v-photos/right_old.jpg) | ![New right](v-photos/right.jpeg) |
+
 
 ## 2. Power & Sensor Architecture   
 
