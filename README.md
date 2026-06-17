@@ -82,17 +82,18 @@ Finally, the medium motor has a top speed of 250 RPM, a running torque of 8Nxcm,
 Our robot uses an Ackermann steering mechanism on the front axle, which 
 is controlled by the EV3 medium motor. In this type of steering, the two 
 front wheels turn at different angles when the robot takes a turn. The 
-inner wheel turns more sharply than the outer one. This is important because both wheels are tracing different sized arcs at the same time, and if they were forced to turn at the same angle, they would drag and scrub against the ground instead of rolling cleanly. Ackermann geometry 
-solves this by giving each wheel the correct angle for the arc it needs 
+inner wheel turns more sharply than the outer one. This is important because both wheels are tracing different sized arcs at the same time, and if they were forced to turn at the same angle, they would drag and scrub against the ground instead of rolling cleanly. Ackermann geometry solves this by giving each wheel the correct angle for the arc it needs 
 to follow.
 
 We chose this steering system because the WRO track has four corners per 
 lap, and we needed our robot to take them consistently and without losing 
-control. 
-
-
-
-The medium motor controls the steering through short timed pulses in the code. Instead of using a sensor to track the exact wheel angle, the motor pushes the steering for a set amount of time and then returns it toward center. This kept our system simple and avoided adding extra sensors to our build.
+control. The medium motor controls steering through direct angle commands rather 
+than timed pulses. The code calls `on_to_position()` with a target angle 
+in degrees (`ANGLE_CENTER`, `ANGLE_GENTLE`, `ANGLE_MEDIUM`, `ANGLE_STRONG`, 
+or `ANGLE_DANGER`), and the motor moves to that exact position and holds 
+it with the brake engaged. This is more precise than a timed-pulse 
+approach, since the motor always reaches the same physical angle 
+regardless of small variations in motor speed or friction.
 
 
 ### Chassis iterations               
@@ -127,24 +128,47 @@ because we neglected to fully charge the battery before testing. This taught us 
 
 ### Wiring diagram  
 
-The diagram below shows how all sensors and motors connect to the EV3 brick. Ultrasonic sensors plug into sensor ports 1, 2, and 3, while the medium and large motors connect to motor ports A and respectively. All connections use standard LEGO Mindstorms cables with no external wiring.
+The diagram below shows how all sensors and motors connect to the EV3 brick. Ultrasonic sensors plug into sensor ports 1, 2, and 3, while the medium and large motors connect to motor ports A and B respectively. All connections use standard LEGO Mindstorms cables with no external wiring.
 ![Wiring diagram](schemes/wiring_diagram_GC.jpeg)
 
-> **Note:** This Bill of Materials table was organized with the assistance 
-> of AI tools based on the actual components used in our build, confirmed 
-> against our LEGO Mindstorms Education boxes and the part list generated 
-> from our BrickLink Studio model.
+> **Note:** This wiring diagram was created with the assistance of AI 
+> tools based on our actual port assignments as defined in our code 
+> (`OUTPUT_A`, `OUTPUT_B`, `INPUT_1`, `INPUT_2`, `INPUT_3`). The connections 
+> shown reflect exactly how our sensors and motors are wired to the EV3 
+> brick.
 
 ### Sensor selection & placement    
 
-For our sensor setup, we decided to use three ultrasonic sensors: one 
-on the left side, one on the right side, and one at the front of the robot. Since we do not have a camera, these sensors are responsible for all of our robot's awareness.
+For our sensor setup, we use three ultrasonic sensors, each connected to 
+its own dedicated input port and serving a different role in the 
+robot's decision-making: `INPUT_1` (left), `INPUT_2` (front), and 
+`INPUT_3` (right). Since we do not have a camera, these three readings 
+are the only information the robot has about its surroundings.
 
-We chose ultrasonic sensors over other options like infrared sensors because they are more reliable at measuring distance accurately and are less affected by lighting conditions or surface color. They are also more straightforward to calibrate, since their output is a direct distance reading in centimeters rather than a relative proximity value.
+We chose ultrasonic sensors over infrared specifically because their 
+output is a direct distance measurement in centimeters. This matters for 
+our code because nearly every decision layer in `navigate()` compares a 
+sensor reading against a numeric threshold, such as `HIT_RISK_CM = 18`. 
+An infrared sensor's relative proximity value would not give us a 
+consistent number to compare against across different lighting 
+conditions or surface materials on the track.
 
-The left and right sensors are mounted at mid-chassis height on each side. This placement allows them to detect the track walls consistently as the robot moves forward. The front sensor is mounted at the front of the chassis and faces forward. It is responsible for detecting upcoming walls and triggering 
-corner navigation. 
+The left and right sensors are mounted at mid-chassis height, facing 
+perpendicular to the direction of travel. Their primary job is feeding 
+the PID controller: the difference between the left and right readings 
+is the main input the controller uses to calculate a centering error and 
+adjust the steering angle smoothly. They are also checked independently 
+in the wall guard and emergency layers (`SIDE_EMERGENCY_CM = 48`, 
+`WALL_GUARD_CM = 88`), since a robot can be too close to one wall while 
+still being far from the other.
 
+The front sensor is mounted facing forward and has a completely 
+different job from the side sensors: it does not feed the PID controller 
+at all. Instead, it exclusively drives the corner detection logic. Three 
+separate front distances (`FRONT_GENTLE_CM = 235`, `FRONT_MEDIUM_CM = 178`, 
+`FRONT_STRONG_CM = 128`) let the program distinguish between a corner 
+that is still far away and one that is immediately ahead, responding 
+with a proportionally gentler or stronger turn.
 
 ### Sensor calibration              
 
@@ -158,20 +182,33 @@ wall spacing.
 
 ### Algorithm description
 
-The vehicle's navigation software is written in Python 3 using the ev3dev2 
-library, and runs directly on the EV3 brick. Instead of using a camera or 
-color sensors, our robot relies entirely on distance readings from its three 
-ultrasonic sensors to make decisions. The program checks four conditions every cycle, in order of urgency, and reacts to whichever one applies first.
+The vehicle's navigation software is written in Python 3 using the 
+ev3dev2 library, and runs directly on the EV3 brick. Instead of using a 
+camera or color sensors, our robot relies entirely on distance readings 
+from its three ultrasonic sensors to make decisions.
 
-Once the robot completes three laps, or once 99 seconds have passed since the run started, the program stops the motors automatically. 
+The core of the program is a PID controller (Proportional-Integral-
+Derivative) that continuously centers the robot between the left and 
+right walls during normal driving. The controller uses KP = 0.56 and 
+KD = 1.22, while the integral term (KI) is kept at 0 because ultrasonic 
+sensors are too noisy for integral correction to be reliable. This makes 
+our implementation closer to a PD controller in practice, even though 
+the structure supports a full PID if needed later.
 
-The time limit works as a timed parking mechanism — after testing 
-multiple full runs, we found that 99 seconds consistently brings 
-the robot back close to its starting position after finishing the required laps.
+PID centering only runs when conditions are safe. Several priority 
+layers sit above it and override it whenever the robot is close to a 
+wall, approaching a corner, or just exited one. The function navigate() 
+evaluates these layers in order on every loop cycle, from most urgent to 
+least urgent, and the first layer that applies takes control for that 
+cycle.
 
-A key feature of the algorithm is *turn direction locking* (TURN_DIR). The first time the robot naturally navigates a corner (front wall detected at warn range), it records whether it steered left or right and locks that direction for the entire run. Since all four corners of a WRO track share the same handedness, this guarantees that every subsequent corner and every recovery always steers the robot back into the correct lane.
-
-To keep track of laps, the program counts corners. Every time the front sensor goes from detecting a wall closer than 70 cm to reading open space again above 90 cm, the program registers that a corner was passed. Once 4 corners are counted, one full lap is complete. After 3 laps, the robot stops automatically.
+The program also tracks laps by counting corners, using the front 
+sensor distance to detect when the robot enters and exits a turn. After 
+4 corners, one lap is registered, and after 3 laps the robot can stop. 
+As an additional safety net, the program also stops automatically once 
+99 seconds have passed since the run started, since testing showed this 
+time consistently brings the robot back near its starting position 
+after completing the required laps.
 
 ### Flowchart                         
 
@@ -188,47 +225,84 @@ are met, it drives straight and stays centered until the next cycle.
 
 ### Obstacle & corner handling   
 
-The main loop of our program evaluates four conditions on every cycle, 
-in order of priority:
+The function navigate() evaluates the robot's situation through nine 
+layers, checked in this exact order every cycle:
 
-**P1: Crash recovery:** This is the highest priority condition and it 
-always fires, even during a steering cooldown. If any sensor reads below 
-its crash threshold — front at 25 cm or either side at 6 cm: the robot 
-stops immediately, reverses while counter-steering to swing the nose away 
-from the wall, and then steers back toward the locked turn direction to 
-re-enter the correct lane.
+**1. Absolute hit risk:** If any sensor reads at or below 18 cm, the 
+robot treats this as a panic situation. It resets the PID controller and 
+steers hard (90°) away from the closer side at reduced speed.
 
-**P2: Right wall closing:** If the right sensor reads below 20 cm and 
-no crash condition is active, the robot steers left while continuing to 
-move forward.
+**2. Emergency wall avoidance:** If the front sensor reads at or below 
+58 cm, or either side sensor reads at or below 48 cm, the robot performs 
+the same hard steering response as the hit risk layer. This acts as a 
+last line of defense that should rarely trigger if the wall guard layer 
+below is working correctly.
 
-**P3: Left wall closing:** If the left sensor reads below 20 cm and no 
-crash condition is active, the robot steers right while continuing to 
-move forward.
+**3. Post-corner centering:** For a short window after completing a 
+corner, side sensor readings are capped at 75 cm. This prevents the 
+robot from misreading an open corner exit as no wall detected and 
+driving off course before it reconnects with the next straight wall.
 
-**P4: Front wall approaching:** If the front sensor reads below 55 cm, 
-the robot steers using the locked turn direction (TURN_DIR). If this is 
-the first corner the robot has encountered and TURN_DIR has not been set 
-yet, the robot picks the side with more open space and locks that direction for the rest of the run.
+**4. Front wall / corner logic:** The front sensor decides cornering 
+behavior independently of the PID controller. Three thresholds control 
+how sharply the robot turns: 128 cm triggers a strong turn (70°), 178 cm 
+triggers a medium turn (45°), and 235 cm triggers a gentle turn (25°). 
+The robot always turns toward whichever side has more open space.
 
-To avoid the robot overcorrecting repeatedly, a cooldown of 0.50 seconds 
-is applied after every P2, P3, and P4 correction. P1 always bypasses this cooldown. Additionally, all sensor readings are passed through a median-of-3 filter every cycle to reduce false triggers caused by noise 
-or reflections.
+**5. Blind side detection:** On straight sections, if one side sensor 
+reads an unusually large distance (over 180 cm, suggesting it missed 
+the wall at an angle) while the other side is reasonably close, the 
+robot steers away from the side it can still detect.
+
+**6. Wall guard:** This is the main correction layer for normal driving. 
+It activates progressively as either side wall gets closer than 88 cm, 
+escalating to a stronger correction if a wall drops below 68 cm.
+
+**7. PID side-wall centering:** When both side readings are valid and no 
+wall is dangerously close, the PID controller continuously adjusts 
+steering angle to keep the robot centered between both walls.
+
+**8. Single-side fallback:** If only one side sensor is giving a valid 
+reading, the robot falls back to a threshold-based correction using that 
+single sensor.
+
+**9. Safe driving:** If none of the above apply, the robot drives 
+straight ahead at full speed with the steering centered.
+
+All sensor readings also pass through an anticipation function that 
+detects sudden drops in distance between cycles, allowing the robot to 
+react slightly earlier than the raw sensor value would suggest.
 
 
 ### Tuning process                     
 
-The distance thresholds and timing values in our code were not chosen arbitrarily — they were the result of repeated physical testing on a mock track built to approximate the WRO layout.
+Unlike a simple threshold system, tuning this PID-based program required 
+adjusting both the controller gains and the priority layer distances 
+together, since they interact with each other.
 
-Our first issue was that the robot was entering corners too late. With the front sensor warn threshold set to 35 cm, the robot did not have enough time to begin turning before it reached the wall, which caused it to clip the outer corner consistently. We gradually raised the threshold in 5 cm increments during testing until we reached 55 cm, which gave the robot enough advance warning to complete the turn cleanly.
+Our first challenge was PID oscillation. With early KP and KD values, 
+the robot zigzagged between the two side walls instead of holding a 
+steady center line. We lowered KD and adjusted KP gradually until the 
+robot settled into smooth centering on straight sections. We kept KI at 
+0 throughout testing, since enabling it made the robot drift 
+unpredictably due to ultrasonic sensor noise.
 
-Our second issue was oscillation on straight sections. In our first 
-version of the loop, a correction fired every single cycle whenever a 
-sensor read below its warn threshold. This caused the robot to zigzag 
-continuously down the straight sections instead of holding a steady path. We solved this by introducing a 0.50 second cooldown after every correction, which gave the robot time to evaluate whether the correction had worked before firing another one.
+Our second challenge was emergency triggering too late. Our original 
+emergency distance was set lower, around 35 cm, but the robot did not 
+have enough time to steer away before contact. We raised it to 58 cm for 
+the front sensor and 48 cm for the sides, which gave the steering motor 
+enough time to respond before the hit risk layer had to take over.
 
-The 99 second run time limit was also the result of physical testing. We timed several complete runs and measured where the robot ended up after each one. We adjusted the timer until the robot stopped consistently close to its starting position, which we used as our 
-parking point.
+Our third challenge was corners. Early corner thresholds caused the 
+robot to either turn too late and clip the wall, or turn too early and 
+cut across the track before the corner actually started. We tuned the 
+three-stage front distances (128 / 178 / 235 cm) through repeated runs 
+until the robot consistently began turning at the right point for each 
+severity of corner.
+
+Finally, the 99 second run time limit was tuned by timing several 
+complete three-lap runs and adjusting the value until the robot reliably 
+stopped close to its starting position after finishing.
 
 ## 4. Engineering Decisions           
 
@@ -253,7 +327,10 @@ with no prior robotics experience, the process of wiring individual components, 
 
 Our initial sensor layout used only two ultrasonic sensors on the left and 
 right sides of the vehicle. During early testing we identified a blind spot 
-directly in front of the robot — the side sensors could not detect a wall ahead until the robot was already too close to correct in time. This led us to add a third ultrasonic sensor facing forward, which became the primary trigger for corner detection and is responsible for the UF_WARN (55 cm) threshold that gives the robot enough time to begin steering before reaching the wall.
+directly in front of the robot. The side sensors could not detect a wall ahead until the robot was already too close to correct in time. This led us to add a third ultrasonic sensor facing forward, which 
+became the dedicated input for our corner detection logic, controlled by 
+the `FRONT_GENTLE_CM`, `FRONT_MEDIUM_CM`, and `FRONT_STRONG_CM` thresholds 
+in our current code.
 
 *Medium motor for steering over a servo*
 
@@ -268,21 +345,42 @@ the EV3 ecosystem. The EV3 medium motor provided sufficient steering response th
 *Infrared sensor as front obstacle detector*
 
 Our original design used an infrared sensor mounted at the front of the 
-robot to detect the distance between the vehicle and the wall ahead. In theory, the infrared sensor offered a narrower detection beam than an ultrasonic sensor, which we believed would reduce false positives from angled surfaces. In practice, the sensor performed poorly under repeated collision conditions — after several impacts during testing, its readings became inconsistent and unreliable, causing the robot to either fail to detect walls or trigger corrections at incorrect distances. We replaced it with a third ultrasonic sensor (EV3 model, INPUT_2), which proved 
+robot to detect the distance between the vehicle and the wall ahead. In theory, the infrared sensor offered a narrower detection beam than an ultrasonic sensor, which we believed would reduce false positives from angled surfaces. In practice, the sensor performed poorly under repeated collision conditions. After several impacts during testing, its readings became inconsistent and unreliable, causing the robot to either fail to detect walls or trigger corrections at incorrect distances. We replaced it with a third ultrasonic sensor (EV3 model, INPUT_2), which proved 
 significantly more robust and consistent across all testing sessions.
 
-*Threshold-based steering without cooldown*
+*Threshold-based steering caused oscillation*
 
-Our first version of the navigation loop fired a steering correction every single cycle whenever a sensor read below its warn threshold. This caused the robot to oscillate violently in straight sections — it would correct right, then immediately correct left on the next cycle, then right again, producing a zigzag pattern instead of a straight line. Introducing a 0.50 second cooldown after each correction (STEER_COOLDOWN) resolved the oscillation entirely and allowed the robot to maintain a stable forward trajectory between corrections.
+Our first version of the navigation loop fired a steering correction 
+every single cycle whenever a sensor read below its warn threshold. This 
+caused the robot to oscillate violently in straight sections — it would 
+correct right, then immediately correct left on the next cycle, then 
+right again, producing a zigzag pattern instead of a straight line. 
+This is what led us to abandon pure threshold-based steering and 
+implement a PID controller instead, which corrects proportionally to 
+how far off-center the robot is rather than firing a fixed correction 
+every time a threshold is crossed.
 
-*Fixed front warn threshold of 35 cm*
+*Pure threshold-based steering replaced by PID*
 
-Our initial front sensor warn distance was set to 35 cm. During corner 
-testing, the robot consistently clipped the outer wall because it began 
-steering too late — 35 cm did not give the motors enough time to turn the 
-front wheels and change the vehicle's heading before the wall was reached. 
-Raising the threshold to 55 cm gave the robot enough advance warning to 
-complete the steering maneuver before reaching the corner wall.
+Even after fixing the oscillation problem in our early threshold-based 
+version, the robot's centering still felt mechanical: it would not 
+correct until crossing a specific distance, then overcorrect, then wait 
+again. We replaced this entire approach with a PID controller for normal 
+centering, which calculates a proportional correction based on exactly 
+how far off-center the robot is, rather than reacting only at fixed 
+trigger points. This made centering noticeably smoother, though it 
+required more tuning time since two gains (KP and KD) had to be balanced 
+against each other instead of a single threshold value.
+
+*Single fixed front threshold was not enough*
+
+Our initial corner logic used a single front distance threshold to 
+decide when to turn. This caused the robot to either clip the wall on 
+sharp corners or turn unnecessarily early on shallow ones, since one 
+distance value could not represent every corner severity correctly. We 
+replaced this with three separate thresholds (128 / 178 / 235 cm), each 
+triggering a different turn strength, which allowed the robot to respond 
+proportionally to how sharp each corner actually was.
 
 ## 5. Reproducibility        
 
