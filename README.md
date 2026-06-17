@@ -300,15 +300,16 @@ complete the steering maneuver before reaching the corner wall.
 
 | Component | Source | Quantity | Purpose |
 |---|---|---|---|
-| LEGO Mindstorms EV3 Expansion Set | 45560, 853 pcs | 1 set | Primary source of structural parts |
-| Technic beams (various lengths) | Included in 45560 | var. | Chassis frame and motor mounts |
-| Connector pegs and pins | Included in 45560 | var. | Joins beams and axle assemblies |
-| Bushings and spacers | Included in 45560 | var. | Reduces friction on rotating axles |
-| Cross-axles (various lengths) | Included in 45560 | var. | Drive shaft and steering linkage |
-| Gears | Included in 45560 | var. | Steering mechanism transmission |
-| Wheels with tires | Included in 45560 | 4 | Front steering wheels and rear drive wheels |
-| Steering knuckles | Included in 45560 | 2 | Front axle Ackermann steering joints |
-| Angle connectors | Included in 45560 | var. | Sensor mounting brackets |
+| LEGO Mindstorms EV3 Core Set | 45544 | 1 set | Primary structural parts, brick, motors, and sensors |
+| LEGO Mindstorms EV3 Expansion Set | 45560, 853 pcs | 1 set | Additional beams, gears, wheels, and connectors |
+| Technic beams (various lengths) | Included in 45544 and 45560 | var. | Chassis frame and motor mounts |
+| Connector pegs and pins | Included in 45544 and 45560 | var. | Joins beams and axle assemblies |
+| Bushings and spacers | Included in 45544 and 45560 | var. | Reduces friction on rotating axles |
+| Cross-axles (various lengths) | Included in 45544 and 45560 | var. | Drive shaft and steering linkage |
+| Gears | Included in 45544 and 45560 | var. | Steering mechanism transmission |
+| Wheels with tires | Included in 45544 and 45560 | 4 | Front steering wheels and rear drive wheels |
+| Steering knuckles | Included in 45544 and 45560 | 2 | Front axle Ackermann steering joints |
+| Angle connectors | Included in 45544 and 45560 | var. | Sensor mounting brackets |
 
 The complete and detailed parts breakdown, including exact piece counts 
 per build stage, is available as a PDF in `models/finalrobot.pdf`, and 
