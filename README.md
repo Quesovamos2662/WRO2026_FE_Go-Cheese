@@ -82,10 +82,7 @@ Finally, the medium motor, which we decided to use for steering, has a top speed
 Our robot uses an Ackermann steering mechanism on the front axle, which 
 is controlled by the EV3 medium motor. In this type of steering, the two 
 front wheels turn at different angles when the robot takes a turn. The 
-inner wheel turns more sharply than the outer one. This is important 
-because both wheels are tracing different sized arcs at the same time, 
-and if they were forced to turn at the same angle, they would drag and 
-scrub against the ground instead of rolling cleanly. Ackermann geometry 
+inner wheel turns more sharply than the outer one. This is important because both wheels are tracing different sized arcs at the same time, and if they were forced to turn at the same angle, they would drag and scrub against the ground instead of rolling cleanly. Ackermann geometry 
 solves this by giving each wheel the correct angle for the arc it needs 
 to follow.
 
@@ -95,10 +92,7 @@ control.
 
 
 
-The medium motor controls the steering through short timed pulses in the 
-code. Instead of using a sensor to track the exact wheel angle, the motor 
-pushes the steering for a set amount of time and then returns it toward 
-center. This kept our system simple and avoided adding extra sensors to 
+The medium motor controls the steering through short timed pulses in the code. Instead of using a sensor to track the exact wheel angle, the motor pushes the steering for a set amount of time and then returns it toward center. This kept our system simple and avoided adding extra sensors to 
 our build.
 
 
@@ -107,15 +101,9 @@ our build.
 Our robot went through one major structural redesign between its first 
 and final version.
 
-In the original design, the EV3 brick was mounted vertically at the 
-center of the chassis, with the sensor ports facing sideways. The two 
-ultrasonic sensors were placed at the rear of the robot, pointing 
-outward to the sides. This made the robot significantly taller 
-and placed most of its weight near the back, which made it unstable 
-during turns and caused the front wheels to lose grip on the track 
-surface. The rear sensor placement also created a large blind spot at 
-the front of the robot, since there was no sensor covering what was 
-directly ahead.
+In the original design, the EV3 brick was mounted vertically at the center of the chassis, with the sensor ports facing sideways. The two ultrasonic sensors were placed at the rear of the robot, pointing 
+outward to the sides. This made the robot significantly taller and placed most of its weight near the back, which made it unstable during turns and caused the front wheels to lose grip on the track 
+surface. The rear sensor placement also created a large blind spot at the front of the robot, since there was no sensor covering what was directly ahead.
 
 For the final version, we rebuilt the chassis with the EV3 brick mounted 
 horizontally, which made the robot more 
@@ -126,46 +114,27 @@ sensor was added facing forward to eliminate the front blind spot.
 
 ## 2. Power & Sensor Architecture   
 
-For our controller and power supply, we used a standard LEGO Mindstorms 
-EV3 Brick. We chose this brick because it works as both the brain and the 
-battery of our robot, meaning all of our sensors and motors draw power 
-directly from it without needing any external power source or voltage 
-regulators.
+For our controller and power supply, we used a standard LEGO Mindstorms EV3 Brick. We chose this brick because it works as both the brain and the battery of our robot, meaning all of our sensors and motors draw power directly from it without needing any external power source or voltage regulators.
 
 The brick has 16 MB of flash memory, 64 MB of RAM, and outputs between 
 0V and 9V depending on the component connected. Its rechargeable battery 
-has a maximum capacity of 2000 mAh. To decompose our power usage, our three ultrasonic sensors consume approximately 3.3V each at low current, and our two motors consume the most power during movement and recovery maneuvers. Running all five components simultaneously stays well within the brick's 
-output capacity. However, during early testing sessions we experienced 
-several unexpected shutdowns mid-run, not due to hardware failure, but 
-because we neglected to fully charge the battery before testing. This 
-taught us to treat battery management as part of our testing routine, and 
-we made it a standard practice to verify battery level on the EV3 display 
-before every run. After adopting this habit, we did not experience any 
-further power interruptions during testing.
+has a maximum capacity of 2000 mAh. To decompose our power usage, our three ultrasonic sensors consume approximately 3.3V each at low current, and our two motors consume the most power during movement and recovery maneuvers. Running all five components simultaneously stays well within the brick's output capacity. However, during early testing sessions we experienced several unexpected shutdowns mid-run, not due to hardware failure, but 
+because we neglected to fully charge the battery before testing. This taught us to treat battery management as part of our testing routine, and we made it a standard practice to verify battery level on the EV3 display before every run. After adopting this habit, we did not experience any further power interruptions during testing.
 
 ### Wiring diagram  
 
-The diagram below shows how all sensors and motors connect to the EV3 
-brick. Ultrasonic sensors plug into sensor ports 1, 2, and 3, while the 
-medium and large motors connect to motor ports A and B respectively. All 
-connections use standard LEGO Mindstorms cables with no external wiring.
+The diagram below shows how all sensors and motors connect to the EV3 brick. Ultrasonic sensors plug into sensor ports 1, 2, and 3, while the medium and large motors connect to motor ports A and respectively. All connections use standard LEGO Mindstorms cables with no external wiring.
 ![Wiring diagram](schemes/wiring_diagram_QV.jpeg)
 
 ### Sensor selection & placement    
 
 For our sensor setup, we decided to use three ultrasonic sensors: one 
-on the left side, one on the right side, and one at the front of the 
-robot. Since we do not have a camera, these sensors are responsible for 
-all of our robot's awareness.
+on the left side, one on the right side, and one at the front of the robot. Since we do not have a camera, these sensors are responsible for all of our robot's awareness.
 
-We chose ultrasonic sensors over other options like infrared sensors 
-because they are more reliable at measuring distance accurately and are 
-less affected by lighting conditions or surface color. They are also more 
-straightforward to calibrate, since their output is a direct distance 
-reading in centimeters rather than a relative proximity value.
+We chose ultrasonic sensors over other options like infrared sensors because they are more reliable at measuring distance accurately and are 
+less affected by lighting conditions or surface color. They are also more straightforward to calibrate, since their output is a direct distance reading in centimeters rather than a relative proximity value.
 
-The left and right sensors are mounted at mid-chassis height on each 
-side. This placement allows them to detect the track walls consistently as the robot moves forward. The front sensor is mounted at the front of the chassis and faces forward. It is responsible for detecting upcoming walls and triggering 
+The left and right sensors are mounted at mid-chassis height on each side. This placement allows them to detect the track walls consistently as the robot moves forward. The front sensor is mounted at the front of the chassis and faces forward. It is responsible for detecting upcoming walls and triggering 
 corner navigation. 
 
 
@@ -173,13 +142,8 @@ corner navigation.
 
 Our ultrasonic sensors do not require manual calibration in the traditional sense, since they output distance readings in centimeters directly. Instead, calibration for our robot meant finding the right threshold values through physical testing on a mock track.
 
-For the side sensors, we tested different WARN distances until we found 
-20 cm as the value that gave the robot enough time to correct without 
-overcorrecting on straight sections. For the front sensor, we tested 
-values between 35 cm and 60 cm before settling on 55 cm as the distance 
-that consistently allowed the robot to begin turning before reaching the 
-corner wall. These values are defined as constants at the top of our 
-code and can be adjusted if the robot is used on a track with different 
+For the side sensors, we tested different WARN distances until we found 20 cm as the value that gave the robot enough time to correct without overcorrecting on straight sections. For the front sensor, we tested values between 35 cm and 60 cm before settling on 55 cm as the distance 
+that consistently allowed the robot to begin turning before reaching the corner wall. These values are defined as constants at the top of our code and can be adjusted if the robot is used on a track with different 
 wall spacing.
 
 ## 3. Software Architecture            
@@ -189,8 +153,7 @@ wall spacing.
 The vehicle's navigation software is written in Python 3 using the ev3dev2 
 library, and runs directly on the EV3 brick. Instead of using a camera or 
 color sensors, our robot relies entirely on distance readings from its three 
-ultrasonic sensors to make decisions. The program checks four conditions 
-every cycle, in order of urgency, and reacts to whichever one applies first.
+ultrasonic sensors to make decisions. The program checks four conditions every cycle, in order of urgency, and reacts to whichever one applies first.
 
 Once the robot completes three laps, or once 99 seconds have passed 
 since the run started, the program stops the motors automatically. 
