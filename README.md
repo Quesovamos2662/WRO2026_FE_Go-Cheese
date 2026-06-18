@@ -459,9 +459,11 @@ chassis, facing perpendicular to the direction of travel, at
 approximately mid-chassis height.
 - `INPUT_2` — EV3 Ultrasonic sensor mounted at the front of the vehicle, 
 facing forward along the direction of travel.
-- `INPUT_3` — NXT Ultrasonic sensor mounted on the right side of the 
+- `INPUT_3` — EV3 Ultrasonic sensor mounted on the right side of the 
 chassis, facing perpendicular to the direction of travel, mirroring 
 the left sensor placement.
+
+For more detailed instructions, please check out the [assembly instructions](schemes/finalrobot.pdf) done in BrickLink Studio.
 
 **Software setup**
 
