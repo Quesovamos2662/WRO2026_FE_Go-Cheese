@@ -211,14 +211,14 @@ right walls during normal driving. The controller uses KP = 0.56 and
 KD = 1.22, while the integral term (KI) is kept at 0 because ultrasonic 
 sensors are too noisy for integral correction to be reliable. This makes 
 our implementation closer to a PD controller in practice, even though 
-the structure supports a full PID if needed later.
+the structure supports a full PID if needed later. The reason why we opted for a PID-centered approach was that it made testing more bearable and less time inducing. Before we added the PD controller, we used to manually adjust all the values for the corner logic and wall avoidance. This led to several unnecessary attempts and plenty of modifications to the code, which became troublesome over time. The new approched cut our attempts needed in half and provided more reliability. It stopped constantly hitting walls and could adapt to any form of land adjustment without needing user input.
 
 PID centering only runs when conditions are safe. Several priority 
 layers sit above it and override it whenever the robot is close to a 
 wall, approaching a corner, or just exited one. The function navigate() 
 evaluates these layers in order on every loop cycle, from most urgent to 
 least urgent, and the first layer that applies takes control for that 
-cycle.
+cycle. The PID centering does have some rare occurrences. For example, we noticed that in 1 of every 4 laps the car would randomly get a wrongful input and go straight to a wall. We believe that this is caused by an improperly placed track mat, low battery power, or sudden noises that might interfere with the ultrasonic sensors. These situations are really rare and are mostly affected by things out of our control. We have adapted the PD controller to adapt to its environment without accounting for those external issues. For future competitions, we are planning to add a camera with recognition software. Probably the camera's extra input might allow more reliable attempts.
 
 The program also tracks laps by counting corners, using the front 
 sensor distance to detect when the robot enters and exits a turn. After 
@@ -227,6 +227,7 @@ As an additional safety net, the program also stops automatically once
 99 seconds have passed since the run started, since testing showed this 
 time consistently brings the robot back near its starting position 
 after completing the required laps.
+
 
 ### Flowchart                         
 
