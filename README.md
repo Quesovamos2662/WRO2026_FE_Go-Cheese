@@ -75,7 +75,8 @@ Technic liftarms are quite heavy (ranging from 0.5 grams to 4.5 grams). Currentl
 
 ### Technic Pins & Axles ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────
 
-The axles and pins allow for easy connection between liftarms, motors, sensors, and wheels. They are a very crucial part of the build since we wouldn't be able to attach all the pieces together and form a cohesive chassis design. Unfortunately
+★Benefits:  
+The axles and pins allow for easy connection between liftarms, motors, sensors, and wheels. They are a very crucial part of the build since we wouldn't be able to attach all the pieces together and form a cohesive chassis design. The friction in the pins allow us 
 
 
 ### Motor selection & torque reasoning 
