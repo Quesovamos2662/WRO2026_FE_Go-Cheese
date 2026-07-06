@@ -8,7 +8,7 @@
 - [Meet the Team](#meet-the-team)
 - [Robot Overview](#robot-overview)
 - [1. Mobility & Mechanical Design](#1-mobility--mechanical-design)
-  - [Driving base & chassis](#driving-base--chassis)
+  - [Driving base & chassis](#🚗-driving-base--chassis)
   - [Motor selection & torque reasoning](#motor-selection--torque-reasoning)
   - [Steering mechanism](#steering-mechanism-ackermann)
   - [Chassis iterations](#chassis-iterations)
