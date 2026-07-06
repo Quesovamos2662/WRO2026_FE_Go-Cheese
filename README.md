@@ -66,9 +66,14 @@ First, LEGO components offer native compatibility with the EV3 brick, which redu
 
 Our chassis is made out of mostly techinical liftarms, pin connectors, and technical connectors. In the following sections, we'll discuss the benefits and disadvantages of using these pieces. 
 
-### Technical Liftarms ────୨ৎ────
+### Technical Liftarms ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────
 ★ Benefits:  
 The use of liftarms brings a lot of benefits. They are very lightweight due to the acrylonitrile butadiene styrene (ABS) plastic used in their making. They are incredibly rigid thanks to their synergy with technic pins, which allow them to work build an inflexible structure. This lack of flexibility is crucial for PID-based code we are running as they reduce the mechanic noise the PID needs to work with. They allow crossbracing, the stacking of liftarms in perpendicular shapes, to build triangular structures that can prevent the twist of the robot during sharp turns and increase precision. We can also use them to redesign steering geometry or support geometry quickly. The liftarm's holes are placed in specific units and measurements (1 stud = 8mm). These holes allow the positioning of pieces in very specific ways like the mount we've made for the HuskyLens AI Camera.
+
+಄ Disadvantages:  
+Technic liftarms are quite heavy (ranging from 0.5 grams to 4.5 grams). Currently, this is one of the main reasons why our speed of around 0.32 m/s is being held back. To use the liftarms to their maximum potential, we need to know how to make triangles to efficiently support and distribute weight, which is a skill we haven't obtained yet. Their stud placement of 8mm can limit already established geometry like the Ackermann streeing geometry, so they essentially limit our geometry system.
+
+### Technic Pins & Axles ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ
 
 The axles and pins allow for easy connection between liftarms, motors, sensors, and wheels. They are a very crucial part of the build since we wouldn't be able to attach all the pieces together and form a cohesive chassis design. Unfortunately
 
