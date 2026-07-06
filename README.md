@@ -37,7 +37,7 @@
 ## Meet the Team    
 Welcome to the official GitHub repository for Team Go!Cheese from Panama, participating in the WRO 2026 San Miguelito Regional in the Future Engineers category, Open Challenge.
 
-Team Go!Cheese is made up of three unlikely friends who somehow decided that building an autonomous robot, learning GitHub, using BrickLink, programming, documenting, troubleshooting, and surviving WRO all at the same time was a good idea. This is our first time working with many of these tools and technologies, so this repository is not only a place for our source code, materials, and robot documentation, but also proof of our learning process.
+Team Go!Cheese is made up of two unlikely friends who somehow decided that building an autonomous robot, learning GitHub, using BrickLink, programming, documenting, troubleshooting, and surviving WRO all at the same time was a good idea. This is our first time working with many of these tools and technologies, so this repository is not only a place for our source code, materials, and robot documentation, but also proof of our learning process.
 
 Even if we do not achieve something huge in this competition, our goal is to step out of our comfort zone, learn as much as possible, and use this experience to come back stronger in the future. We may be beginners now, but we are determined to improve, keep building, and go beyond what we thought we were capable of.
 
@@ -51,21 +51,20 @@ Our vehicle is a robot built entirely from LEGO Mindstorms EV3 components. It us
 | Height | ~9.5 cm (95 mm) |
 | Width | ~13 cm (130 mm) |
 | Weight | ~703.61 g (0.7361 kg) |
-| Controller | LEGO Mindstorms EV3 Brick |
+| Controller | LEGO Mindstorms EV3 Brick | Arduino NANO Atmega328 (To be used alongside the camera)
 | Drive motor | EV3 Large Motor (OUTPUT_B) |
 | Steering motor | EV3 Medium Motor (OUTPUT_A) |
-| Sensors | 3x Ultrasonic (INPUT_1, 2, 3) |
-| Language | Python 3 — ev3dev2 |
+| Sensors | 3x Ultrasonic (INPUT_1, 2, 3) | 1x HuskyLens Camera
+| Language | Python 3 — ev3dev2 | C++ for the Arduino Nano.
 
 ## 1. Mobility & Mechanical Design   
 ### Driving base & chassis            
 
-Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This was decided beacuse of several technical factors we took into consideration.
+Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This was decided because of several technical factors we took into consideration.
 
-First, LEGO components offer native compatibility with the EV3 brick, which reduces the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing. Additionally, Lego builds don't need any external parts or pieces, as there is almost always an official Lego piece that does the job you need.
+First, LEGO components offer native compatibility with the EV3 brick, which reduces the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing. Additionally, Lego builds don't need any external parts or pieces, as there is almost always an official Lego piece that does the job you need. But an all-LEGO build introduces limitations. These come in the form of the plastic frame having measurable flex at higher speeds, and connection points being able to loosen if the frame withstands powerful impacts. Despite these possible shortcomings, we still believed that we could make our car work, so we chose to build in this manner.
 
-But an all-LEGO build introduces limitations. These come in the form of the plastic frame having measurable flex at higher speeds, and connection points being able to loosen if the frame withstands powerful impacts. Despite these possible shortcomings, we still believed that we could make our car work, so we chose to build in this manner.
-
+Our chassis is made out of mostly techinical liftarms, pin connectors, and technical connectors. In the following sections, we'll discuss the benefits and disadvantages of using these pieces. The use of liftarms brings a lot of benefits. They are very lightweight due to the acrylonitrile butadiene styrene (ABS) plastic used in their making. The lightweightness is amazing for achieving our goal of having a low total mass, but this plastic is very flimsy. Under great load, the liftarms's plastic will bend, cause instability in its structure, and slow down the car. The axles and pins allow for easy connection between liftarms, motors, sensors, and wheels. They are a very crucial part of the build since we wouldn't be able to attach all the pieces together and form a cohesive chassis design. Unfortunately
 
 
 ### Motor selection & torque reasoning 
