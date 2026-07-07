@@ -96,6 +96,7 @@ We fixed both problems at once. We built a LEGO camera mount inspired by another
 In the first version of the mount, the camera sat too far back and too high, so it could not see the track directly ahead of the car. We lowered the camera by raising the EV3 brick and attaching the mount to the back of it. Result: the HuskyLens now has a clear, unobstructed view of what is in front of the robot, which is exactly what the color detection needs.
 
 ᯓ★ Comparisons between version 1 & version 2: 
+NEXT STEP 
 
 
 
