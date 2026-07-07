@@ -54,26 +54,16 @@ Even if we do not achieve something huge in this competition, our goal is to ste
 Our vehicle is a robot built entirely from LEGO Mindstorms EV3 components. It uses three ultrasonic sensors for object detection, and a large and medium motor for Ackerman steering and drive. Below are its physical dimensions in its final configuration.
 
 | Specification | Value |
-
 |---|---|
-
 | Length | ~28 cm (280 mm) |
-
 | Height | ~27 cm (270 mm) |
-
 | Width | ~13 cm (130 mm) |
-
 | Weight | ~888.1 g (0.8881 kg) |
-
-| Controller | LEGO Mindstorms EV3 Brick | Arduino NANO Atmega328 (To be used alongside the camera)
-
+| Controller | LEGO Mindstorms EV3 Brick + Arduino Nano (ATmega328), used alongside the camera |
 | Drive motor | EV3 Large Motor (OUTPUT_B) |
-
 | Steering motor | EV3 Medium Motor (OUTPUT_A) |
-
-| Sensors | 3x Ultrasonic (INPUT_1, 2, 3) | 1x HuskyLens Camera
-
-| Language | Python 3 — ev3dev2 | C++ for the Arduino Nano.
+| Sensors | 3x Ultrasonic (INPUT_1, 2, 3) + 1x HuskyLens Camera |
+| Language | Python 3 (ev3dev2) + C++ for the Arduino Nano |
 
 
 ## 1. Mobility & Mechanical Design   
