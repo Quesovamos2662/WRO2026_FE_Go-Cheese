@@ -1,3 +1,5 @@
+Official repository of the Go!Cheese team from Panama. It contains all the engineering materials of our self-driven vehicle's model participating in the WRO Future Engineers competition in the season of 2026.
+
 <p align="center">
   <img src="img/Banner_GoCheese.png" alt="Go!Cheese" width="600">
 </p>
@@ -17,10 +19,12 @@
   - [Wiring diagram](#wiring-diagram)
   - [Sensor selection & placement](#sensor-selection--placement)
   - [Sensor calibration](#sensor-calibration)
-- [3. Software Architecture](#3-software-architecture)
+- [3. Software Architecture & Obstacle Strategy](#3-software-architecture--obstacle-strategy)
   - [Algorithm description](#algorithm-description)
   - [Flowchart](#flowchart)
-  - [Obstacle & corner handling](#obstacle--corner-handling)
+  - [Open Challenge logic](#open-challenge-logic)
+  - [Obstacle Challenge strategy](#obstacle-challenge-strategy)
+  - [Corner & edge handling](#corner--edge-handling)
   - [Tuning process](#tuning-process)
 - [4. Engineering Decisions](#4-engineering-decisions)
   - [Design decision log](#design-decision-log)
@@ -41,32 +45,66 @@ Team Go!Cheese is made up of two unlikely friends who somehow decided that build
 
 Even if we do not achieve something huge in this competition, our goal is to step out of our comfort zone, learn as much as possible, and use this experience to come back stronger in the future. We may be beginners now, but we are determined to improve, keep building, and go beyond what we thought we were capable of.
 
-## Robot Overview     
+## 🚗Robot Overview🚗    
 
 Our vehicle is a robot built entirely from LEGO Mindstorms EV3 components. It uses three ultrasonic sensors for object detection, and a large and medium motor for Ackerman steering and drive. Below are its physical dimensions in its final configuration.
 
 | Specification | Value |
+
 |---|---|
+
 | Length | ~28 cm (280 mm) |
-| Height | ~9.5 cm (95 mm) |
+
+| Height | ~27 cm (270 mm) |
+
 | Width | ~13 cm (130 mm) |
-| Weight | ~703.61 g (0.7361 kg) |
+
+| Weight | ~888.1 g (0.8881 kg) |
+
 | Controller | LEGO Mindstorms EV3 Brick | Arduino NANO Atmega328 (To be used alongside the camera)
+
 | Drive motor | EV3 Large Motor (OUTPUT_B) |
+
 | Steering motor | EV3 Medium Motor (OUTPUT_A) |
+
 | Sensors | 3x Ultrasonic (INPUT_1, 2, 3) | 1x HuskyLens Camera
+
 | Language | Python 3 — ev3dev2 | C++ for the Arduino Nano.
 
+
 ## 1. Mobility & Mechanical Design   
-### 🚗 Driving base & chassis            
+### Driving base & chassis      
 
-Our driving base and chassis are constructed entirely from the official LEGO Mindstorms EV3 Kit. This was decided because of several technical factors we took into consideration.
+Our driving base and chassis are built entirely from official LEGO Mindstorms EV3 Technic parts. We chose a fully LEGO build for a few practical reasons.
 
-First, LEGO components offer native compatibility with the EV3 brick, which reduces the difficulty of mounting sensors and motors. And second, LEGO builds allows structural issues to be identified and corrected rapidly during testing. Additionally, Lego builds don't need any external parts or pieces, as there is almost always an official Lego piece that does the job you need. But an all-LEGO build introduces limitations. These come in the form of the plastic frame having measurable flex at higher speeds, and connection points being able to loosen if the frame withstands powerful impacts. Despite these possible shortcomings, we still believed that we could make our car work, so we chose to build in this manner.
+First, LEGO parts connect natively with the EV3 brick and its motors, so mounting our drive motor, steering motor and ultrasonic sensors was fast and did not require custom brackets. Second, a LEGO build let us test an idea, find a weak point and rebuild that section in minutes instead of hours, which mattered because we went through many versions. Third, the EV3 kit almost always has a part that does what we need, so we rarely got stuck waiting for a component.
 
-Our chassis is made out of mostly techinical liftarms, pin connectors, and technical connectors. In the following sections, we'll discuss the benefits and disadvantages of using these pieces. 
+A fully LEGO frame also has real downsides, and we want to be honest about them. The plastic beams show a small amount of flex at higher speeds, and pinned connections can loosen after repeated impacts against the walls. We decided these tradeoffs were acceptable for our speed range of about 0.32 to 0.38 m/s, and we address them directly in the Chassis iterations section below.
 
-ᯓ★ Comparisons between version 1 & version 2: tba
+The car uses rear wheel drive and front wheel steering. An EV3 Large Motor drives the rear axle and the 56 by 28 ZR rear wheels, while an EV3 Medium Motor drives the front Ackermann steering linkage with the smaller 43.2 by 22 ZR wheels. We explain the motor and gearing choices in the Motor selection section below. The full robot weighs about 1140 g.
+
+The backbone of the chassis is a central spine of stacked Technic liftarms that runs from the front steering module to the rear drive module. This spine ties both ends of the car into one rigid unit so the steering and drive sections do not twist independently. On each side we added liftarm cross bracing (the pink beams in the photos) to fight the flex mentioned above and keep the frame square under load.
+
+The three ultrasonic sensors sit low on the frame: one on the left, one on the right and one facing forward at the center. Mounting them low and directly on the structural beams keeps their readings stable and stops them from shifting on impact. The EV3 brick is mounted vertically to keep our footprint inside the 30 by 20 cm limit and to raise the HuskyLens camera high enough for a clear forward view. The tradeoff is a higher center of mass, which is one reason we keep our speed in the range above instead of running the motors at full power.
+
+### Chassis iterations
+
+Our chassis went through several versions before reaching the current design. Documenting these changes is part of how we improved stability and performance.
+
+**Version 1 → adding vision and fixing the steering**
+
+Our first chassis was not ready for the Obstacle Challenge. It had no camera or color sensor, so it could not identify the red and green pillars or react to obstacles at all, and there was no place on the frame to mount a camera. On top of that, the Ackermann steering was too loose and would snap off under heavy stress.
+
+We fixed both problems at once. We built a LEGO camera mount inspired by another team's design and adapted it to fit our HuskyLens, and we reinforced the steering so it could hold up under load. Result: with a working camera in place, the robot could finally take on the Obstacle Challenge, and the steering stopped failing during hard runs.
+
+**Version 2 → repositioning the camera**
+
+In the first version of the mount, the camera sat too far back and too high, so it could not see the track directly ahead of the car. We lowered the camera by raising the EV3 brick and attaching the mount to the back of it. Result: the HuskyLens now has a clear, unobstructed view of what is in front of the robot, which is exactly what the color detection needs.
+
+ᯓ★ Comparisons between version 1 & version 2: 
+
+
+
 
 ### Technical Liftarms ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ──────
 ★ Benefits:  
