@@ -1,4 +1,8 @@
-Official repository of the Go!Cheese team from Panama. It contains all the engineering materials of our self-driven vehicle's model participating in the WRO Future Engineers competition in the season of 2026.
+## 🧀 Go!Cheese | WRO Future Engineers 2026
+
+Official repository of **Go!Cheese**, a robotics team from San Miguelito, Panama 🇵🇦, competing in the **WRO Future Engineers 2026** season.
+
+Here you will find all the engineering materials behind our self-driving vehicle: mechanical design, code, wiring, and the full story of how we built it.
 
 <p align="center">
   <img src="img/Banner_GoCheese.png" alt="Go!Cheese" width="600">
