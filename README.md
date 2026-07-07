@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/Banner_GoCheese.png" alt="Go!Cheese Banner" width="100%"/>
+  <img src="other/Banner_GoCheese.png" alt="Go!Cheese" width="600">
 </p>
 
 # WRO2026_FE_Go!Cheese
