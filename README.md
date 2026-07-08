@@ -102,12 +102,12 @@ The axles and pins allow for easy connection between liftarms, motors, sensors, 
 The technic pins are incredibly prone to breaking while holding weight with no additional support, which can lead them to shattering when handling them. They also become slowly ruined thanks to the friction caused by holding together the liftarms. This leads to weak grip between pieces, and the simple vibration of the car can finally pull the pieces apart. In the other hand, axles require bushings to be tightened to pieces like wheels. If wrongly adjusted, the pieces can move around and misalign the geometry. 
 
 ♡ Conclusion:  
-Pins and axles (although, mostly pins) are the staple of our build. They help the liftarms take shape into the desirable structure. They are absolutely required since they are essential when using technic liftarms. Pins and axles work alongside the liftarms to hold the structure together, provide mobility, and better shape. We understand that they are quite fragile, specially pins. They can't really hold much stress compared to actual metal screws. Personally, we wouldn't change pins and axles. In fact, the easy addition and removal of pins by using a pull force help us make quick modifications to the structure/chassis. Our only complaint regarding pins is their whimsy plastic. Pins would greatly enjoy having a harder plastic that can't bend as easily.
+Pins and axles (although, mostly pins) are the staple of our build. They help the liftarms take shape into the desirable structure. They are absolutely required since they are essential when using technic liftarms. Pins and axles work alongside the liftarms to hold the structure together, provide mobility, and better shape. We understand that they are quite fragile, specially pins. They can't really hold much stress compared to actual metal screws. Personally, we wouldn't change pins and axles. In fact, the easy addition and removal of pins by using a pull force help us make quick modifications to the structure/chassis. Our only complaint regarding pins is their whimsy plastic. Pins would greatly enjoy having a harder plastic that can't bend as easily. This fragility is also the reason our redesign required adding more pins and connectors than our virtual model predicted. Because each individual pin holds only a small load before slipping, reinforcing a weak joint meant adding several pins around it instead of relying on just one. This connects directly to the stability problems described in the Chassis modifications section, where the physical build needed far more reinforcement than the digital model suggested.
 
 
 ### Motor selection & torque reasoning ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────
 
-Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium. These are connected directly to the EV3 brick via ports A and B. Both motors were chosen for their natural compatibility with the rest of our components and their ability to provide reliable speed and torque on their own.
+Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium.These are connected directly to the EV3 brick: the large motor drives the rear axle through OUTPUT_B, and the medium motor controls the steering through OUTPUT_A. Both motors were chosen for their natural compatibility with the rest of our components and their ability to provide reliable speed and torque on their own.
 
 The large motor, used for moving and load-bearing propulsion, has a top speed of 170 RPM, a running and stall torque of 20Nxcm and 40 Nxcm respectively, an operating voltage of 9V, and a weight of 76g. It trades off speed for torque. This trade-off is required to properly move load since driving needs to overcome the inertia of the chassis, rolling resistance, and friction in the drivetrain. Compared to the medium motor, it has a higher rotational inertia. Its heavier rotor stores momentum and allows for a smoother delivery where any resistance can be pushed through without much stalling. It can also be used for measuring distance through its rotations. It is bulkier and larger compared to a medium motor, and for us, this design structure makes it unfit to be placed on the front of the robot. It would also compete for space with the steering chassis and add weight on undesirable areas. Based on this, we can say that its most defining trait is the high torque that accelerates the robot's mass and does feats unmatched by a medium motor.
 
@@ -132,7 +132,7 @@ it with the brake engaged. This is more precise than a timed-pulse
 approach, since the motor always reaches the same physical angle 
 regardless of small variations in motor speed or friction.
 
-### Chassis modifications
+### Chassis modifications ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ──────
 
 Our robot went through one major structural redesign between its first and final version. The root cause is worth stating up front: we designed the first version entirely in the BrickLink modeling software before building it physically with the LEGO MINDSTORMS kits. When we recreated that virtual model with the real parts, we discovered that most of the modeled structures had serious problems with their connections and stability. Almost every change described below came from that gap between the digital model and the physical build.
 
@@ -159,7 +159,7 @@ Finally, it is worth mentioning that we ended up adding more Technic pins and co
   <em>Comparison between both steering mechanisms and the redesigned front of the chassis.</em>
 </p>
 
-### Vision & obstacle readiness
+### Vision & obstacle readiness ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ──────
 
 Fixing the chassis made the robot stable, but stability alone does not win the Obstacle Challenge. The single most important upgrade between our first and final version was giving the robot the ability to see, and then getting that vision to actually look at the right place.
 
@@ -180,7 +180,7 @@ We fixed this by lowering the camera, raising the EV3 brick and attaching the mo
 ᯓ★ Comparisons between version 1 & version 2:
 NEXT STEP
 
-## 2. Power & Sensor Architecture   
+## 2. 🪫Power & Sensor Architecture🪫   
 
 For our controller and power supply, we used a standard LEGO Mindstorms EV3 Brick. We chose this brick because it works as both the brain and the battery of our robot, meaning all of our sensors and motors draw power directly from it without needing any external power source or voltage regulators.
 
