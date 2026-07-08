@@ -67,12 +67,13 @@ Our vehicle is a robot built entirely from LEGO Mindstorms EV3 components. It us
 | Language | Python 3 (ev3dev2) + C++ for the Arduino Nano |
 
 
-## 1. Mobility & Mechanical Design   
+## ･ﾟ✧1. Mobility & Mechanical Design ･ﾟ✧:･ﾟ✧:
+
 ### Driving base & chassis      
 
 Our driving base and chassis are built entirely from official LEGO Mindstorms EV3 Technic parts. We chose a fully LEGO build for a few practical reasons.
 
-First, LEGO parts connect natively with the EV3 brick and its motors, so mounting our drive motor, steering motor and ultrasonic sensors required no custom brackets. Our HuskyLens camera is the exception, since it is not a LEGO part and had to be integrated through an Arduino Nano, which we explain in the Power & Sensor Architecture section. Second, a LEGO build let us test a design, find a weak point and rebuild that section quickly, which was important because our chassis went through three major versions. Third, the EV3 kit almost always has a part that does what we need, so we rarely got stuck waiting for a component.
+First, LEGO parts connect natively with the EV3 brick and its motors, so mounting our drive motor, steering motor and ultrasonic sensors required no custom brackets. Our HuskyLens camera is the exception, since it is not a LEGO part and had to be integrated through an Arduino Nano, which we explain in the Power & Sensor Architecture section. Second, a LEGO build let us test a design, find a weak point and rebuild that section quickly, which was important because our chassis went through three major versions (v1, v2 and v3). Third, the EV3 kit almost always has a part that does what we need, so we rarely got stuck waiting for a component.
 
 A fully LEGO frame also has real downsides, and we want to be honest about them. The plastic beams show a small amount of flex at higher speeds, and pinned connections can loosen after repeated impacts against the walls. We considered these tradeoffs acceptable, and we addressed them directly through the important modifications documented in the Chassis iterations section below.
 
@@ -80,8 +81,7 @@ The car uses rear wheel drive and front wheel steering. An EV3 Large Motor drive
 
 The backbone of the chassis is a central spine of stacked Technic liftarms that runs from the front steering module to the rear drive module. This spine ties both ends of the car into one rigid unit so the steering and drive sections do not twist independently. On each side we added liftarm cross bracing (the pink beams in the photos) to reduce the flex mentioned above and keep the frame square under load.
 
-The three ultrasonic sensors sit low on the frame: one on the left, one on the right and one facing forward at the center. Mounting them low and directly on the structural beams keeps their readings stable and stops them from shifting on impact. The EV3 brick is mounted vertically to keep our footprint inside the size limit and to raise the HuskyLens camera high enough for a clear forward view.
-
+The three ultrasonic sensors sit low on the frame: one on the left, one on the right and one facing forward at the center. Mounting them low and directly on the structural beams keeps their readings stable and stops them from shifting on impact. In our current version (v3), the EV3 brick is mounted horizontally, lying flat, with its buttons and display facing up toward the large motor at the back. This position keeps our footprint inside the size limit, leaves the buttons easy to reach, and still lets us mount the HuskyLens camera high enough for a clear forward view.
 
 ### Technical Liftarms ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ──────
 ★ Benefits:  
@@ -105,7 +105,7 @@ The technic pins are incredibly prone to breaking while holding weight with no a
 Pins and axles (although, mostly pins) are the staple of our build. They help the liftarms take shape into the desirable structure. They are absolutely required since they are essential when using technic liftarms. Pins and axles work alongside the liftarms to hold the structure together, provide mobility, and better shape. We understand that they are quite fragile, specially pins. They can't really hold much stress compared to actual metal screws. Personally, we wouldn't change pins and axles. In fact, the easy addition and removal of pins by using a pull force help us make quick modifications to the structure/chassis. Our only complaint regarding pins is their whimsy plastic. Pins would greatly enjoy having a harder plastic that can't bend as easily.
 
 
-### Motor selection & torque reasoning 
+### Motor selection & torque reasoning ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────
 
 Our vehicle uses two LEGO Mindstorms EV3 motors: one large and one medium. These are connected directly to the EV3 brick via ports A and B. Both motors were chosen for their natural compatibility with the rest of our components and their ability to provide reliable speed and torque on their own.
 
@@ -114,7 +114,7 @@ The large motor, used for moving and load-bearing propulsion, has a top speed of
 Finally, the medium motor has a top speed of 250 RPM, a running torque of 8Nxcm, a stall torque of 12Nxcm, and an operating voltage of 9V and a weight of only 36g. This motor's higher RPM and lower torque make it better suited for steering. Its low weight also helps on making our robot lighter, benefiting its speed overall. We can say that the medium motor is the total opposite of the large motor. It has a low rotational inertia that allows for reversible motion, which is heavily required for quick adjustments and steering in our PID-focused build. It has a lighter rotor that allows for quick acceleration and reversals. Since steering is a very repetitive task of moving back-and-forth and center-to-sides, a motor with easy direction changes is needed to produce tighter, more stable steering corrections. The medium motor has a rotation sensor built-in, and it allows for the control of all angles. Steering is about absolute position. It needs to perfectly hold positions, so proportional steering and reliable centering become possible. It has higher speed compared to the large motor snd it helps for quick position-switching. The medium motor is also smaller, flatter, and lighter than the large motor. As previously mentioned, the steering area of the chassis task most of the available space at the front. The motor's compact body easily fits there, and its light weight prevents the steering mechanism from sagging. 
 
 
-### Steering mechanism (Ackermann)   
+### Steering mechanism (Ackermann) ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ────────
 
 Our robot uses an Ackermann steering mechanism on the front axle, which 
 is controlled by the EV3 medium motor. In this type of steering, the two 
