@@ -18,6 +18,8 @@ Here you will find all the engineering materials behind our self-driving vehicle
   - [Motor selection & torque reasoning](#motor-selection--torque-reasoning)
   - [Steering mechanism](#steering-mechanism-ackermann)
   - [Chassis iterations](#chassis-iterations)
+    - [Chassis modifications](#chassis-modifications)
+    - [Vision & obstacle readiness](#vision--obstacle-readiness)
 - [2. Power & Sensor Architecture](#2-power--sensor-architecture)
   - [Power supply & EV3 brick specs](#power-supply--ev3-brick-specs)
   - [Wiring diagram](#wiring-diagram)
@@ -40,7 +42,6 @@ Here you will find all the engineering materials behind our self-driving vehicle
 - [Team Photos](#team-photos)
 - [Performance Video](#performance-videos)
 - [Resources](#resources)
-
 
 ## Meet the Team    
 Welcome to the official GitHub repository for Team Go!Cheese from Panama, participating in the WRO 2026 San Miguelito Regional in the Future Engineers category, Open Challenge.
@@ -80,25 +81,6 @@ The car uses rear wheel drive and front wheel steering. An EV3 Large Motor drive
 The backbone of the chassis is a central spine of stacked Technic liftarms that runs from the front steering module to the rear drive module. This spine ties both ends of the car into one rigid unit so the steering and drive sections do not twist independently. On each side we added liftarm cross bracing (the pink beams in the photos) to reduce the flex mentioned above and keep the frame square under load.
 
 The three ultrasonic sensors sit low on the frame: one on the left, one on the right and one facing forward at the center. Mounting them low and directly on the structural beams keeps their readings stable and stops them from shifting on impact. The EV3 brick is mounted vertically to keep our footprint inside the size limit and to raise the HuskyLens camera high enough for a clear forward view.
-
-### Chassis iterations
-
-Our chassis went through several versions before reaching the current design. Documenting these changes is part of how we improved stability and performance.
-
-**Version 1 → adding vision and fixing the steering**
-
-Our first chassis was not ready for the Obstacle Challenge. It had no camera or color sensor, so it could not identify the red and green pillars or react to obstacles at all, and there was no place on the frame to mount a camera. On top of that, the Ackermann steering was too loose and would snap off under heavy stress.
-
-We fixed both problems at once. We built a LEGO camera mount inspired by another team's design and adapted it to fit our HuskyLens, and we reinforced the steering so it could hold up under load. Result: with a working camera in place, the robot could finally take on the Obstacle Challenge, and the steering stopped failing during hard runs.
-
-**Version 2 → repositioning the camera**
-
-In the first version of the mount, the camera sat too far back and too high, so it could not see the track directly ahead of the car. We lowered the camera by raising the EV3 brick and attaching the mount to the back of it. Result: the HuskyLens now has a clear, unobstructed view of what is in front of the robot, which is exactly what the color detection needs.
-
-ᯓ★ Comparisons between version 1 & version 2: 
-NEXT STEP 
-
-
 
 
 ### Technical Liftarms ────୨ৎ────────୨ৎ────────୨ৎ────────୨ৎ──────
@@ -150,19 +132,53 @@ it with the brake engaged. This is more precise than a timed-pulse
 approach, since the motor always reaches the same physical angle 
 regardless of small variations in motor speed or friction.
 
+### Chassis modifications
 
-### Chassis iterations               
+Our robot went through one major structural redesign between its first and final version. The root cause is worth stating up front: we designed the first version entirely in the BrickLink modeling software before building it physically with the LEGO MINDSTORMS kits. When we recreated that virtual model with the real parts, we discovered that most of the modeled structures had serious problems with their connections and stability. Almost every change described below came from that gap between the digital model and the physical build.
 
-Our robot went through one major structural redesign between its first 
-and final version.
+**The original design**
 
-In the original design, the EV3 brick was mounted horizontally at the center of the chassis, with starting button facing the front of the robot. The orientation in which the EV3 was placed made it hard to access the starting button of the EV3. Initially, the chassis was more compact and smaller. Because we wanted the car to be as swift as possible, we thought of that decision. We also worked on building the Ackermann steering geometry, but when placing the medium motor to test the steering, we noticed the motor had a hard time to position the whole geometry. It used a technic liftarm 1 x 3, some technic pins, and a 3L axle with stop. The pins and the technic liftarm didn't allow for flexible movement, so we had to scratch it from our plans. When we worked on the original design, we also planned on using wheels of the same side for both the front and rear motors. Overall, the first design was unstable and rigid. This was because we made the design in the BrickLink modeling software before building it physically using the LEGO MINDSTORMS kits.
+In the original design, the EV3 brick was mounted horizontally at the center of the chassis, with the start button facing the front of the robot. This orientation turned out to be a mistake in practice, because it made the start button difficult to reach when we needed to launch a run. The chassis itself was also more compact and shorter than our final one. We made it that way on purpose, since we wanted the car to be as swift as possible and a smaller frame felt like the faster option at the time.
 
-For the final version, we rebuilt the chassis with the EV3 brick mounted horizontally but rotated around so that the buttons and display of the EV3 were facing the large motor at the back. Since there was more space between the EV3 brick and the large motor, our hands could easily reach the buttons. We also lengthened the chassis on the front. This sacrificed our idea of a smaller chassis with higher speed, but gave us more stability. To do that, we had to add several more structures that were able to hold the longer technical liftarms at the front. We also added some support on the sides of the medium motor at the front, so the motor would not be moving aggresively from side to side while steering and potentially cause us more trouble when testing. We switched a technic liftarm 1 x 3 with a connector with pin alongside an 3L axle with stop to fix the rigid movement of the steering mechanism. We added support to the large motor, it would stay straight and keep the tires tight against it. Additionally, the rear tires were changed to a bigger size. For reference, we were using 13.2 x 22 ZR sized tires on both front and rear, but after seeing the unsteadiness of the overall chassis, we changed the rear tires to some sized 56 x 28 ZR. It is worth mentioning that we added more technical pins and connectors than expected. When we recreated the virtual model using the kits, we found out that most structures of the modeled chassis had a lot of problems with connections and stability.
+We also worked on the Ackermann steering geometry during this first stage. For the linkage we used a Technic liftarm 1x3, some Technic pins, and a 3L axle with stop. However, when we mounted the medium motor to test the steering, the motor had a hard time positioning the whole geometry. The pins combined with that liftarm did not allow for flexible movement, so the steering fought against the motor instead of moving smoothly, and we had to scratch that setup from our plans. On top of this, we had originally planned to use the same size wheels on both the front and the rear.
 
-Here is an image adjunct showing the difference between both steering mechanisms and planned front of the chassis:
-![Steering comparison](v-photos/Steering_comparison.png)
+Overall, the first design ended up being both unstable and too rigid in the wrong places: loose where it needed to hold, and stiff where it needed to move.
 
+**The final design**
+
+For the final version, we rebuilt the chassis with the EV3 brick still mounted horizontally, but rotated around so that its buttons and display face the large motor at the back. Because there is more open space between the EV3 brick and the large motor, our hands can now reach the buttons easily, which fixed the access problem from the original layout.
+
+We also lengthened the front of the chassis. This sacrificed our earlier idea of a small chassis built for higher speed, but in exchange it gave us noticeably more stability, which was the better tradeoff for reliable runs. To make the longer frame work, we had to add several new structures capable of holding the longer Technic liftarms at the front. We then added support on both sides of the front medium motor, so that the motor would not shift aggressively from side to side while steering and create more problems for us during testing.
+
+To fix the stiff steering from the original version, we switched the Technic liftarm 1x3 for a connector with pin alongside a 3L axle with stop, which finally gave the steering mechanism the smooth movement it was missing. We also added support to the large motor so that it would stay straight and keep the tires held tight against it. In addition, we changed the rear tires to a bigger size: we had originally been running 13.2 x 22 ZR tires on both the front and rear, but after seeing how unsteady the chassis was, we swapped the rear tires for larger 56 x 28 ZR ones to plant the drive end of the car more firmly.
+
+Finally, it is worth mentioning that we ended up adding more Technic pins and connectors than we originally expected. This ties back to the main lesson of this redesign: the virtual model looked complete on screen, but the physical build needed far more reinforcement at its connection points to actually hold together and stay stable under load.
+
+<p align="center">
+  <img src="v-photos/Steering_comparison.png" width="500"><br>
+  <em>Comparison between both steering mechanisms and the redesigned front of the chassis.</em>
+</p>
+
+### Vision & obstacle readiness
+
+Fixing the chassis made the robot stable, but stability alone does not win the Obstacle Challenge. The single most important upgrade between our first and final version was giving the robot the ability to see, and then getting that vision to actually look at the right place.
+
+**The problem: a robot that could not see**
+
+Our first chassis was simply not ready for the Obstacle Challenge. It had no camera and no color sensor, which meant it had no way to identify the red and green pillars, and therefore no way to react to them at all. Worse, there was not even a place on the frame designed to hold a camera, so adding vision was not just a matter of plugging something in, we had to create space and structure for it. This was a hard limit: without a camera, an entire round of the competition was impossible for us, no matter how well the car drove.
+
+**Adding the camera**
+
+To solve this, we built a LEGO camera mount inspired by another team's design and adapted it to fit our specific hardware, the HuskyLens. Choosing to base our mount on an existing, proven design saved us from reinventing something from scratch, and adapting it to the HuskyLens made sure it fit our own camera rather than the one it was originally meant for. With a working camera finally in place, the robot could take on the Obstacle Challenge for the first time and begin detecting the pillars it needs to pass.
+
+**Repositioning the camera for a usable view**
+
+Getting the camera onto the robot was only half the job. In the first version of the mount, the camera sat too far back and too high on the frame, which meant it could not clearly see the track directly ahead of the car, exactly the area where the pillars appear. A camera that is mounted but pointed at the wrong place is almost as useless as no camera at all.
+
+We fixed this by lowering the camera, raising the EV3 brick and attaching the mount to the back of it so the HuskyLens could sit at a better height and angle. After this change, the camera has a clear, unobstructed view of what is directly in front of the robot, which is exactly the field of view the color detection depends on to identify pillars in time to react.
+
+ᯓ★ Comparisons between version 1 & version 2:
+NEXT STEP
 
 ## 2. Power & Sensor Architecture   
 
