@@ -55,28 +55,32 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
   </a>
 </p>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
----
-
----
 
 ## 📌 Project Rundown
 
 ### 💻 Code Structure & Goal
-Our software architecture preserves the logical core of our original codebase: a **priority-based** decision-making system backed by a **steering PID controller** ($K_P = 0.56, K_D = 1.22$). However, for the **v3** iteration, we are systematically optimizing and calibrating critical algorithmic thresholds—such as turn angles and dynamic speed layers—to achieve significantly smoother, more accurate, and highly repeatable lap times on the live track.
+
+Our software keeps the logical core of our original codebase: a **priority-based decision system** backed by a **steering PID controller**.
+
+For the **v3** iteration, we are focused on tuning and calibrating the key thresholds of that system, such as the turn angles and the dynamic speed layers, to reach smoother, more accurate and more repeatable behavior on the track.
+
+> **PID constants:** `KP = 0.56`, `KD = 1.22`
 
 ### 🎯 Cheese's Goals & Mission
-> 🚀 **Engineering Inspiration:** Drawing from world-class documented repositories like *ShahroodRC*, we have broken down our vehicle's performance targets into concrete, verifiable metrics.
+
+> 🚀 **Engineering Inspiration:** Drawing from well-documented repositories like *ShahroodRC*, we broke our vehicle's performance targets down into concrete, verifiable metrics.
+
 | Challenge / Mission | Engineering Target & Success Metric | Status |
 | :--- | :--- | :---: |
-| **Open Challenge** | Cleanly clock 3 consecutive laps in **under 1 minute and 30 seconds** under fully autonomous execution. | ⬜ Planned |
-| **Obstacle Challenge** | Flawless navigation. Safely clear red pillars on the left and green pillars on the right using real-time HuskyLens vision processing... with zero collisions. | ⬜ Planned |
-| **Parallel Parking** | Secure a perfectly centered position inside the designated parking zone, entering and exiting **without making a single-wall contact**. | ⬜ Planned |
+| **Open Challenge** | Complete 3 consecutive laps under fully autonomous control, targeting a time under 1 minute 30 seconds. | ⬜ Planned |
+| **Obstacle Challenge** | Clear all pillars using real-time HuskyLens vision, passing red pillars on the left and green pillars on the right without knocking any over. | ⬜ Planned |
+| **Parallel Parking** | Reach a centered position inside the parking zone, keeping the front and rear margins within the 2 cm symmetry limit required by the rules. | ⬜ Planned |
 
 ### 👥 Team Goals (Road to the National Finals 🇵🇦)
-* **Safety Margin:** Freeze the definitive obstacle and parking software builds at least **2 weeks prior to the competition** to guarantee a broad testing window for data collection and trackside tuning.
-* **Crush the Previous 15/30:** Elevate this repository into an exhaustive, scientifically rigorous engineering journal so transparent that judges have no choice but to award a top-tier documentation score.
-* **The Grand Objective:** Document our technical evolution step-by-step to decisively earn our ticket straight to the **National Finals**.
 
+* **Safety Margin:** Freeze the definitive obstacle and parking software builds at least **2 weeks before the competition**, to guarantee a broad testing window for data collection and trackside tuning.
+* **Improve on our previous 15/30:** Build a journal so clear and well documented that it reflects the real depth of our engineering work, and pushes our documentation score well above last year's result.
+* **The Grand Objective:** Document our technical evolution step by step to earn our place at the **National Finals**.
 ---
 
 ## 🏎️ Meet the Big Cheese — Robot Overview
@@ -110,7 +114,7 @@ QUESO PICTURE
 | `INPUT_3` | Right Ultrasonic Sensor | Mounted low on the chassis for stable sidewall tracking. |
 | `USB Port` | Arduino Nano (ATmega328) | Data link to the co-processor that hosts the **HuskyLens** camera, which connects to the Nano via I2C. |
 
-### 📈 Evolution (Brief)
+### 📈 Evolution ###
 
 The current design is our 3rd iteration (v1, v2 and v3). The most significant structural change was moving the EV3 Intelligent Brick from a vertical orientation to a flat horizontal layout, which lowered our center of gravity and improved stability during cornering.
 ---
