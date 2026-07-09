@@ -41,6 +41,21 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
 | 🤖 **Steering** | Ackermann geometry |
 
 ---
+<h3 align="center">Check us out! 👇</h3>
+
+<p align="center">
+  <a href="https://www.youtube.com/@GoCheese-pty" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
+  </a>
+  <a href="https://www.instagram.com/teamgocheese?igsh=aXV5bTluZTg4aGFi" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+  </a>
+  <a href="https://github.com/GoCheese" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
+</p>
+
+---
 
 # WRO2026_FE_Go!Cheese
 ## Contents
