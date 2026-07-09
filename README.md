@@ -82,9 +82,7 @@ Our software architecture preserves the logical core of our original codebase: a
 
 ## 🏎️ Meet the Big Cheese — Robot Overview
 
-<p align="center">
-  <img src="img/Banner_GoCheese.png" alt="Go Cheese Banner" width="85%">
-</p>
+QUESO PICTURE
 
 ### 📊 Dimensions & Physical Constraints
 *Cheese* has been engineered to comply strictly with the official WRO dimensional boundaries ($30 \times 20 \times 30\text{ cm}$)[span_8](start_span)[span_8](end_span):
