@@ -50,11 +50,10 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
   <a href="https://www.instagram.com/teamgocheese?igsh=aXV5bTluZTg4aGFi" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
   </a>
-  <a href="https://github.com/GoCheese" target="_blank">
+  <a href="https://github.com/Quesovamos2662" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
 </p>
-
 ---
 
 # WRO2026_FE_Go!Cheese
