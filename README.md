@@ -1,3 +1,6 @@
+
+<h1 align="center">🧀 Welcome to the Go!Cheese Repository 🧀</h1>
+
 <div align="center">
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -8,7 +11,6 @@
 
 </div>
 
-<h1 align="center">🧀 Welcome to the Go!Cheese Repository 🧀</h1>
 
 <h3 align="center"><em>"Cheese does run away from rats, right?"</em></h3>
 
