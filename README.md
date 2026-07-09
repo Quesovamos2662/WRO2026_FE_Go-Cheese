@@ -116,6 +116,7 @@ QUESO PICTURE
 ### 📈 Design & Structural Evolution
 
 The development of Cheese spans three distinct major iterations (v1, v2, and v3). Our most critical engineering breakthrough involved transitioning the massive EV3 Intelligent Brick from a tall, vertical orientation to a flat, horizontal layout—aggressively dropping our center of gravity to mitigate vehicle tip-over risks and stabilize high-speed cornering.
+
 ---
 
 # WRO2026_FE_Go!Cheese
