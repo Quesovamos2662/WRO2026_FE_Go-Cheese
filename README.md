@@ -112,9 +112,10 @@ QUESO PICTURE
 | `INPUT_3` | Right Ultrasonic Sensor | Mounted low on the chassis for stable sidewall tracking. |
 | `USB Port` | Arduino Nano (ATmega328) | Data link to the co-processor that hosts the **HuskyLens** camera, which connects to the Nano via I2C. |
 
-### 📈 Evolution ###
+### 📈 Design & Structural Evolution
 
-The current design is our 3rd iteration (v1, v2 and v3). The most significant structural change was moving the EV3 Intelligent Brick from a vertical orientation to a flat horizontal layout, which lowered our center of gravity and improved stability during cornering.
+The development of Cheese spans three distinct major iterations (v1, v2, and v3)[span_0](start_span)[span_0](end_span). Our most critical engineering breakthrough involved transitioning the massive EV3 Intelligent Brick from a tall, vertical orientation to a flat, horizontal layout—aggressively dropping our center of gravity to mitigate vehicle tip-over risks and stabilize high-speed cornering[span_1](start_span)[span_1](end_span).
+
 ---
 
 # WRO2026_FE_Go!Cheese
