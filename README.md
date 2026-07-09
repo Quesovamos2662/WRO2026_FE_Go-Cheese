@@ -1,6 +1,12 @@
-<p align="center">
-  <img src="img/Banner_GoCheese.png" alt="Go!Cheese" width="700" style="border-radius: 15px;">
-</p>
+<div align="center">
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<img src="img/Banner_GoCheese.png" alt="Go!Cheese" width="700">
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+</div>
 
 <h1 align="center">🧀 Welcome to the Go!Cheese Repository 🧀</h1>
 
