@@ -57,6 +57,8 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ---
 
+---
+
 ## 📌 Project Rundown
 
 ### 💻 Code Structure & Goal
@@ -65,9 +67,11 @@ Our software architecture preserves the logical core of our original codebase: a
 ### 🎯 Cheese's Goals & Mission
 > 🚀 **Engineering Inspiration:** Drawing from world-class documented repositories like *ShahroodRC*, we have broken down our vehicle's performance targets into concrete, verifiable metrics[span_2](start_span)[span_2](end_span):
 
-- [ ] **Open Challenge:** Cleanly clock 3 consecutive laps in **under 1 minute and 30 seconds** under fully autonomous execution[span_3](start_span)[span_3](end_span).
-- [ ] **Obstacle Challenge:** Flawless navigation. Safely clear red pillars on the left and green pillars on the right using real-time HuskyLens vision processing... with zero collisions[span_4](start_span)[span_4](end_span).
-- [ ] **Parallel Parking:** Secure a perfectly centered position inside the designated parking zone, entering and exiting **without making single-wall contact**[span_5](start_span)[span_5](end_span).
+| Challenge / Mission | Engineering Target & Success Metric | Status |
+| :--- | :--- | :---: |
+| **Open Challenge** | Cleanly clock 3 consecutive laps in **under 1 minute and 30 seconds** under fully autonomous execution[span_3](start_span)[span_3](end_span). | ⬜ Planned |
+| **Obstacle Challenge** | Flawless navigation. Safely clear red pillars on the left and green pillars on the right using real-time HuskyLens vision processing... with zero collisions[span_4](start_span)[span_4](end_span). | ⬜ Planned |
+| **Parallel Parking** | Secure a perfectly centered position inside the designated parking zone, entering and exiting **without making a single-wall contact**[span_5](start_span)[span_5](end_span). | ⬜ Planned |
 
 ### 👥 Team Goals (Road to the National Finals 🇵🇦)
 * **Safety Margin:** Freeze the definitive obstacle and parking software builds at least **2 weeks prior to the competition** to guarantee a broad testing window for data collection and trackside tuning[span_6](start_span)[span_6](end_span).
@@ -92,20 +96,27 @@ Our software architecture preserves the logical core of our original codebase: a
 | **Height** | ~27.0 cm[span_13](start_span)[span_13](end_span) | 30.0 cm[span_14](start_span)[span_14](end_span) | 🟩 Compliant |
 | **Current Weight** | **888.1 g**[span_15](start_span)[span_15](end_span) | Unlimited | ⚡ Lightweight & Agile |
 
-### ⚙️ Main Components & Feature Table
+### ⚙️ Technical Specifications & Component Mapping
 
-* **Chassis & Body:** Fabricated entirely from LEGO Technic components utilizing stacked ABS plastic liftarms running from front to back, reinforced by custom pink side *cross-bracing* to eradicate chassis twisting and structural flex[span_16](start_span)[span_16](end_span).
-* **Powertrain (Drive):** Direct drive configuration (1:1 gear ratio, omitting any intermediate gear reductions) linking the **EV3 Large Motor** (OUTPUT_B) straight to the rear axle, fitted with 56 x 28 ZR tires[span_17](start_span)[span_17](end_span).
-* **Steering:** **Ackermann** steering geometry driven by an **EV3 Medium Motor** (OUTPUT_A), enabling the inner wheels to naturally turn tighter than the outer wheels for optimal cornering traction[span_18](start_span)[span_18](end_span).
-* **I/O Ports & Sensor Placement:**
-  * `INPUT_1`: Left Ultrasonic Sensor (chassis-low mount)[span_19](start_span)[span_19](end_span).
-  * `INPUT_2`: Front Ultrasonic Sensor (centered to detect upcoming walls/hazards)[span_20](start_span)[span_20](end_span).
-  * `INPUT_3`: Right Ultrasonic Sensor (chassis-low mount)[span_21](start_span)[span_21](end_span).
-  * `USB Port`: High-speed data link to the **Arduino Nano** (ATmega328) co-processor dedicated entirely to hosting the **HuskyLens** smart camera via I2C[span_22](start_span)[span_22](end_span).
+| Subsystem | Component Details & Engineering Logic |
+| :--- | :--- |
+| **Chassis & Body** | Fabricated entirely from LEGO Technic components utilizing stacked ABS plastic liftarms running from front to back, reinforced by custom pink side *cross-bracing* to eradicate chassis twisting and structural flex[span_16](start_span)[span_16](end_span). |
+| **Powertrain (Drive)**| Direct drive configuration (1:1 gear ratio, omitting any intermediate gear reductions) linking the **EV3 Large Motor** (`OUTPUT_B`) straight to the rear axle, fitted with 56 x 28 ZR tires[span_17](start_span)[span_17](end_span). |
+| **Steering System** | **Ackermann** steering geometry driven by an **EV3 Medium Motor** (`OUTPUT_A`), enabling the inner wheels to naturally turn tighter than the outer wheels for optimal cornering traction[span_18](start_span)[span_18](end_span). |
+
+### 🔌 I/O Ports & Sensor Configuration
+
+| Port | Connected Device | Mounting & Operational Placement |
+| :--- | :--- | :--- |
+| `INPUT_1` | Left Ultrasonic Sensor | Mounted ultra-low on the chassis for precise sidewall tracking[span_19](start_span)[span_19](end_span). |
+| `INPUT_2` | Front Ultrasonic Sensor | Centered forward-facing to detect upcoming walls/hazards[span_20](start_span)[span_20](end_span). |
+| `INPUT_3` | Right Ultrasonic Sensor | Mounted ultra-low on the chassis for precise sidewall tracking[span_21](start_span)[span_21](end_span). |
+| `USB Port`| Arduino Nano (ATmega328) | High-speed data link to the co-processor hosting the **HuskyLens** smart camera via I2C[span_22](start_span)[span_22](end_span). |
 
 ### 📈 Evolution (Brief)
 The current design marks our 3rd iteration (v1, v2, and v3)[span_23](start_span)[span_23](end_span). Our most radical breakthrough involved transitioning the massive EV3 Intelligent Brick from a tall vertical orientation to a **flat horizontal layout**[span_24](start_span)[span_24](end_span). This aggressively dropped our center of gravity, mitigating vehicle tip-over risks and dramatically stabilizing high-speed cornering[span_25](start_span)[span_25](end_span).
 
+---
 ---
 
 # WRO2026_FE_Go!Cheese
