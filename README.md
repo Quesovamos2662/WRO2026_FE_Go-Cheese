@@ -1,12 +1,38 @@
-## 🧀 Go!Cheese | WRO Future Engineers 2026
+<p align="center">
+  <img src="img/Banner_GoCheese.png" alt="Go!Cheese" width="700">
+</p>
 
-Official repository of **Go!Cheese**, a robotics team from San Miguelito, Panama 🇵🇦, competing in the **WRO Future Engineers 2026** season.
+<h1 align="center">🧀 Welcome to the Go!Cheese Repository 🧀</h1>
 
-Here you will find all the engineering materials behind our self-driving vehicle: mechanical design, code, wiring, and the full story of how we built it.
+<h3 align="center"><em>"Cheese does run away from rats, right?"</em></h3>
 
 <p align="center">
-  <img src="img/Banner_GoCheese.png" alt="Go!Cheese" width="600">
+  <img src="https://img.shields.io/badge/WRO-Future_Engineers_2026-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Team-Go!Cheese-yellow?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Panama-🇵🇦-red?style=for-the-badge">
 </p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/LEGO-EV3-green?style=flat-square">
+  <img src="https://img.shields.io/badge/Python-ev3dev2-3776AB?style=flat-square">
+  <img src="https://img.shields.io/badge/Camera-HuskyLens-orange?style=flat-square">
+  <img src="https://img.shields.io/badge/Arduino-Nano-00979D?style=flat-square">
+</p>
+
+---
+
+Welcome to the official repository of **Go!Cheese**, a robotics team from San Miguelito, Panama, competing in the **WRO Future Engineers 2026** season. This repo documents the full engineering journey behind our self-driving vehicle, from the first chassis sketch to the code that runs on the track.
+
+| | |
+|---|---|
+| 🏆 **Competition** | WRO Future Engineers 2026 |
+| 📍 **Region** | San Miguelito, Panama |
+| 🧠 **Controller** | LEGO Mindstorms EV3 |
+| 💻 **Language** | Python 3 (ev3dev2) + C++ (Arduino Nano) |
+| 👁️ **Vision** | HuskyLens camera |
+| 🤖 **Steering** | Ackermann geometry |
+
+---
 
 # WRO2026_FE_Go!Cheese
 ## Contents
