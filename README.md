@@ -68,8 +68,6 @@ For the **v3** iteration, we are focused on tuning and calibrating the key thres
 
 ### 🎯 Cheese's Goals & Mission
 
-> 🚀 **Engineering Inspiration:** Drawing from well-documented repositories like *ShahroodRC*, we broke our vehicle's performance targets down into concrete, verifiable metrics.
-
 | Challenge / Mission | Engineering Target & Success Metric | Status |
 | :--- | :--- | :---: |
 | **Open Challenge** | Complete 3 consecutive laps under fully autonomous control, targeting a time under 1 minute 30 seconds. | ⬜ Planned |
