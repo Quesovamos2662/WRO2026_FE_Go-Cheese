@@ -54,7 +54,7 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
 </p>
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+---
 
 ## 📌 Project Rundown
 
