@@ -80,44 +80,53 @@ For the **v3** iteration, we are focused on tuning and calibrating the key thres
 * **Safety Margin:** Freeze the definitive obstacle and parking software builds at least **2 weeks before the competition**, to guarantee a broad testing window for data collection and trackside tuning.
 * **Improve on our previous 15/30:** Build a journal so clear and well documented that it reflects the real depth of our engineering work, and pushes our documentation score well above last year's result.
 * **The Grand Objective:** Document our technical evolution step by step to earn our place at the **National Finals**.
+
 ---
 
-## 🏎️ Meet the Big Cheese — Robot Overview
 
-QUESO PICTURE
+## 🏎️ Meet the Big Cheese! — Robot Overview
 
-### 📊 Dimensions & Physical Constraints
-*Cheese* has been engineered to comply strictly with the official WRO dimensional boundaries ($30 \times 20 \times 30\text{ cm}$).
+<p align="center">
+  <img src="img/v3_hero_shot.png" alt="Cheese Official Competition Photo" width="85%">
+</p>
 
-| Dimension | Vehicle Measurement (v3) | WRO Maximum Limit | Status |
+### 📊 1. Dimension Table
+*Cheese* has been engineered to comply strictly with the official physical constraints dictated by the WRO Future Engineers rulebook ($30 \times 20 \times 30\text{ cm}$):
+
+| Dimension Parameter | Vehicle Metric (v3) | WRO Maximum Limit | Verification Status |
 | :--- | :--- | :--- | :--- |
-| **Length** | ~28.0 cm| 30.0 cm | 🟩 Compliant |
-| **Width** | ~13.0 cm | 20.0 cm | 🟩 Compliant |
-| **Height** | ~27.0 cm| 30.0 cm | 🟩 Compliant |
-| **Current Weight** | **888.1 g** | Unlimited | ⚡ Lightweight & Agile |
-
-### ⚙️ Technical Specifications & Component Mapping
-
-| Subsystem | Component Details & Engineering Logic |
-| :--- | :--- |
-| **Chassis & Body** | Fabricated entirely from LEGO Technic components using stacked ABS plastic liftarms running from front to back, reinforced by custom pink side *cross-bracing* to reduce chassis twisting and structural flex. |
-| **Powertrain (Drive)** | Direct drive configuration (1:1 gear ratio, omitting any intermediate gear reductions) linking the **EV3 Large Motor** (`OUTPUT_B`) straight to the rear axle, fitted with 56 x 28 ZR tires. |
-| **Steering System** | **Ackermann** steering geometry driven by an **EV3 Medium Motor** (`OUTPUT_A`), enabling the inner wheels to naturally turn tighter than the outer wheels for optimal cornering traction. |
-
-### 🔌 I/O Ports & Sensor Configuration
-
-| Port | Connected Device | Mounting & Operational Placement |
-| :--- | :--- | :--- |
-| `INPUT_1` | Left Ultrasonic Sensor | Mounted low on the chassis for stable sidewall tracking. |
-| `INPUT_2` | Front Ultrasonic Sensor | Centered and forward-facing to detect upcoming walls and hazards. |
-| `INPUT_3` | Right Ultrasonic Sensor | Mounted low on the chassis for stable sidewall tracking. |
-| `USB Port` | Arduino Nano (ATmega328) | Data link to the co-processor that hosts the **HuskyLens** camera, which connects to the Nano via I2C. |
-
-### 📈 Design & Structural Evolution
-
-The development of Cheese spans three distinct major iterations (v1, v2, and v3). Our most critical engineering breakthrough involved transitioning the massive EV3 Intelligent Brick from a tall, vertical orientation to a flat, horizontal layout—aggressively dropping our center of gravity to mitigate vehicle tip-over risks and stabilize high-speed cornering.
+| **Total Length** | ~28.0 cm | 30.0 cm | 🟩 Fully Compliant |
+| **Total Width** | ~13.0 cm | 20.0 cm | 🟩 Fully Compliant |
+| **Total Height** | ~27.0 cm | 30.0 cm | 🟩 Fully Compliant |
+| **Chassis Weight** | **888.1 g** | Unlimited Limit | ⚡ Weight-Optimized |
 
 ---
+
+### ⚙️ 2. Feature Table
+A quick technical summary of the main technical specifications embedded into our platform:
+
+| Core Subsystem | Technical Implementation Specifications |
+| :--- | :--- |
+| **Main Controller** | LEGO Mindstorms EV3 Brick running Python 3 (`ev3dev2`) |
+| **Co-Processing Unit** | Arduino Nano (ATmega328) running C++ |
+| **Vision Sensor** | HuskyLens AI Smart Camera via high-speed I2C communication |
+| **Propulsion System** | Rear-wheel drive driven by a LEGO EV3 Large Motor |
+| **Steering Assembly** | Front-axle Ackermann steering geometry driven by a LEGO EV3 Medium Motor |
+
+---
+
+### 🏆 3. Achievements & Track Milestones
+* **Regional Progress:** Advanced through tough regional stages, securing an essential 15/30 base documentation score while identifying high-priority areas for software optimization.
+* **Structural Optimization:** Successfully reduced vehicle weight down to a highly competitive **888.1 g** while completely preserving structural integrity.
+* **Vision Stability:** Achieved a reliable, high-framerate object detection pipeline by offloading heavy pixel tasks from the EV3 to the Arduino Nano.
+
+---
+
+### 📈 4. Structural Evolution (v1, v2, & v3)
+
+---
+
+
 
 # WRO2026_FE_Go!Cheese
 ## Contents
