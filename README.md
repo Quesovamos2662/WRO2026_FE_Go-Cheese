@@ -163,8 +163,21 @@ A quick technical summary of the main technical specifications embedded into our
 
 ### 4. Structural Evolution (v1, v2, & v3)
 
----
+*Cheese* went through three versions before reaching its current form, and each one was a direct response to the problems we ran into with the version before it. Our changes were never random: every redesign chased more stability, more reliable sensing, or a fix to something that had failed on the track. Along the way we reworked the position of the EV3, rebuilt the steering so the motor could actually move it, swapped tires and sensors, added a camera, and reinforced the chassis, gaining a bit of weight in exchange for a much steadier robot. Here is a quick overview of how it evolved, with the full reasoning behind each change explained further down in the documentation.
 
+| Aspect | v1 (digital model) | v2 (first regional) | v3 (current) |
+| :--- | :--- | :--- | :--- |
+| **Stage** | BrickLink model, never fully built | First physical build | Current competition build |
+| **EV3 position** | Vertical | Horizontal | Horizontal |
+| **Sensors** | 2 ultrasonic + 1 infrared | 3 ultrasonic | 2 ultrasonic + 1 color |
+| **Rear tires** | Same size front/rear | 56 x 28 ZR | 56 x 28 ZR |
+| **Camera** | None | None | HuskyLens on custom mount |
+| **Chassis** | Compact | Compact | Lengthened front |
+| **Weight** | Not measurable (model only) | 763.5 g | 888.1 g |
+
+In short: v1 was only a digital model that proved unstable when built, v2 became our first real robot with a stable steering base, and v3 added vision and a color sensor for reliable corner timing, trading a little extra weight for noticeably more stability.
+
+---
 
 ## Meet the Team    
 Welcome to the official GitHub repository for Team Go!Cheese from Panama, participating in the WRO 2026 San Miguelito Regional in the Future Engineers category, Open Challenge.
