@@ -61,27 +61,61 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
 
 ### 💻 Code Structure & Goal
 
-Our software keeps the logical core of our original codebase: a **priority-based decision system** backed by a **steering PID controller**.
+Cheese runs on a **priority-based decision system**. Instead of following a fixed sequence of instructions, the code evaluates the situation on every loop and executes the highest-priority action that applies at that moment. This lets the robot react to walls, corners and obstacles in real time rather than blindly running a pre-set path.
 
-For the **v3** iteration, we are focused on tuning and calibrating the key thresholds of that system, such as the turn angles and the dynamic speed layers, to reach smoother, more accurate and more repeatable behavior on the track.
+<br>
 
-> **PID constants:** `KP = 0.56`, `KD = 1.22`
+**🎛️ The base layer: steering PID**
 
-### 🎯 Cheese's Goals & Mission
+At the base of this system sits a steering controller that handles lane-keeping. It continuously measures the error between the robot and its target distance from the walls, and converts that error into a steering correction. We currently run it as a **PD controller** (proportional + derivative):
 
-| Challenge / Mission | Engineering Target & Success Metric | Status |
-| :--- | :--- | :---: |
-| **Open Challenge** | Complete 3 consecutive laps under fully autonomous control, targeting a time under 1 minute 30 seconds. | ⬜ Planned |
-| **Obstacle Challenge** | Clear all pillars using real-time HuskyLens vision, passing red pillars on the left and green pillars on the right without knocking any over. | ⬜ Planned |
-| **Parallel Parking** | Reach a centered position inside the parking zone, keeping the front and rear margins within the 2 cm symmetry limit required by the rules. | ⬜ Planned |
+| Term | Symbol | What it does |
+| :--- | :---: | :--- |
+| **Proportional** | `KP = 0.56` | Reacts to how far off-center the robot is. A larger error produces a stronger correction. |
+| **Derivative** | `KD = 1.22` | Reacts to how fast the error is changing. Dampens the response and prevents overshooting and side-to-side oscillation. |
+
+<br>
+
+**🧠 The layer above: priority overrides**
+
+Higher-priority conditions can override normal lane-keeping. Each condition sits at a defined priority level, and the highest active one takes control of the motors on that loop:
+
+- 🚧 A **wall detected too close ahead** triggers a corner routine.
+- 📉 A **lost side wall** changes how the robot tracks its reference.
+
+<br>
+
+**🔧 What changes in v3**
+
+The logical core stays the same, but we are systematically re-tuning its critical thresholds:
+
+- Turn-trigger distances
+- Discrete steering angle levels
+- Dynamic speed layers
+
+The goal is smoother cornering and more repeatable lap times, validated through testing rather than guessed.
+
+> ⚙️ The full breakdown of each priority level, the state logic and the tuning data lives in the [Software Architecture & Obstacle Strategy](#3-software-architecture--obstacle-strategy) section. *(Final v3 code pending.)*
+
+---
 
 ### 👥 Team Goals (Road to the National Finals 🇵🇦)
 
-* **Safety Margin:** Freeze the definitive obstacle and parking software builds at least **2 weeks before the competition**, to guarantee a broad testing window for data collection and trackside tuning.
-* **Improve on our previous 15/30:** Build a journal so clear and well documented that it reflects the real depth of our engineering work, and pushes our documentation score well above last year's result.
-* **The Grand Objective:** Document our technical evolution step by step to earn our place at the **National Finals**.
+**🗓️ Freeze the code early for a real testing window**
 
----
+We aim to lock the definitive obstacle and parking software builds at least **2 weeks before the competition**. This is a deliberate engineering decision: a frozen build gives us a stable base to collect run data, measure consistency, and do trackside tuning, instead of debugging new features under pressure on competition day.
+
+<br>
+
+**📊 Turn our documentation into our strongest asset**
+
+Last season we scored **15/30** on documentation, including a 0 in Software & Obstacle Strategy. Our goal is to rebuild this journal so that every subsystem, decision and iteration is clearly justified with reasoning and data, directly targeting the criteria where we lost the most points.
+
+<br>
+
+**🏆 Document our evolution to earn the National Finals**
+
+Rather than only showing the final robot, we want the repository to tell the full engineering story across our three versions (v1, v2 and v3), so the depth of our process is visible and reproducible.
 
 
 ## 🏎️ Meet the Big Cheese! — Robot Overview
