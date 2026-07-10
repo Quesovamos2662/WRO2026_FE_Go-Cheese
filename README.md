@@ -151,7 +151,7 @@ A quick technical summary of the main technical specifications embedded into our
 
 ---
 
-### Achievements & Track Milestones
+### 3. Achievements & Track Milestones
 
 * **Regional experience:** Competed in the regional stage, which gave us our documentation baseline of 15/30 and, just as importantly, showed us exactly where to focus next: software and obstacle strategy, our lowest-scoring area.
 
