@@ -57,81 +57,6 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
 
 ---
 
-## 📌 Project Rundown
-
-### Code Structure & Goal
-
-Cheese runs on a **priority-based decision system**. Instead of following a fixed sequence of instructions, the code evaluates the situation on every loop and executes the highest-priority action that applies at that moment. This lets the robot react to walls, corners and obstacles in real time rather than blindly running a pre-set path.
-
-<br>
-
-**The base layer: steering PID**
-
-At the base of this system sits a steering controller that handles lane-keeping. It continuously measures the error between the robot and its target distance from the walls, and converts that error into a steering correction. We currently run it as a **PD controller** (proportional + derivative):
-
-| Term | Symbol | What it does |
-| :--- | :---: | :--- |
-| **Proportional** | `KP = 0.56` | Reacts to how far off-center the robot is. A larger error produces a stronger correction. |
-| **Derivative** | `KD = 1.22` | Reacts to how fast the error is changing. Dampens the response and prevents overshooting and oscillation. |
-
-<br>
-
-**The layer above: priority overrides**
-
-Higher-priority conditions can override normal lane-keeping. Each condition sits at a defined priority level, and the highest active one takes control of the motors on that loop:
-
-- A wall detected too close ahead triggers a corner routine.
-- A lost side wall changes how the robot tracks its reference.
-
-<br>
-
-**What changes in v3**
-
-The logical core stays the same, but we are systematically re-tuning its critical thresholds: turn-trigger distances, discrete steering angle levels, and dynamic speed layers. The goal is smoother cornering and more repeatable lap times, validated through testing rather than guessed.
-
-> The full breakdown of each priority level, the state logic and the tuning data lives in the Software Architecture & Obstacle Strategy section. *(Final v3 code pending.)*
-## 🏎️ Meet the Big Cheese! — Robot Overview
-
-<p align="center">
-  <img src="img/v3_hero_shot.png" alt="Cheese Official Competition Photo" width="85%">
-</p>
-
-### 📊 1. Dimension Table
-*Cheese* has been engineered to comply strictly with the official physical constraints dictated by the WRO Future Engineers rulebook ($30 \times 20 \times 30\text{ cm}$):
-
-| Dimension Parameter | Vehicle Metric (v3) | WRO Maximum Limit | Verification Status |
-| :--- | :--- | :--- | :--- |
-| **Total Length** | ~28.0 cm | 30.0 cm | 🟩 Fully Compliant |
-| **Total Width** | ~13.0 cm | 20.0 cm | 🟩 Fully Compliant |
-| **Total Height** | ~27.0 cm | 30.0 cm | 🟩 Fully Compliant |
-| **Chassis Weight** | **888.1 g** | Unlimited Limit | ⚡ Weight-Optimized |
-
----
-
-### ⚙️ 2. Feature Table
-A quick technical summary of the main technical specifications embedded into our platform:
-
-| Core Subsystem | Technical Implementation Specifications |
-| :--- | :--- |
-| **Main Controller** | LEGO Mindstorms EV3 Brick running Python 3 (`ev3dev2`) |
-| **Co-Processing Unit** | Arduino Nano (ATmega328) running C++ |
-| **Vision Sensor** | HuskyLens AI Smart Camera via high-speed I2C communication |
-| **Propulsion System** | Rear-wheel drive driven by a LEGO EV3 Large Motor |
-| **Steering Assembly** | Front-axle Ackermann steering geometry driven by a LEGO EV3 Medium Motor |
-
----
-
-### 🏆 3. Achievements & Track Milestones
-* **Regional Progress:** Advanced through tough regional stages, securing an essential 15/30 base documentation score while identifying high-priority areas for software optimization.
-* **Structural Optimization:** Successfully reduced vehicle weight down to a highly competitive **888.1 g** while completely preserving structural integrity.
-* **Vision Stability:** Achieved a reliable, high-framerate object detection pipeline by offloading heavy pixel tasks from the EV3 to the Arduino Nano.
-
----
-
-### 📈 4. Structural Evolution (v1, v2, & v3)
-
----
-
 # WRO2026_FE_Go!Cheese
 ## Contents
 
@@ -166,6 +91,75 @@ A quick technical summary of the main technical specifications embedded into our
 - [Team Photos](#team-photos)
 - [Performance Video](#performance-videos)
 - [Resources](#resources)
+
+---
+
+## 📌 Project Rundown
+
+### Code Structure & Goal
+
+Cheese runs on a **priority-based decision system**. Instead of following a fixed set of instructions in order, the code checks the situation on every loop and runs the most important action for that moment, which lets the robot react to walls, corners and obstacles in real time.
+
+At its core is a steering controller that keeps the robot centered by measuring how far it is from the walls and correcting its path continuously. On top of that, higher-priority situations, like an upcoming corner or an obstacle, can take over control when needed.
+
+For the **v3** version, we are keeping this same logic but refining it: tuning how the robot reacts to corners, how sharply it steers, and how it manages speed, aiming for smoother and more consistent laps.
+
+> The full technical breakdown of the algorithm, the priority levels and the tuning data is documented in the Software Architecture & Obstacle Strategy section below.
+
+---
+
+### Team Goals (Road to the National Finals)
+
+Beyond just competing, our goals this season are built around the engineering process and improving where it matters most.
+
+**Freeze the code early.** We plan to lock our final obstacle and parking builds at least two weeks before the competition, so we have a real window to test, collect data and tune on the track instead of fixing new problems on competition day.
+
+**Make our documentation count.** Last season we scored 15/30 on documentation. This year our goal is a journal where every decision and iteration is clearly explained and backed by data, directly improving on the areas where we lost the most points.
+
+**Earn our place at the National Finals.** We want this repository to show our full engineering journey across all three versions of the robot, proving the depth of our work and not just the final result.
+
+## 🏎️ Meet the Big Cheese! — Robot Overview
+
+<p align="center">
+  <img src="img/v3_hero_shot.png" alt="Cheese Official Competition Photo" width="85%">
+</p>
+
+### 📊 1. Dimension Table
+*Cheese* has been engineered to comply strictly with the official physical constraints dictated by the WRO Future Engineers rulebook ($30 \times 20 \times 30\text{ cm}$):
+
+| Dimension Parameter | Vehicle Metric (v3) | WRO Maximum Limit | Verification Status |
+| :--- | :--- | :--- | :--- |
+| **Total Length** | ~28.0 cm | 30.0 cm | 🟩 Fully Compliant |
+| **Total Width** | ~13.0 cm | 20.0 cm | 🟩 Fully Compliant |
+| **Total Height** | ~27.0 cm | 30.0 cm | 🟩 Fully Compliant |
+| **Chassis Weight** | **888.1 g** | 1.5kg | ⚡ Weight-Optimized |
+
+---
+
+### ⚙️ 2. Feature Table
+A quick technical summary of the main technical specifications embedded into our platform:
+
+| Core Subsystem | Technical Implementation Specifications |
+| :--- | :--- |
+| **Main Controller** | LEGO Mindstorms EV3 Brick running Python 3 (`ev3dev2`) |
+| **Co-Processing Unit** | Arduino Nano (ATmega328) running C++ |
+| **Vision Sensor** | HuskyLens AI Smart Camera via high-speed I2C communication |
+| **Propulsion System** | Rear-wheel drive driven by a LEGO EV3 Large Motor |
+| **Steering Assembly** | Front-axle Ackermann steering geometry driven by a LEGO EV3 Medium Motor |
+
+---
+
+### 🏆 3. Achievements & Track Milestones
+* **Regional Progress:** Advanced through tough regional stages, securing an essential 15/30 base documentation score while identifying high-priority areas for software optimization.
+* **Structural Optimization:** Successfully reduced vehicle weight down to a highly competitive **888.1 g** while completely preserving structural integrity.
+* **Vision Stability:** Achieved a reliable, high-framerate object detection pipeline by offloading heavy pixel tasks from the EV3 to the Arduino Nano.
+
+---
+
+### 📈 4. Structural Evolution (v1, v2, & v3)
+
+---
+
 
 ## Meet the Team    
 Welcome to the official GitHub repository for Team Go!Cheese from Panama, participating in the WRO 2026 San Miguelito Regional in the Future Engineers category, Open Challenge.
