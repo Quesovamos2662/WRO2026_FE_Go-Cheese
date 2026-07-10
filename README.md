@@ -125,14 +125,14 @@ Beyond just competing, our goals this season are built around the engineering pr
 </p>
 
 ### 1. Dimension Table
-*Cheese* has been engineered to comply strictly with the official physical constraints dictated by the WRO Future Engineers rulebook ($30 \times 20 \times 30\text{ cm}$):
+*Cheese* has been engineered to comply strictly with the official physical constraints dictated by the WRO Future Engineers rulebook (30 x 20 x 30 cm):
 
 | Dimension Parameter | Vehicle Metric (v3) | WRO Maximum Limit | Verification Status |
 | :--- | :--- | :--- | :--- |
 | **Total Length** | ~28.0 cm | 30.0 cm | 🟩 Fully Compliant |
 | **Total Width** | ~13.0 cm | 20.0 cm | 🟩 Fully Compliant |
 | **Total Height** | ~27.0 cm | 30.0 cm | 🟩 Fully Compliant |
-| **Chassis Weight** | **888.1 g** | 1.5kg | ⚡ Weight-Optimized |
+| **Chassis Weight** | **888.1 g** | - | ⚡ Weight-Optimized |
 
 ---
 
@@ -146,6 +146,8 @@ A quick technical summary of the main technical specifications embedded into our
 | **Vision Sensor** | HuskyLens AI Smart Camera via high-speed I2C communication |
 | **Propulsion System** | Rear-wheel drive driven by a LEGO EV3 Large Motor |
 | **Steering Assembly** | Front-axle Ackermann steering geometry driven by a LEGO EV3 Medium Motor |
+| **Sensing** | 2x Ultrasonic + Color sensor + HuskyLens camera |
+| **Sensing Array** | 2x Ultrasonic sensors (wall-following) + 1x Color sensor (corner timing) |
 
 ---
 
@@ -153,7 +155,7 @@ A quick technical summary of the main technical specifications embedded into our
 
 * **Regional experience:** Competed in the regional stage, which gave us our documentation baseline of 15/30 and, just as importantly, showed us exactly where to focus next: software and obstacle strategy, our lowest-scoring area.
 
-* **Lighter, stable chassis:** Through our redesign we brought the robot down to 888.1 g while keeping the frame rigid, using cross-bracing and a central liftarm spine to hold stability as we changed the structure.
+* **Stronger, more stable chassis:** Our redesign added structural reinforcements, cross-bracing and a central liftarm spine, that improved rigidity. This raised the weight from 763.5 g (v2) to 888.1 g (v3), a tradeoff we accepted because stability mattered more than shaving grams for our current speed range.
 
 * **Offloaded vision processing:** We moved the camera's heavy image work off the EV3 by routing the HuskyLens through an Arduino Nano, so the EV3 stays free to run navigation without that extra load.
 
