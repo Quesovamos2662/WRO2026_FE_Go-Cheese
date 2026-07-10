@@ -153,11 +153,11 @@ A quick technical summary of the main technical specifications embedded into our
 
 ### 3. Achievements & Track Milestones
 
-* **Regional experience:** Competed in the regional stage, which gave us our documentation baseline of 15/30 and, just as importantly, showed us exactly where to focus next: software and obstacle strategy, our lowest-scoring area.
+* **Regional experience:** We competed in the regional stage, which became a turning point for us. It gave us our documentation baseline of 15/30 and, just as importantly, showed us exactly where we were losing points. Seeing a 0 in Software & Obstacle Strategy made it clear where to focus this season, and that feedback shaped almost every decision we made afterward.
 
-* **Stronger, more stable chassis:** Our redesign added structural reinforcements, cross-bracing and a central liftarm spine, that improved rigidity. This raised the weight from 763.5 g (v2) to 888.1 g (v3), a tradeoff we accepted because stability mattered more than shaving grams for our current speed range.
+* **Stronger, more stable chassis:** Our redesign added structural reinforcements, including cross-bracing and a central liftarm spine that ties the front and rear of the car together. This noticeably improved rigidity and stopped the frame from twisting during sharp turns. It did raise the weight from 763.5 g (v2) to 888.1 g (v3), but we accepted that tradeoff on purpose, since a steady, predictable robot mattered more to us than saving a few grams at our current speed.
 
-* **Offloaded vision processing:** We moved the camera's heavy image work off the EV3 by routing the HuskyLens through an Arduino Nano, so the EV3 stays free to run navigation without that extra load.
+* **Smarter sensing setup:** We reworked how the robot senses the track. The HuskyLens camera runs its own image processing and connects through an Arduino Nano, which keeps that work off the EV3 so it stays free for navigation. We also replaced our unreliable front ultrasonic with a color sensor for corner timing, which made the robot read the track far more consistently.
 
 ---
 
@@ -179,13 +179,71 @@ In short: v1 was only a digital model that proved unstable when built, v2 became
 
 ---
 
-## Meet the Team    
-Welcome to the official GitHub repository for Team Go!Cheese from Panama, participating in the WRO 2026 San Miguelito Regional in the Future Engineers category, Open Challenge.
+## Meet the Team
 
-Team Go!Cheese is made up of two unlikely friends who somehow decided that building an autonomous robot, learning GitHub, using BrickLink, programming, documenting, troubleshooting, and surviving WRO all at the same time was a good idea. This is our first time working with many of these tools and technologies, so this repository is not only a place for our source code, materials, and robot documentation, but also proof of our learning process.
+We are **Go!Cheese**, a robotics team of two from San Miguelito, Panama, competing in the WRO Future Engineers 2026 season. Romina and Caylee work collaboratively: Romina handles the changes and builds on the robot itself, while Caylee handles the documentation. Our roles complement each other step by step, since we constantly rely on one another, sharing observations and feedback to keep improving and moving forward.
 
-Even if we do not achieve something huge in this competition, our goal is to step out of our comfort zone, learn as much as possible, and use this experience to come back stronger in the future. We may be beginners now, but we are determined to improve, keep building, and go beyond what we thought we were capable of.
+<p align="center">
+  <img src="t-photos/team_photo.jpg" alt="Go!Cheese Team" width="70%">
+</p>
 
+---
+
+### Caylee Rios
+
+![Role](https://img.shields.io/badge/Role-Software_&_Documentation-yellow?style=for-the-badge)
+
+- **Age:** 16
+- **Description:** Hii! My name is Caylee and this is my first time competing in WRO. I'm really happy to be part of a sport that pushes you toward hard work and personal growth. I'm in charge of the software and the documentation. I love smiling, asking lots of questions, and having people I care about around me who inspire me and push me to be better every day.
+
+[Instagram](https://www.instagram.com/caymrr) · [Email](mailto:cayleerios@gmail.com)
+
+<p align="center">
+  <img src="t-photos/caylee.jpg" alt="Caylee Rios" width="45%">
+</p>
+
+---
+
+### Romina Mora
+
+![Role](https://img.shields.io/badge/Role-Programmer_&_Robot_Builder-ff69b4?style=for-the-badge)
+
+- **Age:** 16
+- **Description:** Helloo!!! I'm Romina, a very passionate gamer. I enjoy anything that represents a challenge, including this project. Since 2025 I've shown interest in robotics in general, and I finally managed to join a team in 2026. I wish to learn plenty to improve my skills next year. My role is programmer and robot builder.
+
+*No socials, so reach out through my partner.*
+
+<p align="center">
+  <img src="t-photos/romina.jpg" alt="Romina Mora" width="45%">
+</p>
+
+---
+
+<h2 align="center">🧀 Why "Cheese"? 🧀</h2>
+
+<p align="center">
+  <em>"From a childhood rhyme to the competition track."</em>
+</p>
+
+<div align="center">
+
+────────୨ৎ────────
+
+</div>
+
+Our name comes from a little recess rhyme we used to play back when we were kids. It always stuck with us, so when it came time to name our team, we picked something that carries a piece of that memory with us. That is how **Go!Cheese** was born, a name that reminds us of where we started and of the season of our lives we are living right now.
+
+Our robot is named **Cheese** as a pun on our team name. The idea is simple, and it is the heart of everything we build:
+
+<p align="center">
+  <strong>Cheese is the one who goes.</strong>
+</p>
+
+<div align="center">
+
+────────୨ৎ────────
+
+</div>
 
 ## ･ﾟ✧1. Mobility & Mechanical Design ･ﾟ✧:･ﾟ✧:
 
