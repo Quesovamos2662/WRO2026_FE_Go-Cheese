@@ -124,7 +124,7 @@ Beyond just competing, our goals this season are built around the engineering pr
   <img src="img/v3_hero_shot.png" alt="Cheese Official Competition Photo" width="85%">
 </p>
 
-### 📊 1. Dimension Table
+### 1. Dimension Table
 *Cheese* has been engineered to comply strictly with the official physical constraints dictated by the WRO Future Engineers rulebook ($30 \times 20 \times 30\text{ cm}$):
 
 | Dimension Parameter | Vehicle Metric (v3) | WRO Maximum Limit | Verification Status |
@@ -136,7 +136,7 @@ Beyond just competing, our goals this season are built around the engineering pr
 
 ---
 
-### ⚙️ 2. Feature Table
+### 2. Feature Table
 A quick technical summary of the main technical specifications embedded into our platform:
 
 | Core Subsystem | Technical Implementation Specifications |
@@ -149,14 +149,17 @@ A quick technical summary of the main technical specifications embedded into our
 
 ---
 
-### 🏆 3. Achievements & Track Milestones
-* **Regional Progress:** Advanced through tough regional stages, securing an essential 15/30 base documentation score while identifying high-priority areas for software optimization.
-* **Structural Optimization:** Successfully reduced vehicle weight down to a highly competitive **888.1 g** while completely preserving structural integrity.
-* **Vision Stability:** Achieved a reliable, high-framerate object detection pipeline by offloading heavy pixel tasks from the EV3 to the Arduino Nano.
+### Achievements & Track Milestones
+
+* **Regional experience:** Competed in the regional stage, which gave us our documentation baseline of 15/30 and, just as importantly, showed us exactly where to focus next: software and obstacle strategy, our lowest-scoring area.
+
+* **Lighter, stable chassis:** Through our redesign we brought the robot down to 888.1 g while keeping the frame rigid, using cross-bracing and a central liftarm spine to hold stability as we changed the structure.
+
+* **Offloaded vision processing:** We moved the camera's heavy image work off the EV3 by routing the HuskyLens through an Arduino Nano, so the EV3 stays free to run navigation without that extra load.
 
 ---
 
-### 📈 4. Structural Evolution (v1, v2, & v3)
+### 4. Structural Evolution (v1, v2, & v3)
 
 ---
 
