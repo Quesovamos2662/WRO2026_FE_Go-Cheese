@@ -57,8 +57,8 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
 
 ---
 
-# WRO2026_FE_Go!Cheese
-## Contents
+# General Index
+## WRO2026_FE_Go!Cheese
 
 - [Meet the Team](#meet-the-team)
 - [Robot Overview](#robot-overview)
