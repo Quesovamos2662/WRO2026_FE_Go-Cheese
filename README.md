@@ -59,65 +59,37 @@ Welcome to the official repository of **Go!Cheese**, a robotics team from San Mi
 
 ## 📌 Project Rundown
 
-### 💻 Code Structure & Goal
+### Code Structure & Goal
 
 Cheese runs on a **priority-based decision system**. Instead of following a fixed sequence of instructions, the code evaluates the situation on every loop and executes the highest-priority action that applies at that moment. This lets the robot react to walls, corners and obstacles in real time rather than blindly running a pre-set path.
 
 <br>
 
-**🎛️ The base layer: steering PID**
+**The base layer: steering PID**
 
 At the base of this system sits a steering controller that handles lane-keeping. It continuously measures the error between the robot and its target distance from the walls, and converts that error into a steering correction. We currently run it as a **PD controller** (proportional + derivative):
 
 | Term | Symbol | What it does |
 | :--- | :---: | :--- |
 | **Proportional** | `KP = 0.56` | Reacts to how far off-center the robot is. A larger error produces a stronger correction. |
-| **Derivative** | `KD = 1.22` | Reacts to how fast the error is changing. Dampens the response and prevents overshooting and side-to-side oscillation. |
+| **Derivative** | `KD = 1.22` | Reacts to how fast the error is changing. Dampens the response and prevents overshooting and oscillation. |
 
 <br>
 
-**🧠 The layer above: priority overrides**
+**The layer above: priority overrides**
 
 Higher-priority conditions can override normal lane-keeping. Each condition sits at a defined priority level, and the highest active one takes control of the motors on that loop:
 
-- 🚧 A **wall detected too close ahead** triggers a corner routine.
-- 📉 A **lost side wall** changes how the robot tracks its reference.
+- A wall detected too close ahead triggers a corner routine.
+- A lost side wall changes how the robot tracks its reference.
 
 <br>
 
-**🔧 What changes in v3**
+**What changes in v3**
 
-The logical core stays the same, but we are systematically re-tuning its critical thresholds:
+The logical core stays the same, but we are systematically re-tuning its critical thresholds: turn-trigger distances, discrete steering angle levels, and dynamic speed layers. The goal is smoother cornering and more repeatable lap times, validated through testing rather than guessed.
 
-- Turn-trigger distances
-- Discrete steering angle levels
-- Dynamic speed layers
-
-The goal is smoother cornering and more repeatable lap times, validated through testing rather than guessed.
-
-> ⚙️ The full breakdown of each priority level, the state logic and the tuning data lives in the [Software Architecture & Obstacle Strategy](#3-software-architecture--obstacle-strategy) section. *(Final v3 code pending.)*
-
----
-
-### 👥 Team Goals (Road to the National Finals 🇵🇦)
-
-**🗓️ Freeze the code early for a real testing window**
-
-We aim to lock the definitive obstacle and parking software builds at least **2 weeks before the competition**. This is a deliberate engineering decision: a frozen build gives us a stable base to collect run data, measure consistency, and do trackside tuning, instead of debugging new features under pressure on competition day.
-
-<br>
-
-**📊 Turn our documentation into our strongest asset**
-
-Last season we scored **15/30** on documentation, including a 0 in Software & Obstacle Strategy. Our goal is to rebuild this journal so that every subsystem, decision and iteration is clearly justified with reasoning and data, directly targeting the criteria where we lost the most points.
-
-<br>
-
-**🏆 Document our evolution to earn the National Finals**
-
-Rather than only showing the final robot, we want the repository to tell the full engineering story across our three versions (v1, v2 and v3), so the depth of our process is visible and reproducible.
-
-
+> The full breakdown of each priority level, the state logic and the tuning data lives in the Software Architecture & Obstacle Strategy section. *(Final v3 code pending.)*
 ## 🏎️ Meet the Big Cheese! — Robot Overview
 
 <p align="center">
@@ -159,8 +131,6 @@ A quick technical summary of the main technical specifications embedded into our
 ### 📈 4. Structural Evolution (v1, v2, & v3)
 
 ---
-
-
 
 # WRO2026_FE_Go!Cheese
 ## Contents
