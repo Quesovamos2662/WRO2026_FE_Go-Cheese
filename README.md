@@ -191,7 +191,7 @@ We are **Go!Cheese**, a robotics team of two from San Miguelito, Panama, competi
 
 ### Caylee Rios
 
-![Role](https://img.shields.io/badge/Role-Software_&_Documentation-yellow?style=for-the-badge)
+![Role](https://img.shields.io/badge/Role-Software_&_Documentation-brightgreen?style=for-the-badge)
 
 - **Age:** 16
 - **Description:** Hii! My name is Caylee and this is my first time competing in WRO. I'm really happy to be part of a sport that pushes you toward hard work and personal growth. I'm in charge of the software and the documentation. I love smiling, asking lots of questions, and having people I care about around me who inspire me and push me to be better every day.
