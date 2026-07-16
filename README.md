@@ -135,7 +135,8 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
 <div align="center">
 
 
-# 🏎️ Meet the Big Cheese! — Robot Overview
+
+## 🏎️ Meet the Big Cheese! — Robot Overview
 
 <p align="center">
   <img src="img/v3_hero_shot.png" alt="Cheese Official Competition Photo" width="85%">
