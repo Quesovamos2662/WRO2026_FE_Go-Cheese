@@ -189,8 +189,11 @@ When the color sensor detects a valid color, the robot confirms it through multi
 
 After completing the number of laps, the robot enters the final stop and parking logic. It uses timing and position references recorded during the run to stop near its starting row, realign itself, and finish the program.
 
+<p align="center">
+  <img src="Flowchart_logic_cheese.png" alt="Cheese Flowchart Logic" width="85%">
+</p>
 
-
+---
 
 ## Meet the Team
 
