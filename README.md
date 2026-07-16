@@ -363,9 +363,8 @@ We are **Go!Cheese**, a robotics team of two from San Miguelito, Panama, competi
 *No socials, so reach out through my partner.*
 
 <p align="center">
-  <img src="t-photos/Romina%20pic.jpg" alt="Romina Mora" width="45%">
+  <img src="t-photos/Romina-photos/Romina%20pic.jpg" alt="Romina Mora" width="45%">
 </p>
-
 ---
 
 <h2 align="center">🧀 Why "Cheese"? 🧀</h2>
