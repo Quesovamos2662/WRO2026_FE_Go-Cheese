@@ -193,6 +193,8 @@ After completing the number of laps, the robot enters the final stop and parking
 
 > **Note**: This flowchart was made using artificial inteligence as a support tool, keeping the logic used to develop the functioning of Cheese.
 ---
+## 6. Cheese's Angles
+
 
 ## Meet the Team
 
