@@ -139,9 +139,7 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
   
 </p>
 
-<div align="center">
-
-## 🏎️ Meet the Big Cheese! — Robot Overview
+<h2 align="center">Meet the Big Cheese! — Robot Overview</h2>
 
 <p align="center">
   <img src="v-photos/v3/side_v3.jpg" alt="Cheese v3 Side View" width="85%">
