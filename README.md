@@ -139,7 +139,7 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
 ## 🏎️ Meet the Big Cheese! — Robot Overview
 
 <p align="center">
-  <img src="img/v3_hero_shot.png" alt="Cheese Official Competition Photo" width="85%">
+  <img src="v-photos/v3/side_v3.jpg" alt="Cheese v3 Side View" width="85%">
 </p>
 
 ### 1. Dimension Table
