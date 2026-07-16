@@ -179,6 +179,10 @@ In short: v1 was only a digital model that proved unstable when built, v2 became
 
 ---
 
+### 5. Cheese's logic
+
+We used this flowchart to represent and hightlight *Cheese's* logic throught the circuit.
+
 ## Meet the Team
 
 We are **Go!Cheese**, a robotics team of two from San Miguelito, Panama, competing in the WRO Future Engineers 2026 season. Romina and Caylee work collaboratively: Romina handles the changes and builds on the robot itself, while Caylee handles the documentation. Our roles complement each other step by step, since we constantly rely on one another, sharing observations and feedback to keep improving and moving forward.
