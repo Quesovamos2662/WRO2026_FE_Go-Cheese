@@ -192,8 +192,8 @@ After completing the number of laps, the robot enters the final stop and parking
 <p align="center">
   <img src="img/Flowchart_logic_cheese.png" alt="Cheese Flowchart Logic" width="85%">
 </p>
-s
->*Note: This flowchart was made using artificial inteligence as a support tool, keeping the logic used to develop the functioning of Cheese.*
+
+> **Note**: This flowchart was made using artificial inteligence as a support tool, keeping the logic used to develop the functioning of Cheese.
 ---
 
 ## Meet the Team
