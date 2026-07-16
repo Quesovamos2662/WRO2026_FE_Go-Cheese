@@ -1,7 +1,3 @@
-  
-</p>
-
-<div align="center">
 
 
 <h1 align="center">🧀 Welcome to the Go!Cheese Repository 🧀</h1>
