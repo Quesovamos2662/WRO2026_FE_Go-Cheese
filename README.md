@@ -94,11 +94,13 @@ Welcome to the official repository of Go!Cheese, a robotics team from San Miguel
 
 ## 📌 Project Rundown
 
-### Code Structure & Goal
+### Cheese Goal & Structure 
 
-Cheese runs on a **priority-based decision system**. Instead of following a fixed set of instructions in order, the code checks the situation on every loop and runs the most important action for that moment, which lets the robot react to walls, corners and obstacles in real time.
-
-At its core is a steering controller that keeps the robot centered by measuring how far it is from the walls and correcting its path continuously. On top of that, higher-priority situations, like an upcoming corner or an obstacle, can take over control when needed.
+Cheese uses a priority-based control system that checks its sensors continuously and chooses the most important action for each moment. Instead of following one fixed sequence, the robot reacts in real time to the walls and its position on the track.
+During normal movement, a PID controller compares the distance from the left and right walls and adjusts the steering to keep the robot centered. If Cheese gets too close to a wall, the wall-protection system takes priority, slows the robot down, and steers it away more strongly.
+The color sensor is used to count completed curves. A blue–orange or orange–blue pair counts as one curve, and twelve curves represent the full three laps. After the final curve, the robot uses motor-position data and a backup timer to estimate where it should stop near its starting area.
+For version 3, we are keeping this same structure while improving the PID values, wall corrections, steering angles, speeds, curve counting, and final parking position. The goal is to make the robot move more smoothly, avoid walls more consistently, and complete each lap with better accuracy.
+The full explanation of the control system, priority levels, sensor use, and tuning values is included in the Software Architecture & Obstacle Strategy section below.
 
 For the **v3** version, we are keeping this same logic but refining it: tuning how the robot reacts to corners, how sharply it steers, and how it manages speed, aiming for smoother and more consistent laps.
 
@@ -108,13 +110,28 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
 
 ### Team Goals (Road to the National Finals)
 
-Beyond just competing, our goals this season are built around the engineering process and improving where it matters most.
+<h2 align="center">🎯 Team Goals: Road to the National Finals 🧀</h2>
 
-**Freeze the code early.** We plan to lock our final obstacle and parking builds at least two weeks before the competition, so we have a real window to test, collect data and tune on the track instead of fixing new problems on competition day.
+<p align="center">
+  <em>Building Cheese is not only about competing. It is about learning how to think, test, fail, document, and improve like engineers.</em>
+</p>
 
-**Make our documentation count.** Last season we scored 15/30 on documentation. This year our goal is a journal where every decision and iteration is clearly explained and backed by data, directly improving on the areas where we lost the most points.
+<div align="center">
 
-**Earn our place at the National Finals.** We want this repository to show our full engineering journey across all three versions of the robot, proving the depth of our work and not just the final result.
+| Goal                                        | What We Want to Achieve                                                                                                                                                                                                                                                                                                                                |
+| :------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **🧊 Freeze the Code Early**                | We plan to lock our final obstacle and parking builds at least two weeks before the competition. This gives us time to test consistently, collect data, tune values on the track, and improve reliability without creating new problems right before competition day.                                                                                  |
+| **📚 Make Our Documentation Count**         | Last season, we scored **15/30** on documentation. For the next regional, our goal is to build a clear engineering journal where every decision, test, failure, and iteration is explained and supported with evidence. We also want the repository to be detailed enough for others to understand and reproduce our LEGO Mindstorms EV3-based design. |
+| **🏁 Earn Our Place at Nationals**          | We want this repository to show the full engineering journey behind Cheese across all three versions of the robot. Our goal is to prove the depth of our work, not only the final result, by showing what we learned during competitions, practice sessions, and redesign cycles.                                                                      |
+| **🌱 Set an Example for Our Future Selves** | Since this is our first time in the WRO Future Engineers category, we want to create a strong foundation for future improvement. We aim to meet our current goals, define new ones, and leave behind a reference that both we and other beginner teams can learn from.                                                                                 |
+
+</div>
+
+<p align="center">
+  <strong>Our main objective is to make Cheese more than a robot:</strong><br>
+  a documented engineering project built through testing, iteration, teamwork, and constant improvement.
+</p>
+
 
 ## 🏎️ Meet the Big Cheese! — Robot Overview
 
