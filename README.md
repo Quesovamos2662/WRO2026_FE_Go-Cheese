@@ -195,6 +195,55 @@ After completing the number of laps, the robot enters the final stop and parking
 ---
 ## 6. Cheese's Angles
 
+This section shows the labeled angle views of **Cheese v3**. These images identify the main mechanical, electrical, and sensing components from different perspectives, making it easier to understand how the robot is physically organized.
+
+<p align="center">
+  <img src="v-photos/v3/named%20angles/named_angle_front.jpeg" alt="Cheese v3 front named angle" width="85%">
+</p>
+
+<p align="center"><em>Front named angle: shows the front layout, HuskyLens camera, helping lamp, ultrasonic sensors, color sensor, Arduino Nano, and steering area.</em></p>
+
+---
+
+<p align="center">
+  <img src="v-photos/v3/named%20angles/named_angle_left.jpeg" alt="Cheese v3 left named angle" width="85%">
+</p>
+
+<p align="center"><em>Left named angle: shows the side structure, EV3 Brick placement, motors, sensor alignment, lighting system, and chassis support.</em></p>
+
+---
+
+<p align="center">
+  <img src="v-photos/v3/named%20angles/named_angle_back.jpeg" alt="Cheese v3 back named angle" width="85%">
+</p>
+
+<p align="center"><em>Back named angle: shows the rear structure, Large Motor position, Arduino Nano, HuskyLens camera, wiring area, and lighting battery.</em></p>
+
+---
+
+<p align="center">
+  <img src="v-photos/v3/named%20angles/named_angle_right.jpeg" alt="Cheese v3 right named angle" width="85%">
+</p>
+
+<p align="center"><em>Right named angle: shows the right-side component layout, motors, sensors, EV3 Brick position, and support structure.</em></p>
+
+---
+
+<p align="center">
+  <img src="v-photos/v3/named%20angles/named_angle_top.jpeg" alt="Cheese v3 top named angle" width="85%">
+</p>
+
+<p align="center"><em>Top named angle: shows the top-down organization, wiring path, camera system, Arduino Nano placement, and rear motor area.</em></p>
+
+---
+
+<p align="center">
+  <img src="v-photos/v3/named%20angles/named_angle_bottom.jpeg" alt="Cheese v3 bottom named angle" width="85%">
+</p>
+
+<p align="center"><em>Bottom named angle: shows the underside structure, wheelbase, chassis support, EV3 position, sensor visibility, and motor placement.</em></p>
+
+---
 
 ## Meet the Team
 
