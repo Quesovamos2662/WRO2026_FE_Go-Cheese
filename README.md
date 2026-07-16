@@ -130,11 +130,11 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
 <p align="center">
   <strong>Our main objective is to make Cheese more than a robot:</strong><br>
   a documented engineering project built through testing, iteration, teamwork, and constant improvement.
+
+  
 </p>
 
 <div align="center">
-
-
 
 ## 🏎️ Meet the Big Cheese! — Robot Overview
 
