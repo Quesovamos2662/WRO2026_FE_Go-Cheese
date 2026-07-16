@@ -202,16 +202,38 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 
 ### Quick View Index
 
-<p align="center">
-| Angle | Jump to view |
-| :--- | :---: |
-| Front angle | [View front](#-front-named-angle-) |
-| Left angle | [View left](#-left-named-angle-) |
-| Back angle | [View back](#-back-named-angle-) |
-| Right angle | [View right](#-right-named-angle-) |
-| Top angle | [View top](#-top-named-angle-) |
-| Bottom angle | [View bottom](#-bottom-named-angle-) |
+<h3 align="center">Quick View Index</h3>
 
+<table align="center">
+  <tr>
+    <th>Angle</th>
+    <th>Jump to view</th>
+  </tr>
+  <tr>
+    <td>Front angle</td>
+    <td><a href="#-front-named-angle-">View front</a></td>
+  </tr>
+  <tr>
+    <td>Left angle</td>
+    <td><a href="#-left-named-angle-">View left</a></td>
+  </tr>
+  <tr>
+    <td>Back angle</td>
+    <td><a href="#-back-named-angle-">View back</a></td>
+  </tr>
+  <tr>
+    <td>Right angle</td>
+    <td><a href="#-right-named-angle-">View right</a></td>
+  </tr>
+  <tr>
+    <td>Top angle</td>
+    <td><a href="#-top-named-angle-">View top</a></td>
+  </tr>
+  <tr>
+    <td>Bottom angle</td>
+    <td><a href="#-bottom-named-angle-">View bottom</a></td>
+  </tr>
+</table>
 
 ---
 
