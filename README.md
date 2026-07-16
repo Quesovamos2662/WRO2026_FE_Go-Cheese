@@ -200,12 +200,6 @@ This section shows the labeled angle views of **Cheese v3**. These images identi
 Instead of only showing plain photos, these named angles act as a visual map of the robot. They allow readers to see where each subsystem is placed, how the components are distributed across the chassis, and how the final v3 layout supports stability, sensor access, wiring organization, and future obstacle detection.
 
 
-<p align="center">
-  <img src="v-photos/v3/named%20angles/named_angle_front.jpeg" alt="Cheese v3 front named angle" width="85%">
-</p>
-
-<p align="center"><em>Front named angle: shows the front layout, HuskyLens camera, helping lamp, ultrasonic sensors, color sensor, Arduino Nano, and steering area.</em></p>
-
 ### Quick View Index
 
 | Angle | Jump to view |
@@ -216,6 +210,14 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 | Right angle | [View right](#-right-named-angle-) |
 | Top angle | [View top](#-top-named-angle-) |
 | Bottom angle | [View bottom](#-bottom-named-angle-) |
+
+
+
+<p align="center">
+  <img src="v-photos/v3/named%20angles/named_angle_front.jpeg" alt="Cheese v3 front named angle" width="85%">
+</p>
+
+<p align="center"><em>Front named angle: shows the front layout, HuskyLens camera, helping lamp, ultrasonic sensors, color sensor, Arduino Nano, and steering area.</em></p>
 
 ---
 
