@@ -200,8 +200,6 @@ This section shows the labeled angle views of **Cheese v3**. These images identi
 Instead of only showing plain photos, these named angles act as a visual map of the robot. They allow readers to see where each subsystem is placed, how the components are distributed across the chassis, and how the final v3 layout supports stability, sensor access, wiring organization, and future obstacle detection.
 
 
-### Quick View Index
-
 <h3 align="center">Quick View Index</h3>
 
 <table align="center">
