@@ -202,6 +202,7 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 
 ### Quick View Index
 
+<p align="center">
 | Angle | Jump to view |
 | :--- | :---: |
 | Front angle | [View front](#-front-named-angle-) |
@@ -212,6 +213,7 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 | Bottom angle | [View bottom](#-bottom-named-angle-) |
 
 
+---
 
 <p align="center">
   <img src="v-photos/v3/named%20angles/named_angle_front.jpeg" alt="Cheese v3 front named angle" width="85%">
