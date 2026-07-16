@@ -333,3 +333,66 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 
 ---
 
+We are **Go!Cheese**, a robotics team of two from San Miguelito, Panama, competing in the WRO Future Engineers 2026 season. Romina and Caylee work collaboratively: Romina handles the changes and builds on the robot itself, while Caylee handles the documentation. Our roles complement each other step by step, since we constantly rely on one another, sharing observations and feedback to keep improving and moving forward.
+
+<p align="center">
+  <img src="t-photos/team_photo.jpg" alt="Go!Cheese Team" width="70%">
+</p>
+
+---
+
+### Caylee Rios
+
+![Role](https://img.shields.io/badge/Role-Software_&_Documentation-brightgreen?style=for-the-badge)
+
+- **Age:** 16
+- **Description:** Hii! My name is Caylee and this is my first time competing in WRO. I'm really happy to be part of a sport that pushes you toward hard work and personal growth. I'm in charge of the software and the documentation. I love smiling, asking lots of questions, and having people I care about around me who inspire me and push me to be better every day.
+
+[Instagram](https://www.instagram.com/caymrr) · [Email](mailto:cayleerios@gmail.com)
+
+<p align="center">
+  <img src="t-photos/caylee.jpg" alt="Caylee Rios" width="45%">
+</p>
+
+---
+
+### Romina Mora
+
+![Role](https://img.shields.io/badge/Role-Programmer_&_Robot_Builder-ff69b4?style=for-the-badge)
+
+- **Age:** 16
+- **Description:** Helloo!!! I'm Romina, a very passionate gamer. I enjoy anything that represents a challenge, including this project. Since 2025 I've shown interest in robotics in general, and I finally managed to join a team in 2026. I wish to learn plenty to improve my skills next year. My role is programmer and robot builder.
+
+*No socials, so reach out through my partner.*
+
+<p align="center">
+  <img src="t-photos/romina.jpg" alt="Romina Mora" width="45%">
+</p>
+
+---
+
+<h2 align="center">🧀 Why "Cheese"? 🧀</h2>
+
+<p align="center">
+  <em>"From a childhood rhyme to the competition track."</em>
+</p>
+
+<div align="center">
+
+────────୨ৎ────────
+
+</div>
+
+Our name comes from a little recess rhyme we used to play back when we were kids. It always stuck with us, so when it came time to name our team, we picked something that carries a piece of that memory with us. That is how **Go!Cheese** was born, a name that reminds us of where we started and of the season of our lives we are living right now.
+
+Our robot is named **Cheese** as a pun on our team name. The idea is simple, and it is the heart of everything we build:
+
+<p align="center">
+  <strong>Cheese is the one who goes.</strong>
+</p>
+
+<div align="center">
+
+────────୨ৎ────────
+
+</div>
