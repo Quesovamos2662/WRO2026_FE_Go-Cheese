@@ -333,6 +333,9 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 
 ---
 
+## Meet the Team
+
+
 We are **Go!Cheese**, a robotics team of two from San Miguelito, Panama, competing in the WRO Future Engineers 2026 season. Romina and Caylee work collaboratively: Romina handles the changes and builds on the robot itself, while Caylee handles the documentation. Our roles complement each other step by step, since we constantly rely on one another, sharing observations and feedback to keep improving and moving forward.
 
 <p align="center">
