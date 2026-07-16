@@ -32,12 +32,12 @@ Welcome to the official repository of Go!Cheese, a robotics team from San Miguel
 
 | | |
 |---|---|
-| 🏆 **Competition** | WRO Future Engineers 2026 |
-| 📍 **Region** | San Miguelito, Panama |
-| 🧠 **Controller** | LEGO Mindstorms EV3 |
-| 💻 **Language** | Python 3 (ev3dev2) + C++ (Arduino Nano) |
-| 👁️ **Vision** | HuskyLens camera |
-| 🤖 **Steering** | Ackermann geometry |
+|  **Competition** | WRO Future Engineers 2026 |
+|  **Region** | San Miguelito, Panama |
+|  **Controller** | LEGO Mindstorms EV3 |
+|  **Language** | Python 3 (ev3dev2) + C++ (Arduino Nano) |
+|  **Vision** | HuskyLens camera |
+|  **Steering** | Ackermann geometry |
 
 ---
 <h3 align="center">Check us out! 👇</h3>
@@ -111,7 +111,7 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
 
 ### Team Goals (Road to the National Finals)
 
-<h2 align="center">🎯 Team Goals: Road to the National Finals 🧀</h2>
+<h2 align="center"> Team Goals: Road to the National Finals 🧀</h2>
 
 <p align="center">
   <em>Building Cheese is not only about competing. It is about learning how to think, test, fail, document, and improve like engineers.</em>
