@@ -142,6 +142,11 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
   <img src="v-photos/v3/side_v3.jpg" alt="Cheese v3 Side View" width="85%">
 </p>
 
+<p align="center">
+  <em>Cheese v3 side view showing the current chassis structure, wheelbase, and component layout.</em>
+</p>
+
+
 ### 1. Dimension Table
 *Cheese* has been engineered to comply strictly with the official physical constraints dictated by the WRO Future Engineers rulebook (30 x 20 x 30 cm):
 
