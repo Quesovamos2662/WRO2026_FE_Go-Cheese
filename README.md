@@ -171,11 +171,33 @@ A quick technical summary of the main technical specifications embedded into our
 
 ### 3. Achievements & Track Milestones
 
-* **Regional experience:** We competed in the regional stage, which became a turning point for us. It gave us our documentation baseline of 15/30 and, just as importantly, showed us exactly where we were losing points. Seeing a 0 in Software & Obstacle Strategy made it clear where to focus this season, and that feedback shaped almost every decision we made afterward.
+<h3 align="center">3. Achievements & Track Milestones</h3>
 
-* **Stronger, more stable chassis:** Our redesign added structural reinforcements, including cross-bracing and a central liftarm spine that ties the front and rear of the car together. This noticeably improved rigidity and stopped the frame from twisting during sharp turns. It did raise the weight from 763.5 g (v2) to 888.1 g (v3), but we accepted that tradeoff on purpose, since a steady, predictable robot mattered more to us than saving a few grams at our current speed.
+<p align="center">
+  This section summarizes the main milestones that shaped the development of Cheese. Each achievement represents a design lesson, a technical improvement, or a feedback point that influenced the current version of the robot.
+</p>
 
-* **Smarter sensing setup:** We reworked how the robot senses the track. The HuskyLens camera runs its own image processing and connects through an Arduino Nano, which keeps that work off the EV3 so it stays free for navigation. We also replaced our unreliable front ultrasonic with a color sensor for corner timing, which made the robot read the track far more consistently.
+<table>
+  <tr>
+    <td width="28%" align="center"><strong>Regional Experience</strong></td>
+    <td>
+      We competed in the regional stage, which became a turning point for our team. It gave us a documentation baseline of <strong>15/30</strong> and showed us exactly where we were losing points. Seeing a <strong>0 in Software & Obstacle Strategy</strong> made it clear where we needed to focus, and that feedback shaped many of our decisions for the current season.
+    </td>
+  </tr>
+  <tr>
+    <td width="28%" align="center"><strong>Stronger Chassis</strong></td>
+    <td>
+      Our redesign added structural reinforcements, including cross-bracing and a central liftarm spine that connects the front and rear of the vehicle. This improved rigidity and reduced frame twisting during sharp turns. Although the weight increased from <strong>763.5 g</strong> in v2 to <strong>888.1 g</strong> in v3, we accepted the tradeoff because stability and predictable movement were more important than reducing mass at our current speed.
+    </td>
+  </tr>
+  <tr>
+    <td width="28%" align="center"><strong>Improved Sensing Setup</strong></td>
+    <td>
+      We redesigned how the robot senses the track. The HuskyLens camera performs its own image processing and communicates through an Arduino Nano, keeping that workload separate from the EV3 navigation code. We also replaced the unreliable front ultrasonic sensor with a color sensor for corner timing, which made the robot detect track events more consistently.
+    </td>
+  </tr>
+</table>
+
 
 ---
 
