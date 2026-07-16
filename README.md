@@ -169,8 +169,6 @@ A quick technical summary of the main technical specifications embedded into our
 
 ---
 
-### 3. Achievements & Track Milestones
-
 <h3 align="center">3. Achievements & Track Milestones</h3>
 
 <p align="center">
