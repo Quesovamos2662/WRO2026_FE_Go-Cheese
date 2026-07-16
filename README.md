@@ -4,9 +4,7 @@
 <div align="center">
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 <img src="img/Banner_GoCheese (2).png" alt="Go!Cheese" width="700">
-
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 </div>
