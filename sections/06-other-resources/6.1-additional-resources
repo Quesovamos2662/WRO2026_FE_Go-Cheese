@@ -1,0 +1,255 @@
+# ᯓ★ 6. Additional Resources ᯓ★
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Section-Additional_Resources-4A90E2?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Focus-Testing_Evidence-FF69B4?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Robot-Cheese_v3-FFD43B?style=for-the-badge">
+</p>
+
+<p align="center">
+  <em>This section contains supporting resources for Cheese v3, including testing data, graph ideas, code-based evidence, digital model notes, and future resources that can help explain the robot’s development more clearly.</em>
+</p>
+
+---
+
+## ❀ Purpose of This Section ────୨ৎ────────୨ৎ────
+
+The purpose of this folder is to keep all extra materials organized in one place. These resources are not part of the main technical sections, but they support our engineering explanation by showing testing evidence, design progress, code improvements, and future documentation plans.
+
+| Resource Type | Why It Helps |
+| :--- | :--- |
+| **Testing graphs** | Show measurable evidence of improvement. |
+| **Code metrics** | Support the decision to simplify the software. |
+| **Sensor data** | Show how lighting, placement, and calibration affected readings. |
+| **3D model notes** | Prepare space for future digital reconstruction files. |
+| **Testing logs** | Help connect practice results with design changes. |
+| **Reference links** | Make the repository easier to navigate. |
+
+<p align="center">
+  <strong>This section turns extra testing and documentation into engineering evidence.</strong>
+</p>
+
+---
+
+## ❀ Testing Data and Graphs ────୨ৎ────────୨ৎ────
+
+Graphs are useful because they show that our design decisions were based on testing, not only on assumptions. The following graphs are planned or can be added as data is collected.
+
+| Graph | Data Needed | What It Supports |
+| :--- | :--- | :--- |
+| **Code Length Comparison** | Early code: ~1500 lines; current code: ~300 lines | Shows that simplifying the code reduced complexity and made debugging easier. |
+| **Robot Weight Tradeoff** | v2: 763.5 g; v3: 888.1 g | Shows the tradeoff between added weight and improved stability/structure. |
+| **HuskyLens Detection With and Without Lights** | Correct detections out of 10 trials | Shows whether the upper lamp improved obstacle recognition. |
+| **Color Sensor Detection With and Without Lower Lamp** | Correct floor color detections out of 10 trials | Shows whether the lower lamp improved color sensor consistency. |
+| **Crash Count by Setup** | Number of crashes in 5 runs per version/setup | Shows whether the robot became more reliable after design changes. |
+| **Parking Accuracy** | Success/failure or distance from target zone | Shows whether the final stop logic improved after the first regional. |
+| **Lap Time Comparison** | Time per lap or total time over 3 laps | Shows whether curve tuning and code simplification improved efficiency. |
+
+---
+
+## ❀ Graph 1: Code Length Comparison ────୨ৎ────────୨ৎ────
+
+This graph is one of the easiest to include because we already have approximate data from the software development process.
+
+| Code Version | Approximate Lines of Code | Notes |
+| :--- | ---: | :--- |
+| **Early extended code** | ~1500 lines | Included many overlapping conditions and became harder to debug. |
+| **Simplified current code** | ~300 lines | Organized into clearer behavior priorities and easier to tune. |
+
+<p align="center">
+  <img src="data-graphs/code_length_comparison_graph.png" alt="Code length comparison graph" width="75%">
+</p>
+
+<p align="center">
+  <em>This graph will show how the program was simplified after testing revealed that overly long code created behavior conflicts and made debugging harder.</em>
+</p>
+
+> **Status:** Data available. Graph image still needs to be created.
+
+---
+
+## ❀ Graph 2: Robot Weight Tradeoff ────୨ৎ────────୨ৎ────
+
+This graph supports the mechanical design tradeoff between weight and stability.
+
+| Robot Version | Weight | Engineering Meaning |
+| :--- | ---: | :--- |
+| **v2** | 763.5 g | Lighter, but less developed in structure and mounting. |
+| **v3** | 888.1 g | Heavier, but includes stronger structure, better mounting, lighting support, and improved sensor architecture. |
+
+<p align="center">
+  <img src="data-graphs/robot_weight_tradeoff_graph.png" alt="Robot weight tradeoff graph" width="75%">
+</p>
+
+<p align="center">
+  <em>This graph will show that Cheese v3 became heavier, but the added weight supported stability, reinforcement, lighting, and better component placement.</em>
+</p>
+
+> **Status:** Data available. Graph image still needs to be created.
+
+---
+
+## ❀ Graph 3: HuskyLens Detection With and Without Lighting ────୨ৎ────────୨ৎ────
+
+This graph should compare obstacle recognition before and after using the upper helping lamp.
+
+| Setup | Correct Obstacle Detections out of 10 | Notes |
+| :--- | ---: | :--- |
+| **Without dual-light system** | To be tested | Green appeared blackish and red appeared brownish/chocolate-colored. |
+| **With dual-light system** | To be tested | Obstacle colors appeared closer to their real colors. |
+
+<p align="center">
+  <img src="data-graphs/huskylens_detection_graph.png" alt="HuskyLens detection graph" width="75%">
+</p>
+
+<p align="center">
+  <em>This graph will show whether the upper helping lamp improved HuskyLens obstacle recognition.</em>
+</p>
+
+> **Status:** Data still needs to be collected.
+
+---
+
+## ❀ Graph 4: Color Sensor Detection With and Without Lower Lamp ────୨ৎ────────୨ৎ────
+
+This graph should compare floor color detection with and without the lower lamp.
+
+| Setup | Correct Floor Color Detections out of 10 | Notes |
+| :--- | ---: | :--- |
+| **Without lower lamp** | To be tested | Floor illumination may be less stable. |
+| **With lower lamp** | To be tested | Floor visibility should improve near the color sensor. |
+
+<p align="center">
+  <img src="data-graphs/color_sensor_lighting_graph.png" alt="Color sensor lighting graph" width="75%">
+</p>
+
+<p align="center">
+  <em>This graph will show whether the lower helping lamp improved floor color detection consistency.</em>
+</p>
+
+> **Status:** Data still needs to be collected.
+
+---
+
+## ❀ Graph 5: Crash Count and Reliability ────୨ৎ────────୨ৎ────
+
+This graph can show whether Cheese became more reliable after removing the front ultrasonic dependency, simplifying the code, and improving the lighting setup.
+
+| Setup | Crashes in 5 Runs | Notes |
+| :--- | ---: | :--- |
+| **Front ultrasonic curve version** | To be tested / from old notes | Steering became unstable because too many detections happened at once. |
+| **Color-based curve timing** | To be tested | Cleaner curve trigger based on floor markings. |
+| **Simplified code + dual-light system** | To be tested | Current direction for improved reliability. |
+
+<p align="center">
+  <img src="data-graphs/crash_count_graph.png" alt="Crash count comparison graph" width="75%">
+</p>
+
+<p align="center">
+  <em>This graph will show whether the robot became more reliable after the main software and sensor changes.</em>
+</p>
+
+> **Status:** Data still needs to be collected or completed from testing notes.
+
+---
+
+## ❀ Graph 6: Parking Accuracy ────୨ৎ────────୨ৎ────
+
+Parking became important after the first regional because Cheese did not stop where it was supposed to and lost points. This graph can show whether parking improved after separate testing.
+
+| Test Attempt | Parking Result | Notes |
+| :---: | :--- | :--- |
+| 1 | To be tested |  |
+| 2 | To be tested |  |
+| 3 | To be tested |  |
+| 4 | To be tested |  |
+| 5 | To be tested |  |
+
+<p align="center">
+  <img src="data-graphs/parking_accuracy_graph.png" alt="Parking accuracy graph" width="75%">
+</p>
+
+<p align="center">
+  <em>This graph will support the decision to treat parking as its own testing focus instead of only an ending detail.</em>
+</p>
+
+> **Status:** Data still needs to be collected.
+
+---
+
+## ❀ Code-Based Evidence ────୨ৎ────────୨ৎ────
+
+The code became an important part of the engineering process because earlier versions were too long and created behavior conflicts. Simplifying the code helped make Cheese easier to debug, tune, and explain.
+
+| Code Area | What It Controls | Why It Matters |
+| :--- | :--- | :--- |
+| **PID centering** | Keeps Cheese between the walls during straight movement. | Supports stable navigation and reduces drifting. |
+| **Wall protection** | Reacts when the robot gets too close to a wall. | Helps prevent collisions. |
+| **Curve logic** | Controls how Cheese enters and exits curves. | Helps the robot complete corners more consistently. |
+| **Color detection** | Reads floor markings. | Supports curve timing and lap/corner logic. |
+| **Parking logic** | Controls the final stop behavior. | Helps Cheese finish in the correct area. |
+| **HuskyLens bridge** | Supports obstacle recognition through Arduino. | Allows the robot to use camera-based information for red and green obstacles. |
+| **Lighting support** | Improves sensor visibility. | Helps both HuskyLens obstacle recognition and color sensor floor detection. |
+
+---
+
+## ❀ Sensor and Lighting Data to Collect ────୨ৎ────────୨ৎ────
+
+To make the graphs real and useful, the following tests should be repeated and recorded.
+
+| Test | Minimum Trials | Data to Record |
+| :--- | :---: | :--- |
+| **HuskyLens without lights** | 10 | Number of correct red/green obstacle detections. |
+| **HuskyLens with dual-light system** | 10 | Number of correct red/green obstacle detections. |
+| **Color sensor without lower lamp** | 10 | Number of correct floor color detections. |
+| **Color sensor with lower lamp** | 10 | Number of correct floor color detections. |
+| **Crash count per setup** | 5 runs | Number of crashes per configuration. |
+| **Parking attempts** | 5 attempts | Success/failure or distance from target zone. |
+| **Lap timing** | 3 runs | Time per lap or total run time. |
+
+---
+
+## ❀ Suggested Testing Log Template ────୨ৎ────────୨ৎ────
+
+This table can be copied and filled during practice sessions.
+
+| Test # | Setup Tested | Result | Problem Found | Next Adjustment |
+| :---: | :--- | :--- | :--- | :--- |
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
+| 4 |  |  |  |  |
+| 5 |  |  |  |  |
+
+---
+
+## ❀ 3D Models and Digital Build Resources ────୨ৎ────────୨ৎ────
+
+The digital 3D model of Cheese v3 is currently in progress. This section is included so the repository already has a place for future digital reconstruction files once they are completed.
+
+| Resource | Status | Purpose |
+| :--- | :--- | :--- |
+| **Cheese v3 full robot model** | In progress | Will support full digital visualization of the robot structure. |
+| **Ackermann steering model** | Planned | Will help explain the steering geometry and linkage. |
+| **Sensor placement model** | Planned | Will show sensor height, angle, and position. |
+| **Dual-light placement model** | Planned | Will show the upper and lower lamp positions. |
+| **Wiring layout model** | Planned | Will help explain cable routes and component connections. |
+
+Until the 3D models are completed, the physical v3 photos and labeled named angles are used as the main visual reconstruction references.
+
+| Current Visual Reference | File |
+| :--- | :--- |
+| **v3 photos** | [`v-photos/v3/`](../../v-photos/v3/) |
+| **Named angles** | [`v-photos/v3/named angles/`](../../v-photos/v3/named%20angles/) |
+| **Build instructions** | [`5.2-build-instructions.md`](../05-reproducibility/5.2-build-instructions.md) |
+
+> **Note:** This section is intentionally marked as in progress because the 3D models are not finished yet. Once completed, the model files or preview links will be added here.
+
+---
+
+## ❀ Useful Graph File Names ────୨ৎ────────୨ৎ────
+
+If graph images are added later, they should be stored inside:
+
+```md
+sections/06-other-resources/data-graphs/
