@@ -123,12 +123,12 @@ You can use this index to navigate through our robot’s documentation. Each sec
     - Documents the EV3 input/output ports and the communication path between components.
     - Helps reproduce the robot’s electrical layout and avoid wiring mistakes.
 
-  - [**2.3 Sensor Selection and Placement**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/02-power-and-sensor-architecture/2.3-sensor-selection-and-placement.md)
+  - [**2.3 Sensor Selection and Placement**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/%2002-power-and-sensor-architecture/2.3-sensor-selection-and-placement.md)
     - Explains why each sensor was selected and where it is placed on the robot.
     - Covers ultrasonic wall sensing, color sensor floor detection, and HuskyLens obstacle recognition.
     - Connects sensor placement to navigation accuracy, curve detection, obstacle strategy, and reliability.
 
-  - [**2.4 Sensor Calibration**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/02-power-and-sensor-architecture/2.4-sensor-calibration.md)
+  - [**2.4 Sensor Calibration**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/%2002-power-and-sensor-architecture/2.4-sensor-calibration.md)
     - Describes how sensors are checked and adjusted before testing.
     - Explains calibration for ultrasonic readings, color detection, HuskyLens recognition, and lighting support.
     - Helps make the robot’s sensing behavior more consistent between runs.
@@ -136,17 +136,17 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **3. Software and Obstacle Strategy**
-  - [**3.0 Cheese Logic Overview**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.0%20Cheese%20Logic%20Overview.md)
+  - [**3.0 Cheese Logic Overview**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy03-software-and-obstacle-strategy/3.0%20Cheese%20Logic%20Overview.md)
     - Gives a general overview of Cheese’s software behavior.
     - Explains the robot’s priority-based decision system and main control flow.
     - Summarizes how normal driving, wall protection, curve handling, obstacle logic, tuning, and parking connect.
 
-  - [**3.1 Algorithm Architecture**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.1-algorithm-architecture.md)
+  - [**3.1 Algorithm Architecture**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy03-software-and-obstacle-strategy/3.1-algorithm-architecture.md)
     - Explains the internal structure of the robot’s code.
     - Describes the main behavior layers, including PID centering, wall correction, curve logic, recovery, obstacle response, and final stop logic.
     - Shows how software priorities prevent different behaviors from interfering with each other.
 
-  - [**3.2 Flowchart**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.2-flowchart.md)
+  - [**3.2 Flowchart**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy03-software-and-obstacle-strategy/3.2-flowchart.md)
     - Presents the general logic flow used by Cheese during a run.
     - Helps visualize how the robot initializes, reads sensors, chooses behaviors, counts curves, and stops.
     - Connects the written algorithm to a clearer visual representation.
@@ -156,17 +156,17 @@ You can use this index to navigate through our robot’s documentation. Each sec
     - Describes wall following, PID centering, protected wall correction, color-based curve detection, lap tracking, and final stop planning.
     - Focuses on consistent autonomous movement without red or green obstacles.
 
-  - [**3.4 Obstacle Challenge**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.4-obstacle-challenge.md)
+  - [**3.4 Obstacle Challenge**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy03-software-and-obstacle-strategy/3.4-obstacle-challenge.md)
     - Explains how Cheese handles red and green obstacles.
     - Describes how the HuskyLens, Arduino Nano, lighting system, and movement logic support obstacle recognition.
     - Connects obstacle detection to steering decisions, controlled avoidance, recovery behavior, and safe path planning.
 
-  - [**3.5 Corner Handling**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.5-corner-handling.md)
+  - [**3.5 Corner Handling**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy03-software-and-obstacle-strategy/3.5-corner-handling.md)
     - Explains how Cheese detects, enters, counts, and exits corners.
     - Describes the relationship between color detection, confirmed blue/orange pairing, curve counting, and post-curve recovery.
     - Shows why corner handling is separated from normal PID driving.
 
-  - [**3.6 Tuning Process**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.6-tuning-process.md)
+  - [**3.6 Tuning Process**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy03-software-and-obstacle-strategy/3.6-tuning-process.md)
     - Documents how movement values were adjusted during testing.
     - Explains tuning for curve aggressiveness, steering angles, PID response, wall protection, color detection, parking, and obstacle recognition.
     - Shows how testing results influenced software changes and calibration decisions.
