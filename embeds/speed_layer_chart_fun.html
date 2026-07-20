@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed Layer Chart</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const cheesePalette = {
+  yellow: 'rgba(255, 212, 59, 0.78)',
+  yellowLine: 'rgba(244, 180, 0, 1)',
+  pink: 'rgba(255, 143, 171, 0.72)',
+  pinkLine: 'rgba(255, 143, 171, 1)',
+  blue: 'rgba(74, 144, 226, 0.70)',
+  blueLine: 'rgba(74, 144, 226, 1)',
+  green: 'rgba(87, 199, 133, 0.70)',
+  greenLine: 'rgba(87, 199, 133, 1)',
+  cream: 'rgba(255, 248, 214, 0.85)',
+  ink: 'rgba(22, 33, 62, 1)'
+};
+Chart.defaults.font.family = "'Trebuchet MS', Arial, sans-serif";
+Chart.defaults.color = '#16213E';
+</script>
+
+<style>
+:root{
+  --cheese:#FFD43B;
+  --cheese-dark:#F4B400;
+  --pink:#FF8FAB;
+  --blue:#4A90E2;
+  --green:#57C785;
+  --cream:#FFF8D6;
+  --ink:#16213E;
+  --soft:#FFFDF2;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:34px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(244,180,0,.26) 0 18px, transparent 19px),
+    radial-gradient(circle at 88% 12%, rgba(255,143,171,.20) 0 22px, transparent 23px),
+    radial-gradient(circle at 22% 82%, rgba(74,144,226,.16) 0 18px, transparent 19px),
+    linear-gradient(135deg, #fffdf2 0%, #fff8d6 45%, #ffffff 100%);
+  color:var(--ink);
+}
+.card{
+  max-width:1080px;
+  margin:0 auto;
+  border:3px solid var(--cheese-dark);
+  border-radius:28px;
+  padding:28px;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 14px 38px rgba(70,50,0,.13);
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:auto -70px -90px auto;
+  width:240px;
+  height:240px;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(255,255,255,.70) 0 18px, transparent 19px),
+    radial-gradient(circle at 66% 60%, rgba(255,255,255,.55) 0 24px, transparent 25px),
+    radial-gradient(circle at 42% 75%, rgba(255,255,255,.58) 0 13px, transparent 14px),
+    var(--cheese);
+  clip-path:polygon(0 0,100% 30%,15% 100%);
+  opacity:.42;
+  transform:rotate(-12deg);
+}
+h1{
+  text-align:center;
+  margin:0;
+  font-size:38px;
+  letter-spacing:.2px;
+}
+.subtitle{
+  text-align:center;
+  color:#596275;
+  margin:10px auto 24px;
+  max-width:760px;
+  line-height:1.5;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:18px 0 20px;
+}
+.badge{
+  background:var(--cheese);
+  border:2px solid var(--cheese-dark);
+  border-radius:999px;
+  padding:8px 14px;
+  font-weight:800;
+  box-shadow:0 3px 0 var(--cheese-dark);
+}
+.badge.blue{background:#DCEBFF;border-color:var(--blue);box-shadow:0 3px 0 var(--blue)}
+.badge.pink{background:#FFE4ED;border-color:var(--pink);box-shadow:0 3px 0 var(--pink)}
+.badge.green{background:#E2F8EB;border-color:var(--green);box-shadow:0 3px 0 var(--green)}
+.controls{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:18px 0;
+}
+button{
+  border:0;
+  background:var(--ink);
+  color:white;
+  border-radius:999px;
+  padding:10px 15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease;
+  box-shadow:0 4px 0 rgba(0,0,0,.20);
+}
+button:hover{transform:translateY(-2px)}
+button.cheese{background:var(--cheese-dark);color:#231900}
+button.pink{background:var(--pink)}
+button.blue{background:var(--blue)}
+button.green{background:var(--green);color:#062611}
+.chart-box{
+  position:relative;
+  height:460px;
+  width:100%;
+  margin:14px 0 4px;
+}
+.note{
+  margin-top:24px;
+  padding:18px 20px;
+  border-left:7px solid var(--cheese-dark);
+  background:linear-gradient(90deg,#fff8d6,#fffdf2);
+  border-radius:16px;
+  line-height:1.65;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+  margin-top:24px;
+}
+.tile{
+  border:2px solid #E6D58F;
+  background:#fffdf2;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.tile strong{
+  display:block;
+  font-size:24px;
+  margin-bottom:8px;
+}
+.tile p{margin:0;color:#596275;line-height:1.45}
+.link-card{
+  border:2px solid #E6D58F;
+  border-radius:20px;
+  padding:18px;
+  background:#fffdf2;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.link-card a{
+  display:block;
+  font-size:19px;
+  font-weight:900;
+  color:#1b5faa;
+  text-decoration:none;
+  margin-bottom:8px;
+}
+.footer{
+  margin-top:28px;
+  text-align:center;
+  color:#6b7280;
+  font-size:14px;
+}
+.legend-mini{
+  text-align:center;
+  color:#596275;
+  font-size:14px;
+  margin-top:8px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Speed Layer Chart</h1>
+  <p class="subtitle">A fun chart showing how Cheese slows down when the situation becomes riskier.</p>
+  
+<div class="badges">
+  <span class="badge">🏎️ Speed</span>
+  <span class="badge blue">PID</span>
+  <span class="badge pink">Wall Safety</span>
+</div>
+<div class="controls">
+  <button class="green" onclick="normalView()">Driving Layers</button>
+  <button class="blue" onclick="riskView()">Risk View</button>
+</div>
+<div class="chart-box"><canvas id="chart"></canvas></div>
+<div class="note">This graph shows how Cheese changes speed depending on the situation. Faster movement is used when the robot is stable, while lower speeds are used when wall protection needs more reaction time.</div>
+
+  <p class="footer">Go!Cheese · WRO Future Engineers 2026 · Cheese v3</p>
+</div>
+<script>
+
+const ctx = document.getElementById('chart');
+let chart = new Chart(ctx, {
+  type:'bar',
+  data:{labels:['Normal PID driving','Gentle wall correction','Severe wall correction'],datasets:[{label:'Programmed speed %',data:[62,46,40],backgroundColor:[cheesePalette.green,cheesePalette.yellow,cheesePalette.pink],borderColor:[cheesePalette.greenLine,cheesePalette.yellowLine,cheesePalette.pinkLine],borderWidth:2,borderRadius:12}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true},title:{display:true,text:'Speed Layers for Cheese 🏎️🧀',font:{size:20}}},scales:{x:{beginAtZero:true,max:100}}}
+});
+function normalView(){
+  chart.data.labels = ['Normal PID driving','Gentle wall correction','Severe wall correction'];
+  chart.data.datasets[0].label = 'Programmed speed %';
+  chart.data.datasets[0].data = [62,46,40];
+  chart.options.plugins.title.text = 'Speed Layers for Cheese 🏎️🧀';
+  chart.update();
+}
+function riskView(){
+  chart.data.labels = ['Stable movement','Near wall','Very close to wall'];
+  chart.data.datasets[0].label = 'Risk level';
+  chart.data.datasets[0].data = [25,65,90];
+  chart.options.plugins.title.text = 'Risk increases as Cheese gets closer to the wall ⚠️';
+  chart.update();
+}
+
+</script>
+</body>
+</html>
