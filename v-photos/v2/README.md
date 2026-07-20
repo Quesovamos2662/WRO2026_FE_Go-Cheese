@@ -25,3 +25,12 @@ This folder documents **Version 2 (v2)** of Cheese, our first fully tested compe
 
 Version 2 matters because it was the first version that gave us real testing feedback on the track. It helped us identify which mechanical choices were working and which areas needed improvement, especially in steering consistency, sensor positioning, and chassis rigidity. The information collected from this version directly influenced the redesign choices made for v3.
 
+<p align="center">
+  ✦ ─── ⋆⋅☆⋅⋆ ─── (❁´◡`❁) ─── ⋆⋅☆⋅⋆ ─── ✦
+</p>
+
+<p align="center">
+  <a href="https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese#general-project-index">
+    <img src="https://img.shields.io/badge/Back_to_Main_README_Index-FFD43B?style=for-the-badge">
+  </a>
+</p>
