@@ -475,44 +475,221 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 
 ---
 
-## Meet the Team
-
-
-We are **Go!Cheese**, a robotics team of two from San Miguelito, Panama, competing in the WRO Future Engineers 2026 season. Romina and Caylee work collaboratively: Romina handles the changes and builds on the robot itself, while Caylee handles the documentation. Our roles complement each other step by step, since we constantly rely on one another, sharing observations and feedback to keep improving and moving forward.
+# ᯓ★ Meet the Team ᯓ★
 
 <p align="center">
-  <img src="t-photos/team_photo.jpg" alt="Go!Cheese Team" width="70%">
+  <img src="https://img.shields.io/badge/Team-Go!Cheese-FFD43B?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Country-Panama-4A90E2?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Season-WRO_2026-57C785?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Members-2-FF8FAB?style=for-the-badge">
+</p>
+
+<p align="center">
+  <em>Two students, one robot, many late tests, many changes, and one very determined piece of cheese.</em>
+</p>
+
+<p align="center">
+  <img src="t-photos/team_photo.jpg" alt="Go!Cheese Team Photo" width="72%">
+</p>
+
+<p align="center">
+  <strong>We are Go!Cheese</strong>, a robotics team of two from San Miguelito, Panama, competing in the 
+  <strong>WRO Future Engineers 2026</strong> season. Our team is built on collaboration, patience, testing, and trust. 
+  Romina focuses on programming, robot changes, and physical building, while Caylee focuses on documentation, software explanation, 
+  engineering analysis, and organizing the project so others can understand how Cheese works.
+</p>
+
+<p align="center">
+  <em>What makes our team special is not that we always get things right on the first try. It is that we keep testing, fixing, explaining, rebuilding, and trying again until Cheese gets closer to the robot we imagine.</em>
 </p>
 
 ---
 
-### Caylee Rios
+## ❀ Team at a Glance ────୨ৎ────────୨ৎ────
 
-![Role](https://img.shields.io/badge/Role-Software_&_Documentation-brightgreen?style=for-the-badge)
+<div align="center">
 
-- **Age:** 16
-- **Description:** Hii! My name is Caylee and this is my first time competing in WRO. I'm really happy to be part of a sport that pushes you toward hard work and personal growth. I'm in charge of the software and the documentation. I love smiling, asking lots of questions, and having people I care about around me who inspire me and push me to be better every day.
+| Member | Main Role | Superpower | Project Focus |
+| :---: | :--- | :--- | :--- |
+| **Caylee Rios** | Software Explanation & Documentation | Turning ideas, tests, and failures into clear engineering documentation | README structure, logic explanation, tuning analysis, visual organization |
+| **Romina Mora** | Programming & Robot Builder | Turning ideas into physical robot changes and functional code | Robot building, code implementation, mechanical adjustments, testing support |
 
-[Instagram](https://www.instagram.com/caymrr) · [Email](mailto:cayleerios@gmail.com)
+</div>
 
 <p align="center">
-  <img src="t-photos/caylee.jpg" alt="Caylee Rios" width="45%">
+  <strong>Our teamwork works because one of us organizes and explains the process, while the other transforms those ideas into code and robot changes. Together, we connect the story, the software, and the physical robot.</strong>
 </p>
 
 ---
 
-### Romina Mora
+## ❀ Our Team Dynamic ────୨ৎ────────୨ৎ────
 
-![Role](https://img.shields.io/badge/Role-Programmer_&_Robot_Builder-ff69b4?style=for-the-badge)
+<div align="center">
 
-- **Age:** 16
-- **Description:** Helloo!!! I'm Romina, a very passionate gamer. I enjoy anything that represents a challenge, including this project. Since 2025 I've shown interest in robotics in general, and I finally managed to join a team in 2026. I wish to learn plenty to improve my skills next year. My role is programmer and robot builder.
+| What Happens During Testing | How We Work Together |
+| :--- | :--- |
+| **Cheese crashes into a wall** | We identify whether the issue is mechanical, sensor-based, or software-based. |
+| **The curve is too wide or too sharp** | We discuss the behavior, adjust values, and test again. |
+| **The color sensor misses a marker** | We check lighting, color calibration, sensor height, and detection logic. |
+| **Parking becomes inaccurate** | We review curve counting, timing, final stop logic, and run consistency. |
+| **The robot improves** | We document what changed and why it worked. |
 
-*No socials, so reach out through my partner.*
+</div>
+
+This process helped us grow as a team because we learned that robotics is not only about building or coding. It is also about observing, communicating, making decisions, and understanding why each change matters.
+
+---
+
+# ✦ Member Profiles ─── ⋆⋅☆⋅⋆ ───
+
+<table>
+<tr>
+<td width="50%" align="center">
+
+## Caylee Rios
+
+<img src="https://img.shields.io/badge/Role-Documentation_&_Software_Analysis-57C785?style=for-the-badge">
+
+<br><br>
+
+<img src="t-photos/caylee.jpg" alt="Caylee Rios" width="75%">
+
+<br><br>
+
+<strong>Age:</strong> 16  
+<br>
+<strong>Focus:</strong> Documentation, software explanation, engineering reasoning, project structure, and testing analysis.
+
+<br><br>
+
+<a href="https://www.instagram.com/caymrr">
+  <img src="https://img.shields.io/badge/Instagram-caymrr-FF69B4?style=for-the-badge&logo=instagram&logoColor=white">
+</a>
+
+<a href="mailto:cayleerios@gmail.com">
+  <img src="https://img.shields.io/badge/Email-cayleerios%40gmail.com-4A90E2?style=for-the-badge&logo=gmail&logoColor=white">
+</a>
+
+</td>
+
+<td width="50%" align="center">
+
+## Romina Mora
+
+<img src="https://img.shields.io/badge/Role-Programmer_&_Robot_Builder-FF8FAB?style=for-the-badge">
+
+<br><br>
+
+<img src="t-photos/Romina-photos/Romina%20pic.jpg" alt="Romina Mora" width="75%">
+
+<br><br>
+
+<strong>Age:</strong> 16  
+<br>
+<strong>Focus:</strong> Programming, robot building, hardware changes, mechanical testing, and code implementation.
+
+<br><br>
+
+<img src="https://img.shields.io/badge/Socials-Reach_out_through_partner-lightgrey?style=for-the-badge">
+
+</td>
+</tr>
+</table>
+
+---
+
+<details>
+<summary><strong>ᯓ★ More About Caylee</strong></summary>
+
+<br>
+
+Hii! My name is **Caylee**, and this is my first time competing in WRO. I am really happy to be part of a competition that pushes us toward hard work, problem-solving, and personal growth.  
+
+In this project, I focus on explaining how Cheese works, organizing our documentation, analyzing our decisions, and making sure that our testing process is clear for anyone who reads our repository. I enjoy asking questions, understanding why something works, and turning confusing robot behavior into explanations that make sense.
+
+I love smiling, learning new things, and being around people who inspire me and push me to become better every day. For me, Go!Cheese is not only about building a robot; it is also about showing our effort, our teamwork, and our improvement through every test.
+
+<br>
+
+**Favorite part of the project:** turning messy testing problems into organized engineering explanations.  
+<br>
+**Biggest challenge:** making sure every failure becomes something we can learn from.  
+<br>
+**Main contribution:** documentation, software explanation, project organization, and engineering analysis.
+
+</details>
+
+---
+
+<details>
+<summary><strong>ᯓ★ More About Romina</strong></summary>
+
+<br>
+
+Helloo!!! I’m **Romina**, and I am a very passionate gamer. I enjoy anything that represents a challenge, and this project has definitely been one of them. Since 2025, I have been interested in robotics, and in 2026 I finally had the chance to join a team and work on a real WRO robot.
+
+My role in Go!Cheese is focused on programming and robot building. I help turn ideas into real changes on the robot, whether that means adjusting the structure, modifying code, testing a new behavior, or helping Cheese move closer to the result we want.
+
+I hope to keep learning a lot from this experience so I can improve my skills for future competitions. For me, robotics is exciting because every problem feels like a challenge to solve, and every improvement shows that the work was worth it.
+
+<br>
+
+**Favorite part of the project:** solving challenges through building and programming.  
+<br>
+**Biggest challenge:** adjusting the robot until the physical behavior matches the idea in the code.  
+<br>
+**Main contribution:** programming, robot building, mechanical changes, and testing support.
+
+</details>
+
+---
+
+## ❀ How Our Roles Connect ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="t-photos/Romina-photos/Romina%20pic.jpg" alt="Romina Mora" width="45%">
+  <img src="https://img.shields.io/badge/Caylee-Documents_&_Explains-57C785?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Romina-Builds_&_Programs-FF8FAB?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Together-Test_Improve_Repeat-FFD43B?style=for-the-badge">
 </p>
+
+<div align="center">
+
+| Caylee | Together | Romina |
+| :--- | :--- | :--- |
+| Organizes documentation | Share observations | Builds robot changes |
+| Explains software logic | Discuss failures | Programs behavior |
+| Writes engineering decisions | Compare test results | Adjusts mechanisms |
+| Creates README structure | Choose next improvement | Tests physical changes |
+| Connects evidence to reasoning | Improve Cheese step by step | Helps implement solutions |
+
+</div>
+
+Our roles are different, but they are connected in every part of the project. When the robot fails, we do not treat it as just a mistake. We treat it as information. One observation becomes a discussion, the discussion becomes a change, the change becomes a test, and the test becomes documentation.
+
+---
+
+## ❀ What Go!Cheese Means to Us ────୨ৎ────────୨ৎ────
+
+Go!Cheese is more than the name of our team. It represents our first serious step into the WRO Future Engineers category, our learning process, and our determination to keep improving even when the robot does not behave the way we expected.
+
+Throughout the season, Cheese has changed many times. We adjusted the structure, changed sensor strategies, improved lighting, modified software logic, worked on curve behavior, and documented the decisions behind each improvement. Every version taught us something different.
+
+<p align="center">
+  <strong>For us, Go!Cheese means learning by doing, improving through testing, and proving that a small team can still build something meaningful with creativity, discipline, and teamwork.</strong>
+</p>
+
+---
+
+## ❀ Team Motto ────୨ৎ────────୨ৎ────
+
+<p align="center">
+  <strong>“Test it, fix it, explain it, and try again.”</strong>
+</p>
+
+<p align="center">
+  <em>That is how Cheese keeps getting better.</em>
+</p>
+
 ---
 
 <h2 align="center">🧀 Why "Cheese"? 🧀</h2>
