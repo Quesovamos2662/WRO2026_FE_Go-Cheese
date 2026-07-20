@@ -1,1 +1,220 @@
+# ᯓ★ 3.5 Corner Handling ᯓ★
 
+<p align="center">
+  <img src="https://img.shields.io/badge/System-Corner_Handling-FFB347?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Sensor-Color_Sensor-57C785?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Logic-Detection_+_Recovery-4A90E2?style=for-the-badge">
+</p>
+
+<p align="center">
+  <em>This section explains how Cheese detects, executes, counts, and exits each corner. Curve handling is one of the most important parts of the robot’s logic because it connects color detection, movement control, lap progress, and final stopping accuracy.</em>
+</p>
+
+---
+
+## ❀ Corner Handling Objective ────୨ৎ────────୨ৎ────
+
+Corner handling is the subsystem that allows Cheese to recognize when a curve begins, respond with the correct steering action, detect when the curve has finished, and then return smoothly to normal PID driving. In our robot, corners are not detected by timing alone and are not guessed from wall shape. Instead, Cheese uses the **floor color markers** as the main trigger for curve logic.
+
+This makes corner handling a critical bridge between sensing and movement. The color sensor provides the event that tells the robot that a corner sequence is happening, while the steering logic decides how the robot should physically react. If the color event is interpreted incorrectly, Cheese may turn too early, too late, or count the wrong number of curves. Because of this, corner handling must be more precise than a simple “see color, turn” rule.
+
+The objective of this subsystem is therefore not only to make the robot turn. Its real purpose is to make the robot turn **at the correct moment**, **in the correct sequence**, and **with enough reliability** that the total number of completed curves can be trusted for lap counting and final stopping.
+
+---
+
+## ❀ Corner Handling Flowchart ────୨ৎ────────୨ৎ────
+
+<p align="center">
+  <img src="../../img/corner_handling_flowchart.png" alt="Cheese Corner Handling Flowchart" width="88%">
+</p>
+
+<p align="center">
+  <em>This flowchart focuses specifically on Cheese’s corner-handling logic. It shows how the color sensor reads floor markers, confirms stable blue or orange detections, starts a curve sequence with the first accepted color, waits for the opposite color to complete the pair, counts one completed curve, resets the curve state, and applies post-curve recovery before returning to normal PID navigation.</em>
+</p>
+
+The corner-handling flowchart isolates one of the most delicate behaviors in the robot. Unlike the full Open Challenge flowchart, this one focuses only on the internal logic of curve detection and completion. This is useful because curve handling is not a single action; it is a sequence of linked decisions. The robot must detect a first valid color, decide whether that color begins a new curve, wait for the opposite color, count the curve only when the sequence is complete, and then recover before returning to its normal driving behavior.
+
+This flowchart is especially important because Cheese does not rely on raw color sensor readings alone. Each accepted curve passes through confirmation, sequencing, counting, and reset stages. This makes the system more resistant to fast flickers, partial detections, or repeated readings of the same marker.
+
+---
+
+## ❀ 1. Why Corner Handling Needs Its Own Logic ────୨ৎ────────୨ৎ────
+
+In straight-line driving, Cheese can rely mostly on the ultrasonic sensors and PID wall-following to stay centered. A corner is different. At a corner, the robot must stop treating the track as a normal straight path and instead follow a more deliberate steering action. If the robot stayed in pure PID mode during the whole corner, it could react too softly, drift into the wrong wall, or fail to complete the turn cleanly.
+
+For this reason, corner handling is treated as its own behavior layer. When a valid curve sequence begins, normal driving is temporarily overridden by curve-specific logic. This allows Cheese to react to the track markers in a more structured way and to separate “driving straight” from “executing a turn.”
+
+This distinction also improves reproducibility. A straight section and a corner do not demand the same steering response, so using separate logic for each one helps make the robot’s behavior more consistent from lap to lap.
+
+---
+
+## ❀ 2. Role of the Color Sensor ────୨ৎ────────୨ৎ────
+
+The color sensor is the primary trigger for corner handling. It looks downward at the floor and detects the colored markings that indicate the robot is entering and completing a curve. In our logic, the sensor is not used to continuously steer through the turn like a line follower. Instead, it acts as an event detector.
+
+The first accepted floor color tells Cheese that a curve sequence has started. The second accepted color, which must be the opposite one, confirms that the corner sequence has been completed. This means one full curve is not counted from one color alone, but from a **two-color sequence**.
+
+This design is important because a single color reading can be unstable or incomplete. By requiring a pair of colors, the robot gains a more reliable way to identify real corner completion.
+
+<div align="center">
+
+| Sensor Role | Function in Corner Handling |
+| :--- | :--- |
+| **Detect first color** | Starts the curve sequence |
+| **Detect opposite color** | Confirms curve completion |
+| **Reject unstable readings** | Prevents false activation |
+| **Support curve count** | Feeds lap and final stop logic |
+
+</div>
+
+---
+
+## ❀ 3. Color Confirmation Before Acceptance ────୨ৎ────────୨ৎ────
+
+Cheese does not react instantly to every raw color reading. Before a color is accepted, the reading must remain stable for a short confirmation period. This step helps filter noise and prevents the robot from responding to accidental flickers caused by lighting, quick transitions, or sensor jitter.
+
+Without confirmation, the robot could detect a color for a fraction of a moment and incorrectly think a curve has started or ended. That would damage the accuracy of the curve counter and eventually affect lap counting and final stop timing.
+
+Color confirmation therefore acts as a protective filter between sensing and decision-making. It ensures that corner handling begins only when the robot has enough evidence that the color event is real.
+
+<div align="center">
+
+| Stage | Purpose |
+| :--- | :--- |
+| **Raw detection** | Sensor sees a possible blue or orange marker |
+| **Confirmation** | Reading must remain stable long enough to be trusted |
+| **Acceptance** | Color is officially used by curve logic |
+
+</div>
+
+---
+
+## ❀ 4. Start of a Curve Sequence ────୨ৎ────────୨ৎ────
+
+A curve sequence begins when Cheese accepts the first valid floor color and determines that it is not simply a repeated reading of the same marker. At this moment, the robot changes from normal driving state into a curve state.
+
+This first color does not yet mean that the curve has been completed. It only means that the robot has detected the entry event of a corner. The logic stores that first accepted color and waits for the second one.
+
+The decision to separate “curve started” from “curve completed” is very important. It prevents the robot from counting a curve too early and creates a more reliable structure for tracking progress around the track.
+
+---
+
+## ❀ 5. Opposite-Color Completion Rule ────୨ৎ────────୨ৎ────
+
+Cheese uses a color-pair rule to decide when one full curve is completed. After the first valid color starts the curve sequence, the robot waits until it detects the **opposite accepted color**. Only then is the curve counted.
+
+This rule prevents repeated readings of the same color from being treated as multiple corners. It also makes the system more robust when the sensor briefly remains above a marker or sees the same tone more than once during the turn.
+
+The logic can be summarized like this:
+
+```text
+first confirmed color detected
+→ start curve sequence
+
+wait for opposite confirmed color
+→ complete curve sequence
+
+count 1 completed curve
+→ reset curve state
+```
+
+This pairing method is one of the most important protections in Cheese’s software because accurate curve counting is directly connected to lap tracking and stopping at the correct time.
+
+---
+
+## ❀ 6. Curve Counting and Lap Progress ────୨ৎ────────୨ৎ────
+
+Once the opposite color is confirmed, Cheese increments its completed curve counter. This counter is one of the main progress variables in the Open Challenge because the robot uses total completed curves to estimate how far it has advanced through the track.
+
+The curve counter does more than just record turning events. It supports:
+
+- lap progression,
+- internal state tracking,
+- and the logic that eventually activates the final stop.
+
+Because of this, corner handling must be treated as a high-importance subsystem. A missed curve or a double-counted curve can shift the robot’s idea of where it is on the track. If that happens, the robot may stop too early, stop too late, or transition into the wrong state.
+
+<div align="center">
+
+| Curve Event | Effect on the Robot |
+| :--- | :--- |
+| **First accepted color** | Begins the curve sequence |
+| **Opposite accepted color** | Completes one curve |
+| **Curve counter increases** | Updates track progress |
+| **Target total reached** | Can contribute to final stop activation |
+
+</div>
+
+---
+
+## ❀ 7. Steering Behavior During Curves ────୨ৎ────────୨ৎ────
+
+When Cheese is in an active curve sequence, steering behavior changes. The robot no longer depends only on standard PID centering because a corner demands a stronger and more intentional steering response than a straight section.
+
+The purpose of this steering phase is to physically guide the robot around the turn while still keeping the movement controlled. The robot must turn enough to follow the curve but not so much that it crashes into the inner wall or exits the corner with too much angle.
+
+This means curve handling is both a sensing problem and a motion-control problem. The color sensor decides **when** the curve logic begins and ends, while the steering system decides **how** the robot physically performs that turn.
+
+---
+
+## ❀ 8. Post-Curve Recovery ────୨ৎ────────୨ৎ────
+
+A curve does not end the moment the second color is detected. After a turn, Cheese still needs a recovery phase before returning to normal PID driving. This recovery stage helps the robot stabilize its orientation and avoid oversteering immediately after the turn.
+
+Without recovery, the robot might exit the curve at an angle and allow PID to react too aggressively, which could cause unnecessary oscillation or a wall hit. The post-curve recovery phase gives the robot a short transition period so it can straighten itself more smoothly.
+
+This recovery logic is especially useful because the most dangerous moment is often not the middle of the turn, but the exit. A robot that turns correctly but exits badly can still lose the line, touch the wall, or delay the next correction.
+
+---
+
+## ❀ 9. Reset Logic After a Completed Curve ────୨ৎ────────୨ৎ────
+
+After a curve is completed and counted, Cheese resets the temporary curve variables. This includes clearing the remembered first color, deactivating the curve state, and preparing the system to detect the next corner sequence.
+
+Reset logic is necessary because the robot must treat each corner as a new event. If old curve data is not cleared properly, the robot could confuse one corner with the next and produce incorrect counts.
+
+This reset stage is one of the reasons why the corner-handling logic stays reproducible. It gives the software a clean starting point after every completed curve.
+
+---
+
+## ❀ 10. Main Failure Risks in Corner Handling ────୨ৎ────────୨ৎ────
+
+Corner handling is one of the most sensitive subsystems in Cheese because it depends on both accurate sensing and accurate timing. Several failure modes can affect it.
+
+<div align="center">
+
+| Risk | Possible Effect | Mitigation |
+| :--- | :--- | :--- |
+| **Unstable color reading** | False curve activation | Use color confirmation |
+| **Repeated same-color reading** | Double counting risk | Require opposite-color completion |
+| **Late first detection** | Robot begins turn too late | Improve sensor placement and lighting |
+| **Early recovery** | Robot exits curve badly | Keep a controlled post-curve phase |
+| **No reset after curve** | Next corner becomes inconsistent | Clear curve state after completion |
+| **Missed opposite color** | Curve is never counted | Tune detection and confirmation thresholds |
+
+</div>
+
+These risks show why corner handling cannot be simplified too much. A curve is not just a turn in the track; it is also a software event that affects the robot’s internal understanding of progress.
+
+---
+
+## ❀ 11. Why This Section Matters ────୨ৎ────────୨ৎ────
+
+Corner handling deserves its own section because it is one of the main connections between navigation and state tracking. The robot does not just need to move around corners physically. It also needs to understand that a corner has happened, that it has been completed, and that the run has advanced by one valid step.
+
+This is why the system uses **confirmation**, **pair-based detection**, **counting**, **reset logic**, and **post-curve recovery**. Together, these features make the corner subsystem much more reliable than a simple one-trigger turn system.
+
+A strong corner-handling design improves the entire robot. Better corner recognition means better lap counting, better final stop accuracy, more repeatable navigation, and fewer unexpected failures late in the run.
+
+---
+
+## ❀ Corner Handling Summary ────୨ৎ────────୨ৎ────
+
+Cheese handles corners through a dedicated color-based sequence. A curve begins when the color sensor confirms the first valid floor marker, and it is completed only when the opposite color is confirmed. This completed pair increments the curve counter, updates track progress, and then resets the internal state.
+
+After counting the curve, the robot performs a short post-curve recovery before returning to normal PID wall-following. This structure makes corner handling more reliable because it separates detection, turning, counting, stabilization, and reset into distinct steps.
+
+<p align="center">
+  <strong>Final interpretation:</strong><br>
+  Cheese does not treat a corner as a single moment, but as a controlled sequence of detection, action, confirmation, counting, and recovery.
+</p>
