@@ -75,311 +75,189 @@ For the **v3** version, we are keeping this same logic but refining it: tuning h
 > The full technical breakdown of the algorithm, the priority levels and the tuning data is documented in the Software Architecture & Obstacle Strategy section below.
 
 ---
-# ᯓ★ 3.4 Obstacle Challenge ᯓ★
+
+## General Project Index
+
+You can use this index to navigate through our robot’s documentation. Each section explains a specific part of Cheese’s development process, including the mechanical design, power and sensor architecture, software logic, engineering decisions, reproducibility materials, testing resources, source code, and visual documentation.
+
+---
+
+- [**General Project Overview**](sections/01-mobility-and-mechanical-design/project%20overview.md)
+  - Introduces Cheese as our WRO Future Engineers robot.
+  - Explains the robot’s main purpose, competition context, and general design direction.
+  - Summarizes how the mechanical structure, sensors, software, testing process, and final strategy work together.
+
+---
+
+- **1. Mobility and Mechanical Design**
+  - [**1.1 Mechanical Design**](sections/01-mobility-and-mechanical-design/1.1-mechanical-design.md)
+    - Explains the main mechanical choices behind Cheese’s movement system.
+    - Includes motor selection, wheel choice, torque and speed reasoning, and drivetrain testing observations.
+    - Justifies why the EV3 Large Motor is used for propulsion and the EV3 Medium Motor is used for steering.
+
+  - [**1.2 Structural Components**](sections/01-mobility-and-mechanical-design/1.2-structural-component.mds.md)
+    - Documents the LEGO Technic components used to build the robot’s structure.
+    - Explains the role of liftarms, pins, axles, connectors, and reinforced sections.
+    - Connects structural choices to durability, alignment, and mechanical reliability.
+
+  - [**1.3 Steering and Drive**](sections/01-mobility-and-mechanical-design/1.3-steering-and-drive.md)
+    - Describes the rear-wheel drive system and Ackermann steering mechanism.
+    - Explains how propulsion and steering work together during straight movement, curves, and corrections.
+    - Includes reasoning about steering response, linkage movement, drivetrain stability, and control.
+
+  - [**1.4 Chassis Explanation**](sections/01-mobility-and-mechanical-design/1.4-chassis-explanation.md)
+    - Explains the chassis layout and how the robot’s body supports each subsystem.
+    - Describes weight distribution, mounting points, upper tower support, and component placement.
+    - Shows how the chassis evolved to support sensors, lights, wiring, and repeated testing.
+
+---
+
+- **2. Power and Sensor Architecture**
+  - [**2.1 Power Supply and EV3**](sections/02-power-and-sensor-architecture/2.1-power-supply-and-ev3.md)
+    - Explains how Cheese is powered during operation.
+    - Describes the EV3 rechargeable battery, motor power, sensor power, Arduino Nano power, HuskyLens power, and external lighting battery.
+    - Connects the power architecture to reliability, safe subsystem separation, and easier debugging.
+
+  - [**2.2 Wiring Diagram**](sections/02-power-and-sensor-architecture/2.2-wiring-diagram.md)
+    - Shows how motors, sensors, Arduino Nano, HuskyLens, and lights are connected.
+    - Documents the EV3 input/output ports and the communication path between components.
+    - Helps reproduce the robot’s electrical layout and avoid wiring mistakes.
+
+  - [**2.3 Sensor Selection and Placement**](sections/02-power-and-sensor-architecture/2.3-sensor-selection-and-placement.md)
+    - Explains why each sensor was selected and where it is placed on the robot.
+    - Covers ultrasonic wall sensing, color sensor floor detection, and HuskyLens obstacle recognition.
+    - Connects sensor placement to navigation accuracy, curve detection, obstacle strategy, and reliability.
+
+  - [**2.4 Sensor Calibration**](sections/02-power-and-sensor-architecture/2.4-sensor-calibration.md)
+    - Describes how sensors are checked and adjusted before testing.
+    - Explains calibration for ultrasonic readings, color detection, HuskyLens recognition, and lighting support.
+    - Helps make the robot’s sensing behavior more consistent between runs.
+
+---
+
+- **3. Software and Obstacle Strategy**
+  - [**3.0 Cheese Logic Overview**](sections/03-software-and-obstacle-strategy/3.0%20Cheese%20Logic%20Overview.md)
+    - Gives a general overview of Cheese’s software behavior.
+    - Explains the robot’s priority-based decision system and main control flow.
+    - Summarizes how normal driving, wall protection, curve handling, obstacle logic, tuning, and parking connect.
+
+  - [**3.1 Algorithm Architecture**](sections/03-software-and-obstacle-strategy/3.1-algorithm-architecture.md)
+    - Explains the internal structure of the robot’s code.
+    - Describes the main behavior layers, including PID centering, wall correction, curve logic, recovery, obstacle response, and final stop logic.
+    - Shows how software priorities prevent different behaviors from interfering with each other.
+
+  - [**3.2 Flowchart**](sections/03-software-and-obstacle-strategy/3.2-flowchart.md)
+    - Presents the general logic flow used by Cheese during a run.
+    - Helps visualize how the robot initializes, reads sensors, chooses behaviors, counts curves, and stops.
+    - Connects the written algorithm to a clearer visual representation.
+
+  - [**3.3 Open Challenge**](sections/03-software-and-obstacle-strategy/3.3-open-challenge.md)
+    - Explains the strategy used for the Open Challenge.
+    - Describes wall following, PID centering, protected wall correction, color-based curve detection, lap tracking, and final stop planning.
+    - Focuses on consistent autonomous movement without red or green obstacles.
+
+  - [**3.4 Obstacle Challenge**](sections/03-software-and-obstacle-strategy/3.4-obstacle-challenge.md)
+    - Explains how Cheese handles red and green obstacles.
+    - Describes how the HuskyLens, Arduino Nano, lighting system, and movement logic support obstacle recognition.
+    - Connects obstacle detection to steering decisions, controlled avoidance, recovery behavior, and safe path planning.
+
+  - [**3.5 Corner Handling**](sections/03-software-and-obstacle-strategy/3.5-corner-handling.md)
+    - Explains how Cheese detects, enters, counts, and exits corners.
+    - Describes the relationship between color detection, confirmed blue/orange pairing, curve counting, and post-curve recovery.
+    - Shows why corner handling is separated from normal PID driving.
+
+  - [**3.6 Tuning Process**](sections/03-software-and-obstacle-strategy/3.6-tuning-process.md)
+    - Documents how movement values were adjusted during testing.
+    - Explains tuning for curve aggressiveness, steering angles, PID response, wall protection, color detection, parking, and obstacle recognition.
+    - Shows how testing results influenced software changes and calibration decisions.
+
+---
+
+- **4. Engineering Decisions**
+  - [**4.1 Design Decision Log**](sections/04-engineering-decisions/4.1-design-decision-log.md)
+    - Explains the major decisions that shaped Cheese v3.
+    - Includes controller choice, Arduino role, code simplification, sensor changes, lighting system, mechanical reinforcement, curve tuning, and parking refinement.
+    - Focuses on why each decision was made, what constraint caused it, and what tradeoff it involved.
+
+  - [**4.2 What Did Not Work**](sections/04-engineering-decisions/4.2-what-didnt-work.md)
+    - Documents the ideas, systems, and configurations that failed during development.
+    - Explains issues with Arduino main control, long code, infrared sensing, front ultrasonic sensing, lighting, broken pins, wide curves, and parking.
+    - Shows how each failure became evidence for a later design improvement.
+
+---
+
+- **5. Reproducibility**
+  - [**5.1 Bill of Materials**](sections/05-reproducibility/5.1-bill-of-materials.md)
+    - Lists the main components required to rebuild Cheese v3.
+    - Includes motors, sensors, EV3 components, HuskyLens, Arduino Nano, lights, battery, LEGO Technic parts, and structural pieces.
+    - Connects each component to its role in the final robot architecture.
+
+  - [**5.2 Build Instructions**](sections/05-reproducibility/5.2-build-instructions.md)
+    - Provides step-by-step instructions to rebuild Cheese v3.
+    - Explains the build order, chassis construction, drive system, Ackermann steering, sensor placement, wiring, lights, calibration, and testing workflow.
+    - Helps another builder reproduce the robot and understand the purpose of each subsystem.
+
+---
+
+- **6. Additional Resources**
+  - [**6.1 Additional Resources**](sections/06-other-resources/6.1-additional-resources.md)
+    - Contains supporting materials that do not fit directly into the main engineering sections.
+    - Can include testing graphs, code-based data, sensor logs, extra diagrams, future 3D model references, and development notes.
+    - Supports deeper analysis of Cheese’s performance and testing process.
+
+---
+
+- **7. Source Code**
+  - [**Source Code Folder**](src/)
+    - Contains the robot’s program files and code versions.
+    - Includes the software used to control movement, steering, sensors, curve logic, obstacle behavior, tuning, and final stopping.
+    - Supports reproducibility by connecting the documentation to the actual robot logic.
+
+---
+
+- **8. Digital Models and Schemes**
+  - [**Robot Models**](models/)
+    - Contains digital model references for Cheese’s chassis, steering system, and version-based development.
+    - Helps document the robot’s structure beyond physical photos.
+
+  - [**Schemes**](schemes/)
+    - Contains supporting diagrams and technical reference files.
+    - Includes wiring and robot reference documents such as `finalrobot.pdf` and wiring diagram images.
+
+---
+
+- **9. Visual Documentation**
+  - [**Version 1 Photos**](v-photos/v1/)
+    - Shows the first physical version of Cheese.
+    - Helps compare early mechanical ideas with later improvements.
+
+  - [**Version 2 Photos**](v-photos/v2/)
+    - Documents the second version of the robot.
+    - Shows changes in structure, sensor placement, steering layout, and design direction before the final v3 design.
+
+  - [**Version 3 Photos**](v-photos/v3/)
+    - Shows the current Cheese v3 build from multiple angles.
+    - Includes front, back, side, top, bottom, sensor placement, camera placement, and dual-light system photos.
+
+  - [**Cheese v3 Named Angles**](v-photos/v3/named%20angles/)
+    - Contains labeled images of the final robot.
+    - Identifies the EV3 Brick, motors, sensors, HuskyLens, Arduino Nano, lights, and main structural components.
+
+---
+
+- **10. Team Documentation**
+  - [**Team Photos**](t-photos/)
+    - Contains team-related images and documentation.
+    - Supports the human side of the project by showing the people behind Cheese.
+
+---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Challenge-Obstacle_Round-FF4B4B?style=for-the-badge">
-  <img src="https://img.shields.io/badge/System-HuskyLens_+_Arduino_Nano-4A90E2?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Robot-Cheese_v3-FFD43B?style=for-the-badge">
-</p>
-
-<p align="center">
-  <em>This section explains Cheese’s obstacle challenge strategy. The obstacle round adds red and green pillars to the track, so the robot must combine its normal navigation system with camera-based obstacle recognition and controlled avoidance behavior.</em>
-</p>
+  <strong>This index connects every major part of the repository so the full engineering process can be followed from concept, to design, to testing, to final reproduction.</strong>
+</p> 
 
 ---
 
-## ❀ Obstacle Challenge Objective ────୨ৎ────────୨ৎ────
-
-The Obstacle Challenge is more complex than the Open Challenge because Cheese must still complete the track while also reacting to colored obstacles. In this round, the robot cannot only follow the walls and count curves. It must also identify red and green pillars, decide which side to pass from, and return to stable navigation after avoiding them.
-
-For Cheese, the obstacle strategy is built on top of the Open Challenge logic. The robot still needs **PID wall centering**, **protected wall correction**, **curve detection**, and **lap tracking**, but it also adds a vision system using the **HuskyLens AI Camera** and **Arduino Nano**.
-
-The main goal is not only to detect an obstacle. The robot must detect it early enough, classify its color correctly, move around it without crashing, and recover its position before the next wall, curve, or obstacle.
-
----
-
-## ❀ Obstacle Challenge Architecture ────୨ৎ────────୨ৎ────
-
-Cheese’s obstacle system is divided into three main layers: navigation, vision, and reaction. Each layer has a different responsibility.
-
-<div align="center">
-
-| Layer | Components Used | Main Role |
-| :--- | :--- | :--- |
-| **Navigation layer** | EV3, Large Motor, Medium Motor, ultrasonic sensors, color sensor | Keeps the robot moving, centered, and aware of curves. |
-| **Vision layer** | HuskyLens camera and Arduino Nano | Detects red and green obstacles and sends useful data to the robot. |
-| **Reaction layer** | Steering motor, drive motor, and software logic | Changes the robot’s path based on the detected obstacle color. |
-
-</div>
-
-This architecture separates the robot’s tasks. The ultrasonic sensors continue helping Cheese stay between the walls, while the HuskyLens focuses on obstacle recognition. This prevents the robot from depending on one sensor for every type of decision.
-
----
-
-## ❀ Visual Reference: Camera Placement ────୨ৎ────────୨ৎ────
-
-<p align="center">
-  <img src="../../v-photos/v3/sensor_placement_cam_v3.jpg" alt="Cheese v3 HuskyLens camera placement" width="75%">
-</p>
-
-<p align="center">
-  <em>Camera placement showing the HuskyLens position used for obstacle recognition.</em>
-</p>
-
-The HuskyLens is mounted in the upper front section of Cheese so it can see the obstacle area before the robot reaches it. This placement is important because obstacle reaction depends on timing. If the camera detects the pillar too late, the robot may not have enough distance to steer around it safely.
-
-The camera must stay stable during movement. If the mount shakes, the detection area changes and the robot may receive inconsistent information. This is why the upper support tower needs to be rigid and why cable management around the camera is important.
-
----
-
-## ❀ 1. Normal Navigation Still Runs First ────୨ৎ────────୨ৎ────
-
-Even in the Obstacle Challenge, Cheese still needs to drive around the track normally. The robot cannot focus only on obstacles because it must also stay between the walls, handle curves, and complete the required laps.
-
-The base navigation logic includes:
-
-```text
-read ultrasonic sensors
-calculate wall error
-apply PID correction
-activate wall protection if too close
-read color sensor
-update curve and lap progress
-```
-
-This means the obstacle logic is added as another behavior layer, not as a replacement for the whole navigation system. If no obstacle is detected, Cheese continues using the same movement principles from the Open Challenge.
-
-This is important because the robot must remain stable between obstacle events. A good obstacle system is not useful if the robot cannot drive smoothly before and after seeing the pillar.
-
----
-
-## ❀ 2. HuskyLens Detection Role ────୨ৎ────────୨ৎ────
-
-The HuskyLens AI Camera is used to identify colored obstacles. Its job is to detect whether the object in front of the robot is red or green. This information is then used by the robot to choose the correct avoidance direction.
-
-The HuskyLens does not drive the robot by itself. It provides vision data, while the EV3-based system controls the motors and steering. This separation is important because the EV3 remains responsible for movement stability.
-
-<div align="center">
-
-| Vision Information | Why It Matters |
-| :--- | :--- |
-| **Obstacle detected** | Confirms that the robot should prepare for avoidance. |
-| **Obstacle color** | Determines which avoidance direction should be used. |
-| **Obstacle position in camera view** | Helps estimate whether the object is centered, left, or right. |
-| **Obstacle size / visibility** | Can help estimate how close or clear the object appears. |
-
-</div>
-
-The obstacle logic depends on reliable detection. If the camera misreads the color, detects the object too late, or loses the object while approaching it, Cheese may choose the wrong path or fail to avoid the obstacle cleanly.
-
----
-
-## ❀ 3. Arduino Nano as Vision Bridge ────୨ৎ────────୨ৎ────
-
-The Arduino Nano supports the obstacle system by acting as a bridge between the HuskyLens and the EV3 architecture. The EV3 is very effective for controlling LEGO motors and LEGO sensors, but the HuskyLens requires a communication setup that is easier to manage through Arduino.
-
-<p align="center">
-  <img src="../../img/HuskyLens_to_Arduino_Nano_Wiring.png" alt="HuskyLens to Arduino Nano wiring diagram" width="80%">
-</p>
-
-<p align="center">
-  <em>HuskyLens to Arduino Nano wiring diagram used to support the camera communication system.</em>
-</p>
-
-The Arduino Nano allows the vision system to stay separate from the main EV3 control system. This means the EV3 can continue focusing on steering, drive speed, ultrasonic readings, and color sensor logic, while the Arduino helps manage the camera data.
-
-This design choice reduces the risk of overloading the main navigation logic with camera communication details. It also makes the system easier to debug because vision communication and EV3 movement can be tested separately.
-
----
-
-## ❀ 4. Obstacle Color Meaning ────୨ৎ────────୨ৎ────
-
-In the obstacle round, Cheese uses the color of the pillar to decide how it should avoid it. The robot follows a programmed convention for red and green obstacles.
-
-<div align="center">
-
-| Obstacle Color | Planned Reaction | Reason |
-| :--- | :--- | :--- |
-| **Red obstacle** | Steer to pass on the required side of the red pillar. | Red tells the robot to choose one avoidance direction. |
-| **Green obstacle** | Steer to pass on the required side of the green pillar. | Green tells the robot to choose the opposite avoidance direction. |
-
-</div>
-
-This color-based decision must be consistent with the final competition rules and the team’s programmed direction convention. The most important requirement is that red and green cannot trigger the same movement. They must produce opposite avoidance responses.
-
-Because the robot moves quickly, the avoidance behavior cannot wait until the obstacle is extremely close. Cheese needs enough reaction distance for the steering motor to reach the required angle and for the chassis to physically move around the pillar.
-
----
-
-## ❀ 5. Lighting Support for Obstacle Recognition ────୨ৎ────────୨ৎ────
-
-Lighting became a major part of the obstacle strategy because the HuskyLens depends on what it can physically see. During testing, poor lighting made the colors appear distorted. Green could look almost black, and red could look brownish or chocolate-colored. This made obstacle recognition less reliable.
-
-To improve this, Cheese uses an upper helping lamp directed toward the obstacle area. This light supports the HuskyLens by making the pillar colors clearer and closer to their real appearance.
-
-<p align="center">
-  <img src="../../v-photos/v3/dual_light_system_v3.jpeg" alt="Cheese v3 dual-light support system" width="75%">
-</p>
-
-<p align="center">
-  <em>Dual-light support system. The upper lamp supports HuskyLens obstacle visibility, while the lower lamp supports floor color detection.</em>
-</p>
-
-The lighting system is not only an extra accessory. It is part of the sensing architecture. If the camera sees distorted colors, the software may receive incorrect information even if the code is written correctly.
-
----
-
-## ❀ 6. Obstacle Detection Process ────୨ৎ────────୨ৎ────
-
-The obstacle detection process should happen continuously while the robot is driving. The camera checks whether a trained red or green object is visible. If no valid obstacle is detected, the robot continues with normal navigation.
-
-A simplified obstacle detection process is:
-
-```text
-read HuskyLens data
-if no obstacle is detected:
-    continue normal navigation
-else:
-    identify obstacle color
-    choose avoidance direction
-    activate obstacle response
-```
-
-This process must include filtering or confirmation so the robot does not react to a false detection. A single unstable camera reading should not immediately control the robot. Similar to the color sensor logic, the obstacle system should prefer stable detection before making a movement decision.
-
----
-
-## ❀ 7. Obstacle Avoidance Behavior ────୨ৎ────────୨ৎ────
-
-Once an obstacle is confirmed, Cheese needs to temporarily adjust its steering behavior. During this moment, obstacle avoidance should have higher priority than normal PID centering because the robot must move around the pillar.
-
-The avoidance behavior can be divided into three phases:
-
-<div align="center">
-
-| Phase | Purpose |
-| :--- | :--- |
-| **Approach phase** | Detect the obstacle early and prepare the steering direction. |
-| **Avoidance phase** | Steer around the obstacle while maintaining controlled speed. |
-| **Recovery phase** | Return to stable wall-following after passing the obstacle. |
-
-</div>
-
-The recovery phase is very important. If Cheese avoids the obstacle but exits at a poor angle, it may crash into a wall afterward. This means the robot must not only dodge the pillar; it must return to a stable path after the dodge.
-
----
-
-## ❀ 8. Speed Control During Obstacles ────୨ৎ────────୨ৎ────
-
-Obstacle avoidance requires controlled speed. If Cheese approaches an obstacle too fast, the steering motor may not have enough time to turn the wheels and move around the pillar. If it moves too slowly, the robot may lose too much time.
-
-Because of this, the obstacle strategy should use a speed that gives the robot enough reaction time. The robot can drive faster during clear straight sections, but it should reduce speed when obstacle detection becomes active.
-
-<div align="center">
-
-| Situation | Speed Behavior | Reason |
-| :--- | :--- | :--- |
-| **No obstacle detected** | Normal navigation speed | Maintains efficient movement. |
-| **Obstacle detected ahead** | Controlled approach speed | Gives the robot time to react. |
-| **Avoiding obstacle** | Reduced or stable avoidance speed | Prevents overshooting the steering path. |
-| **After obstacle** | Recovery speed before full speed | Helps the robot return to stable wall-following. |
-
-</div>
-
-This connects the obstacle challenge to the drivetrain and steering reasoning. The robot may be mechanically capable of moving faster, but speed must be limited when the steering system needs time to react.
-
----
-
-## ❀ 9. Behavior Priority in the Obstacle Challenge ────୨ৎ────────୨ৎ────
-
-The obstacle challenge requires clear behavior priorities. Without priorities, the robot could receive conflicting instructions. For example, PID could try to center the robot while obstacle avoidance tries to steer around a pillar.
-
-<div align="center">
-
-| Priority | Behavior | Reason |
-| :---: | :--- | :--- |
-| **1** | Manual stop / safety stop | The robot must always be able to stop safely. |
-| **2** | Final stop logic | After the required laps, finishing becomes the main goal. |
-| **3** | Confirmed obstacle avoidance | A pillar requires immediate path adjustment. |
-| **4** | Severe wall protection | Prevents collisions with the wall. |
-| **5** | Curve handling / curve tracking | Keeps progress through the track accurate. |
-| **6** | Gentle wall protection | Corrects the robot before it becomes dangerous. |
-| **7** | PID centering | Controls normal movement when no higher-priority behavior is active. |
-
-</div>
-
-This priority structure helps the robot choose one main behavior at a time. Obstacle avoidance should not be treated as just another small correction. It is a special situation that temporarily changes the path of the robot.
-
----
-
-## ❀ 10. Main Risks in the Obstacle Challenge ────୨ৎ────────୨ৎ────
-
-The obstacle challenge adds several risks that are not present in the open round. Most of these risks are connected to camera reliability, timing, lighting, and recovery after avoidance.
-
-<div align="center">
-
-| Risk | Possible Effect | Response |
-| :--- | :--- | :--- |
-| **Camera detects too late** | Robot has little time to avoid the pillar. | Adjust camera angle and approach speed. |
-| **Camera misreads color** | Robot chooses the wrong avoidance direction. | Improve lighting and retrain HuskyLens if needed. |
-| **Obstacle is lost during approach** | Robot may stop reacting or react inconsistently. | Use confirmation and short memory of last valid detection. |
-| **Avoidance steering is too weak** | Robot may hit the obstacle. | Increase avoidance angle carefully and retest. |
-| **Avoidance steering is too strong** | Robot may hit the wall after avoiding. | Add recovery logic and limit steering duration. |
-| **Robot returns to PID too early** | PID may pull robot back toward the obstacle path. | Use a controlled recovery phase. |
-| **Lighting shifts during run** | Detection becomes inconsistent. | Secure upper lamp and battery. |
-
-</div>
-
-This risk analysis is important because it shows that obstacle failures are not always caused by one thing. A missed obstacle can come from camera angle, lighting, speed, training, wiring, or recovery behavior.
-
----
-
-## ❀ 11. Testing Plan for Obstacle Challenge ────୨ৎ────────୨ৎ────
-
-The obstacle system should be tested in stages. Testing the full obstacle round immediately makes debugging harder because many systems are active at the same time.
-
-<div align="center">
-
-| Test Stage | What to Test | Success Condition |
-| :---: | :--- | :--- |
-| **1** | HuskyLens red detection | Red obstacle is detected consistently under the upper lamp. |
-| **2** | HuskyLens green detection | Green obstacle is detected consistently under the upper lamp. |
-| **3** | Camera distance / angle | Obstacle appears early enough for reaction. |
-| **4** | Arduino communication | Vision data reaches the robot system consistently. |
-| **5** | Single obstacle avoidance | Robot moves around one obstacle without hitting it. |
-| **6** | Avoidance recovery | Robot returns to stable wall-following after passing the obstacle. |
-| **7** | Obstacle + curve interaction | Robot does not confuse obstacle response with curve behavior. |
-| **8** | Multiple obstacle run | Robot handles more than one obstacle in a run. |
-| **9** | Full obstacle round | Robot completes navigation with obstacle decisions. |
-| **10** | Repeatability test | Robot performs similarly across multiple runs. |
-
-</div>
-
-The first tests should be done slowly. Once the robot detects colors reliably and avoids a single obstacle safely, speed can be increased carefully. If detection fails, the camera angle, lighting, and HuskyLens training should be checked before changing steering behavior.
-
----
-
-## ❀ 12. Development Status ────୨ৎ────────୨ৎ────
-
-The obstacle challenge is treated as a developing system because it depends on more variables than the open round. The open round mainly depends on wall distance, color floor detection, and curve counting. The obstacle round adds camera recognition, lighting conditions, communication through Arduino Nano, obstacle timing, and avoidance recovery.
-
-For this reason, the obstacle system must be tested separately from normal navigation. A robot can complete the open round and still fail the obstacle challenge if the camera detects too late, if colors appear distorted, or if the avoidance movement is not recovered correctly.
-
-At this stage, the goal of the obstacle strategy is to create a stable foundation: clear detection, correct color classification, controlled avoidance, and safe recovery. Once those parts are reliable, the team can tune speed and timing for better performance.
-
----
-
-## ❀ Obstacle Challenge Summary ────୨ৎ────────୨ৎ────
-
-The obstacle challenge strategy adds vision-based decision-making to Cheese’s normal navigation system. The robot still uses ultrasonic sensors for wall following, PID for centering, wall protection for safety, and color detection for curve progress. The HuskyLens and Arduino Nano add an extra layer that allows Cheese to recognize red and green obstacles.
-
-The most important engineering idea is that obstacle avoidance must be treated as a temporary priority behavior. When an obstacle is confirmed, the robot must control its speed, steer around the pillar, and then recover before returning to normal PID driving.
-
-<p align="center">
-  <strong>Final interpretation:</strong><br>
-  Cheese’s obstacle strategy combines normal wall-following navigation with camera-supported obstacle recognition, using lighting and controlled steering behavior to make red and green pillar avoidance more reliable.
-</p>
 ### Team Goals (Road to the National Finals)
 
 <h2 align="center"> Team Goals: Road to the National Finals 🧀</h2>
