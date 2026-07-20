@@ -542,29 +542,50 @@ This process helped us grow as a team because we learned that robotics is not on
 
 # ✦ Member Profiles ─── ⋆⋅☆⋅⋆ ───
 
+<p align="center">
+  <em>Each member of Go!Cheese has a different focus, but both roles connect during testing, problem-solving, and improvement.</em>
+</p>
+
 <table>
 <tr>
 <td width="50%" align="center">
 
-## Caylee Rios
+<h2>Caylee Rios</h2>
 
 <img src="https://img.shields.io/badge/Role-Documentation_&_Software_Analysis-57C785?style=for-the-badge">
 
 <br><br>
 
-<img src="t-photos/caylee.jpg" alt="Caylee Rios" width="75%">
+<img src="t-photos/caylee.jpg" alt="Caylee Rios" width="78%">
 
 <br><br>
 
-<strong>Age:</strong> 16  
+<table>
+<tr>
+<td align="left"><strong>Age</strong></td>
+<td align="left">16</td>
+</tr>
+<tr>
+<td align="left"><strong>Main Focus</strong></td>
+<td align="left">Documentation, software explanation, engineering analysis, and README structure.</td>
+</tr>
+<tr>
+<td align="left"><strong>Project Strength</strong></td>
+<td align="left">Turning tests, failures, and robot behavior into clear explanations.</td>
+</tr>
+<tr>
+<td align="left"><strong>Favorite Part</strong></td>
+<td align="left">Organizing ideas and explaining how Cheese works.</td>
+</tr>
+</table>
+
 <br>
-<strong>Focus:</strong> Documentation, software explanation, engineering reasoning, project structure, and testing analysis.
-
-<br><br>
 
 <a href="https://www.instagram.com/caymrr">
   <img src="https://img.shields.io/badge/Instagram-caymrr-FF69B4?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
+
+<br><br>
 
 <a href="mailto:cayleerios@gmail.com">
   <img src="https://img.shields.io/badge/Email-cayleerios%40gmail.com-4A90E2?style=for-the-badge&logo=gmail&logoColor=white">
@@ -574,21 +595,36 @@ This process helped us grow as a team because we learned that robotics is not on
 
 <td width="50%" align="center">
 
-## Romina Mora
+<h2>Romina Mora</h2>
 
 <img src="https://img.shields.io/badge/Role-Programmer_&_Robot_Builder-FF8FAB?style=for-the-badge">
 
 <br><br>
 
-<img src="t-photos/Romina-photos/Romina%20pic.jpg" alt="Romina Mora" width="75%">
+<img src="t-photos/Romina-photos/Romina%20pic.jpg" alt="Romina Mora" width="78%">
 
 <br><br>
 
-<strong>Age:</strong> 16  
+<table>
+<tr>
+<td align="left"><strong>Age</strong></td>
+<td align="left">16</td>
+</tr>
+<tr>
+<td align="left"><strong>Main Focus</strong></td>
+<td align="left">Programming, robot building, mechanical changes, and testing support.</td>
+</tr>
+<tr>
+<td align="left"><strong>Project Strength</strong></td>
+<td align="left">Turning ideas into physical robot changes and functional code.</td>
+</tr>
+<tr>
+<td align="left"><strong>Favorite Part</strong></td>
+<td align="left">Solving challenges through building, coding, and testing.</td>
+</tr>
+</table>
+
 <br>
-<strong>Focus:</strong> Programming, robot building, hardware changes, mechanical testing, and code implementation.
-
-<br><br>
 
 <img src="https://img.shields.io/badge/Socials-Reach_out_through_partner-lightgrey?style=for-the-badge">
 
@@ -598,28 +634,37 @@ This process helped us grow as a team because we learned that robotics is not on
 
 ---
 
+## ❀ About Us ────୨ৎ────────୨ৎ────
+
 <details>
 <summary><strong>ᯓ★ More About Caylee</strong></summary>
 
 <br>
 
-Hii! My name is **Caylee**, and this is my first time competing in WRO. I am really happy to be part of a competition that pushes us toward hard work, problem-solving, and personal growth.  
+Hii! My name is **Caylee**, and this is my first time competing in WRO. I am really happy to be part of a competition that pushes us toward hard work, problem-solving, and personal growth.
 
-In this project, I focus on explaining how Cheese works, organizing our documentation, analyzing our decisions, and making sure that our testing process is clear for anyone who reads our repository. I enjoy asking questions, understanding why something works, and turning confusing robot behavior into explanations that make sense.
+In Go!Cheese, my role focuses on documentation, software explanation, engineering reasoning, and project organization. I work on making the README clear, structured, and complete so that anyone reading our repository can understand not only what Cheese does, but also why we made each decision.
 
-I love smiling, learning new things, and being around people who inspire me and push me to become better every day. For me, Go!Cheese is not only about building a robot; it is also about showing our effort, our teamwork, and our improvement through every test.
+I enjoy asking questions, understanding how things work, and turning confusing testing problems into explanations that make sense. For me, this project is not only about building a robot; it is also about showing our process, our teamwork, and our improvement.
 
 <br>
 
-**Favorite part of the project:** turning messy testing problems into organized engineering explanations.  
-<br>
-**Biggest challenge:** making sure every failure becomes something we can learn from.  
-<br>
-**Main contribution:** documentation, software explanation, project organization, and engineering analysis.
+<table>
+<tr>
+<td><strong>Main Contribution</strong></td>
+<td>Documentation, software explanation, README organization, engineering analysis, and testing interpretation.</td>
+</tr>
+<tr>
+<td><strong>Biggest Challenge</strong></td>
+<td>Making sure every failure becomes useful evidence for improvement.</td>
+</tr>
+<tr>
+<td><strong>Personal Touch</strong></td>
+<td>I love smiling, learning, asking questions, and being around people who inspire me to improve.</td>
+</tr>
+</table>
 
 </details>
-
----
 
 <details>
 <summary><strong>ᯓ★ More About Romina</strong></summary>
@@ -628,20 +673,28 @@ I love smiling, learning new things, and being around people who inspire me and 
 
 Helloo!!! I’m **Romina**, and I am a very passionate gamer. I enjoy anything that represents a challenge, and this project has definitely been one of them. Since 2025, I have been interested in robotics, and in 2026 I finally had the chance to join a team and work on a real WRO robot.
 
-My role in Go!Cheese is focused on programming and robot building. I help turn ideas into real changes on the robot, whether that means adjusting the structure, modifying code, testing a new behavior, or helping Cheese move closer to the result we want.
+In Go!Cheese, my role focuses on programming and robot building. I help turn ideas into real changes on the robot, whether that means adjusting the structure, modifying code, testing a new behavior, or helping Cheese move closer to the result we want.
 
-I hope to keep learning a lot from this experience so I can improve my skills for future competitions. For me, robotics is exciting because every problem feels like a challenge to solve, and every improvement shows that the work was worth it.
+I hope to keep learning from this experience so I can improve my skills for future competitions. For me, robotics is exciting because every problem feels like a challenge to solve, and every improvement shows that the work was worth it.
 
 <br>
 
-**Favorite part of the project:** solving challenges through building and programming.  
-<br>
-**Biggest challenge:** adjusting the robot until the physical behavior matches the idea in the code.  
-<br>
-**Main contribution:** programming, robot building, mechanical changes, and testing support.
+<table>
+<tr>
+<td><strong>Main Contribution</strong></td>
+<td>Programming, robot building, mechanical changes, code implementation, and testing support.</td>
+</tr>
+<tr>
+<td><strong>Biggest Challenge</strong></td>
+<td>Adjusting the robot until the physical behavior matches the idea in the code.</td>
+</tr>
+<tr>
+<td><strong>Personal Touch</strong></td>
+<td>I enjoy challenges, games, problem-solving, and learning new skills through robotics.</td>
+</tr>
+</table>
 
 </details>
-
 ---
 
 ## ❀ How Our Roles Connect ────୨ৎ────────୨ৎ────
