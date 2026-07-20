@@ -113,7 +113,7 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **2. Power and Sensor Architecture**
-  - [**2.1 Power Supply and EV3**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/02-power-and-sensor-architecture/2.1-power-supply-and-ev3.md)
+  - [**2.1 Power Supply and EV3**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/%2002-power-and-sensor-architecture/2.1-power-supply-and-ev3.md)
     - Explains how Cheese is powered during operation.
     - Describes the EV3 rechargeable battery, motor power, sensor power, Arduino Nano power, HuskyLens power, and external lighting battery.
     - Connects the power architecture to reliability, safe subsystem separation, and easier debugging.
