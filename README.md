@@ -258,7 +258,6 @@ You can use this index to navigate through our robot’s documentation. Each sec
 
 ---
 
-### Team Goals (Road to the National Finals)
 
 <h2 align="center"> Team Goals: Road to the National Finals 🧀</h2>
 
