@@ -82,7 +82,7 @@ You can use this index to navigate through our robot’s documentation. Each sec
 
 ---
 
-- [**General Project Overview**](sections/01-mobility-and-mechanical-design/project%20overview.md)
+- [**General Project Overview**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/01-mobility-and-mechanical-design/project%20overview.md)
   - Introduces Cheese as our WRO Future Engineers robot.
   - Explains the robot’s main purpose, competition context, and general design direction.
   - Summarizes how the mechanical structure, sensors, software, testing process, and final strategy work together.
@@ -90,22 +90,22 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **1. Mobility and Mechanical Design**
-  - [**1.1 Mechanical Design**](sections/01-mobility-and-mechanical-design/1.1-mechanical-design.md)
+  - [**1.1 Mechanical Design**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/01-mobility-and-mechanical-design/1.1-mechanical-design.md)
     - Explains the main mechanical choices behind Cheese’s movement system.
     - Includes motor selection, wheel choice, torque and speed reasoning, and drivetrain testing observations.
     - Justifies why the EV3 Large Motor is used for propulsion and the EV3 Medium Motor is used for steering.
 
-  - [**1.2 Structural Components**](sections/01-mobility-and-mechanical-design/1.2-structural-component.mds.md)
+  - [**1.2 Structural Components**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/01-mobility-and-mechanical-design/1.2-structural-component.mds.md)
     - Documents the LEGO Technic components used to build the robot’s structure.
     - Explains the role of liftarms, pins, axles, connectors, and reinforced sections.
     - Connects structural choices to durability, alignment, and mechanical reliability.
 
-  - [**1.3 Steering and Drive**](sections/01-mobility-and-mechanical-design/1.3-steering-and-drive.md)
+  - [**1.3 Steering and Drive**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/01-mobility-and-mechanical-design/1.3-steering-and-drive.md)
     - Describes the rear-wheel drive system and Ackermann steering mechanism.
     - Explains how propulsion and steering work together during straight movement, curves, and corrections.
     - Includes reasoning about steering response, linkage movement, drivetrain stability, and control.
 
-  - [**1.4 Chassis Explanation**](sections/01-mobility-and-mechanical-design/1.4-chassis-explanation.md)
+  - [**1.4 Chassis Explanation**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/01-mobility-and-mechanical-design/1.4-chassis-explanation.md)
     - Explains the chassis layout and how the robot’s body supports each subsystem.
     - Describes weight distribution, mounting points, upper tower support, and component placement.
     - Shows how the chassis evolved to support sensors, lights, wiring, and repeated testing.
@@ -113,22 +113,22 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **2. Power and Sensor Architecture**
-  - [**2.1 Power Supply and EV3**](sections/02-power-and-sensor-architecture/2.1-power-supply-and-ev3.md)
+  - [**2.1 Power Supply and EV3**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/02-power-and-sensor-architecture/2.1-power-supply-and-ev3.md)
     - Explains how Cheese is powered during operation.
     - Describes the EV3 rechargeable battery, motor power, sensor power, Arduino Nano power, HuskyLens power, and external lighting battery.
     - Connects the power architecture to reliability, safe subsystem separation, and easier debugging.
 
-  - [**2.2 Wiring Diagram**](sections/02-power-and-sensor-architecture/2.2-wiring-diagram.md)
+  - [**2.2 Wiring Diagram**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/02-power-and-sensor-architecture/2.2-wiring-diagram.md)
     - Shows how motors, sensors, Arduino Nano, HuskyLens, and lights are connected.
     - Documents the EV3 input/output ports and the communication path between components.
     - Helps reproduce the robot’s electrical layout and avoid wiring mistakes.
 
-  - [**2.3 Sensor Selection and Placement**](sections/02-power-and-sensor-architecture/2.3-sensor-selection-and-placement.md)
+  - [**2.3 Sensor Selection and Placement**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/02-power-and-sensor-architecture/2.3-sensor-selection-and-placement.md)
     - Explains why each sensor was selected and where it is placed on the robot.
     - Covers ultrasonic wall sensing, color sensor floor detection, and HuskyLens obstacle recognition.
     - Connects sensor placement to navigation accuracy, curve detection, obstacle strategy, and reliability.
 
-  - [**2.4 Sensor Calibration**](sections/02-power-and-sensor-architecture/2.4-sensor-calibration.md)
+  - [**2.4 Sensor Calibration**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/02-power-and-sensor-architecture/2.4-sensor-calibration.md)
     - Describes how sensors are checked and adjusted before testing.
     - Explains calibration for ultrasonic readings, color detection, HuskyLens recognition, and lighting support.
     - Helps make the robot’s sensing behavior more consistent between runs.
@@ -136,37 +136,37 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **3. Software and Obstacle Strategy**
-  - [**3.0 Cheese Logic Overview**](sections/03-software-and-obstacle-strategy/3.0%20Cheese%20Logic%20Overview.md)
+  - [**3.0 Cheese Logic Overview**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.0%20Cheese%20Logic%20Overview.md)
     - Gives a general overview of Cheese’s software behavior.
     - Explains the robot’s priority-based decision system and main control flow.
     - Summarizes how normal driving, wall protection, curve handling, obstacle logic, tuning, and parking connect.
 
-  - [**3.1 Algorithm Architecture**](sections/03-software-and-obstacle-strategy/3.1-algorithm-architecture.md)
+  - [**3.1 Algorithm Architecture**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.1-algorithm-architecture.md)
     - Explains the internal structure of the robot’s code.
     - Describes the main behavior layers, including PID centering, wall correction, curve logic, recovery, obstacle response, and final stop logic.
     - Shows how software priorities prevent different behaviors from interfering with each other.
 
-  - [**3.2 Flowchart**](sections/03-software-and-obstacle-strategy/3.2-flowchart.md)
+  - [**3.2 Flowchart**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.2-flowchart.md)
     - Presents the general logic flow used by Cheese during a run.
     - Helps visualize how the robot initializes, reads sensors, chooses behaviors, counts curves, and stops.
     - Connects the written algorithm to a clearer visual representation.
 
-  - [**3.3 Open Challenge**](sections/03-software-and-obstacle-strategy/3.3-open-challenge.md)
+  - [**3.3 Open Challenge**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.3-open-challenge.md)
     - Explains the strategy used for the Open Challenge.
     - Describes wall following, PID centering, protected wall correction, color-based curve detection, lap tracking, and final stop planning.
     - Focuses on consistent autonomous movement without red or green obstacles.
 
-  - [**3.4 Obstacle Challenge**](sections/03-software-and-obstacle-strategy/3.4-obstacle-challenge.md)
+  - [**3.4 Obstacle Challenge**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.4-obstacle-challenge.md)
     - Explains how Cheese handles red and green obstacles.
     - Describes how the HuskyLens, Arduino Nano, lighting system, and movement logic support obstacle recognition.
     - Connects obstacle detection to steering decisions, controlled avoidance, recovery behavior, and safe path planning.
 
-  - [**3.5 Corner Handling**](sections/03-software-and-obstacle-strategy/3.5-corner-handling.md)
+  - [**3.5 Corner Handling**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.5-corner-handling.md)
     - Explains how Cheese detects, enters, counts, and exits corners.
     - Describes the relationship between color detection, confirmed blue/orange pairing, curve counting, and post-curve recovery.
     - Shows why corner handling is separated from normal PID driving.
 
-  - [**3.6 Tuning Process**](sections/03-software-and-obstacle-strategy/3.6-tuning-process.md)
+  - [**3.6 Tuning Process**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/03-software-and-obstacle-strategy/3.6-tuning-process.md)
     - Documents how movement values were adjusted during testing.
     - Explains tuning for curve aggressiveness, steering angles, PID response, wall protection, color detection, parking, and obstacle recognition.
     - Shows how testing results influenced software changes and calibration decisions.
@@ -174,12 +174,12 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **4. Engineering Decisions**
-  - [**4.1 Design Decision Log**](sections/04-engineering-decisions/4.1-design-decision-log.md)
+  - [**4.1 Design Decision Log**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/04-engineering-decisions/4.1-design-decision-log.md)
     - Explains the major decisions that shaped Cheese v3.
     - Includes controller choice, Arduino role, code simplification, sensor changes, lighting system, mechanical reinforcement, curve tuning, and parking refinement.
     - Focuses on why each decision was made, what constraint caused it, and what tradeoff it involved.
 
-  - [**4.2 What Did Not Work**](sections/04-engineering-decisions/4.2-what-didnt-work.md)
+  - [**4.2 What Did Not Work**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/04-engineering-decisions/4.2-what-didnt-work.md)
     - Documents the ideas, systems, and configurations that failed during development.
     - Explains issues with Arduino main control, long code, infrared sensing, front ultrasonic sensing, lighting, broken pins, wide curves, and parking.
     - Shows how each failure became evidence for a later design improvement.
@@ -187,12 +187,12 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **5. Reproducibility**
-  - [**5.1 Bill of Materials**](sections/05-reproducibility/5.1-bill-of-materials.md)
+  - [**5.1 Bill of Materials**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/05-reproducibility/5.1-bill-of-materials.md)
     - Lists the main components required to rebuild Cheese v3.
     - Includes motors, sensors, EV3 components, HuskyLens, Arduino Nano, lights, battery, LEGO Technic parts, and structural pieces.
     - Connects each component to its role in the final robot architecture.
 
-  - [**5.2 Build Instructions**](sections/05-reproducibility/5.2-build-instructions.md)
+  - [**5.2 Build Instructions**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/05-reproducibility/5.2-build-instructions.md)
     - Provides step-by-step instructions to rebuild Cheese v3.
     - Explains the build order, chassis construction, drive system, Ackermann steering, sensor placement, wiring, lights, calibration, and testing workflow.
     - Helps another builder reproduce the robot and understand the purpose of each subsystem.
@@ -200,7 +200,7 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **6. Additional Resources**
-  - [**6.1 Additional Resources**](sections/06-other-resources/6.1-additional-resources.md)
+  - [**6.1 Additional Resources**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/blob/main/sections/06-other-resources/6.1-additional-resources.md)
     - Contains supporting materials that do not fit directly into the main engineering sections.
     - Can include testing graphs, code-based data, sensor logs, extra diagrams, future 3D model references, and development notes.
     - Supports deeper analysis of Cheese’s performance and testing process.
@@ -208,7 +208,7 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **7. Source Code**
-  - [**Source Code Folder**](src/)
+  - [**Source Code Folder**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/src)
     - Contains the robot’s program files and code versions.
     - Includes the software used to control movement, steering, sensors, curve logic, obstacle behavior, tuning, and final stopping.
     - Supports reproducibility by connecting the documentation to the actual robot logic.
@@ -216,37 +216,37 @@ You can use this index to navigate through our robot’s documentation. Each sec
 ---
 
 - **8. Digital Models and Schemes**
-  - [**Robot Models**](models/)
+  - [**Robot Models**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/models)
     - Contains digital model references for Cheese’s chassis, steering system, and version-based development.
     - Helps document the robot’s structure beyond physical photos.
 
-  - [**Schemes**](schemes/)
+  - [**Schemes**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/schemes)
     - Contains supporting diagrams and technical reference files.
-    - Includes wiring and robot reference documents such as `finalrobot.pdf` and wiring diagram images.
+    - Includes wiring and robot reference documents such as final robot PDFs and wiring diagram images.
 
 ---
 
 - **9. Visual Documentation**
-  - [**Version 1 Photos**](v-photos/v1/)
+  - [**Version 1 Photos**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/v-photos/v1)
     - Shows the first physical version of Cheese.
     - Helps compare early mechanical ideas with later improvements.
 
-  - [**Version 2 Photos**](v-photos/v2/)
+  - [**Version 2 Photos**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/v-photos/v2)
     - Documents the second version of the robot.
     - Shows changes in structure, sensor placement, steering layout, and design direction before the final v3 design.
 
-  - [**Version 3 Photos**](v-photos/v3/)
+  - [**Version 3 Photos**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/v-photos/v3)
     - Shows the current Cheese v3 build from multiple angles.
     - Includes front, back, side, top, bottom, sensor placement, camera placement, and dual-light system photos.
 
-  - [**Cheese v3 Named Angles**](v-photos/v3/named%20angles/)
+  - [**Cheese v3 Named Angles**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/v-photos/v3/named%20angles)
     - Contains labeled images of the final robot.
     - Identifies the EV3 Brick, motors, sensors, HuskyLens, Arduino Nano, lights, and main structural components.
 
 ---
 
 - **10. Team Documentation**
-  - [**Team Photos**](t-photos/)
+  - [**Team Photos**](https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese/tree/main/t-photos)
     - Contains team-related images and documentation.
     - Supports the human side of the project by showing the people behind Cheese.
 
@@ -254,8 +254,7 @@ You can use this index to navigate through our robot’s documentation. Each sec
 
 <p align="center">
   <strong>This index connects every major part of the repository so the full engineering process can be followed from concept, to design, to testing, to final reproduction.</strong>
-</p> 
-
+</p>
 ---
 
 
