@@ -16,3 +16,13 @@ Documenting this version allows us to compare v1 with later versions and explain
 | **Left side**          |     <img src="left_V1.jpg" alt="V1 Left Side View" width="320">     | Shows the side profile, chassis length, and component height.              |
 | **Right side**         |    <img src="right_V1.jpg" alt="V1 Right Side View" width="320">    | Shows the opposite side profile and structural symmetry.                   |
 | **Top view**           |         <img src="top_V1.jpg" alt="V1 Top View" width="320">        | Shows the full component layout, wheelbase, and chassis proportions.       |
+
+<p align="center">
+  ✦ ─── ⋆⋅☆⋅⋆ ─── (❁´◡`❁) ─── ⋆⋅☆⋅⋆ ─── ✦
+</p>
+
+<p align="center">
+  <a href="https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese#general-project-index">
+    <img src="https://img.shields.io/badge/Back_to_Main_README_Index-FFD43B?style=for-the-badge">
+  </a>
+</p>
