@@ -593,7 +593,7 @@ I enjoy asking questions, understanding how things work, and turning confusing t
 
 <p align="center">
   <img src="https://img.shields.io/badge/Role-Programmer_&_Robot_Builder-FF8FAB?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Age-16-FFD43B?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Age-17-FFD43B?style=for-the-badge">
 </p>
 
 <p align="center">
