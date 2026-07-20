@@ -28,3 +28,12 @@ Some digital resources, such as the 3D BrickLink model of the current Ackermann 
 
 Version 3 represents the current engineering direction of Cheese. After testing earlier versions, we focused on improving rigidity, sensor visibility, wiring organization, and overall stability. These photos document the final physical layout used during testing and help explain why v3 is more reliable than the previous builds.
 
+<p align="center">
+  ✦ ─── ⋆⋅☆⋅⋆ ─── (❁´◡`❁) ─── ⋆⋅☆⋅⋆ ─── ✦
+</p>
+
+<p align="center">
+  <a href="https://github.com/Quesovamos2662/WRO2026_FE_Go-Cheese#general-project-index">
+    <img src="https://img.shields.io/badge/Back_to_Main_README_Index-FFD43B?style=for-the-badge">
+  </a>
+</p>
