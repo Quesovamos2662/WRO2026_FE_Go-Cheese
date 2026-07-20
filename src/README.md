@@ -26,29 +26,6 @@ This is important because Cheese’s final behavior was not created in one attem
 
 ---
 
-## ❀ Source Code Structure ────୨ৎ────────୨ৎ────
-
-```text
-src/
-├── code_obstacles/
-│   └── idk
-│
-├── code_open/
-│   ├── 14.py
-│   ├── 15.py
-│   ├── 15_open_color_sensor_curves_rear_us_reference_...
-│   ├── 18.py
-│   ├── 19.py
-│   ├── 7.py
-│   ├── A2.py
-│   └── A3.py
-│
-└── v2 coding/
-    └── pidWITHstop.py
-```
-
----
-
 ## ❀ Code Folder Overview ────୨ৎ────────୨ৎ────
 
 <div align="center">
