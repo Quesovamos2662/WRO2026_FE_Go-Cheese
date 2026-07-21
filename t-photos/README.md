@@ -52,6 +52,16 @@ Together, we work by testing Cheese, observing what happens, discussing the issu
 
 > **Note:** If this image does not display correctly, the file may need a clearer image name with an extension, such as `team_photo.jpg`.
 
+## ❀ Funny Team Moment ────୨ৎ────────୨ৎ────
+
+<p align="center">
+  <img src="funny_pic.jpeg" alt="Go!Cheese funny team moment" width="65%">
+</p>
+
+<p align="center">
+  <em>A small funny moment from the Go!Cheese journey. Between testing, debugging, building, and documenting, this project also had moments of laughter that made the process more memorable.</em>
+</p>
+
 ---
 
 ## ❀ Member Photos ────୨ৎ────────୨ৎ────
