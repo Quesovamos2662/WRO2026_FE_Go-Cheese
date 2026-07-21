@@ -55,7 +55,7 @@ Together, we work by testing Cheese, observing what happens, discussing the issu
 ## ❀ Funny Team Moment ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="funny_pic.jpeg" alt="Go!Cheese funny team moment" width="65%">
+  <img src="t-photos/team-photos/funny_pic.jpeg" alt="Go!Cheese funny team moment" width="65%">
 </p>
 
 <p align="center">
