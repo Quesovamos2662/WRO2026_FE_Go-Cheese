@@ -489,8 +489,8 @@ Instead of only showing plain photos, these named angles act as a visual map of 
 </p>
 
 <p align="center">
-  <img src="t-photos/team_photo.jpg" alt="Go!Cheese Team Photo" width="72%">
-</p>
+  <img src="t-photos/team-photos/team_photo.jpeg" alt="Go!Cheese Team Photo" width="70%">
+</p>>
 
 <p align="center">
   <strong>We are Go!Cheese</strong>, a robotics team of two from San Miguelito, Panama, competing in the 
@@ -555,7 +555,7 @@ This process helped us grow as a team because we learned that robotics is not on
 </p>
 
 <p align="center">
-  <img src="t-photos/caylee.jpg" alt="Caylee Rios" width="45%">
+  <img src="t-photos/Caylee-photos/Caylee%20pic.jpg" alt="Caylee Rios" width="45%">
 </p>
 
 <div align="center">
