@@ -664,11 +664,15 @@ Throughout the season, Cheese has changed many times. We adjusted the structure,
 ## ❀ Team Motto ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="team-photos/team_photo.jpeg" alt="Go!Cheese Team Photo" width="70%">
+  ✦ ─── ⋆⋅☆⋅⋆ ─── (❁´◡`❁) ─── ⋆⋅☆⋅⋆ ─── ✦
 </p>
 
 <p align="center">
-  <em>That is how Cheese keeps getting better.</em>
+  <strong>“Build it, test it, break it, fix it, and make it better.”</strong>
+</p>
+
+<p align="center">
+  <em>One robot, two minds, many tests, and a lot of cheese-powered determination.</em>
 </p>
 
 ---
