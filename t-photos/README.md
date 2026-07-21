@@ -44,8 +44,9 @@ Together, we work by testing Cheese, observing what happens, discussing the issu
 ## ❀ Team Photo ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="t-photos/team-photos/go_cheese_team_photo.jpeg" alt="Go!Cheese Team Photo" width="70%">
+  <img src="t-photos/team-photos/team_photo.jpeg" alt="Go!Cheese Team Photo" width="70%">
 </p>
+
 
 <p align="center">
   <em>This image represents Go!Cheese as a team and connects the technical documentation to the people behind the robot.</em>
