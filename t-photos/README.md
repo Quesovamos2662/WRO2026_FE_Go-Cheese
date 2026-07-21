@@ -44,7 +44,7 @@ Together, we work by testing Cheese, observing what happens, discussing the issu
 ## ❀ Team Photo ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="team-photos/cheese!" alt="Go!Cheese Team Photo" width="70%">
+  <img src="t-photos/team-photos/go_cheese_team_photo.jpg" alt="Go!Cheese Team Photo" width="70%">
 </p>
 
 <p align="center">
