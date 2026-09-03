@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheese v4 Development Recipe</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+  --cheese:#FFD43B;
+  --cheese-dark:#F4B400;
+  --pink:#FF8FAB;
+  --purple:#B388EB;
+  --blue:#4A90E2;
+  --green:#57C785;
+  --cream:#FFF8D6;
+  --ink:#16213E;
+  --soft:#FFFDF2;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  padding:34px;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,143,171,.20) 0 24px, transparent 25px),
+    radial-gradient(circle at 88% 12%, rgba(179,136,235,.18) 0 26px, transparent 27px),
+    radial-gradient(circle at 22% 82%, rgba(255,212,59,.20) 0 20px, transparent 21px),
+    linear-gradient(135deg, #fffdf2 0%, #fff0f7 45%, #ffffff 100%);
+  color:var(--ink);
+}
+
+.card{
+  max-width:1080px;
+  margin:0 auto;
+  border:3px solid var(--purple);
+  border-radius:28px;
+  padding:28px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 14px 38px rgba(90,50,120,.14);
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:auto -70px -90px auto;
+  width:240px;
+  height:240px;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(255,255,255,.70) 0 18px, transparent 19px),
+    radial-gradient(circle at 66% 60%, rgba(255,255,255,.55) 0 24px, transparent 25px),
+    radial-gradient(circle at 42% 75%, rgba(255,255,255,.58) 0 13px, transparent 14px),
+    var(--cheese);
+  clip-path:polygon(0 0,100% 30%,15% 100%);
+  opacity:.45;
+  transform:rotate(-12deg);
+}
+
+h1{
+  text-align:center;
+  margin:0;
+  font-size:38px;
+  letter-spacing:.2px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#596275;
+  margin:10px auto 24px;
+  max-width:790px;
+  line-height:1.5;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:18px 0 20px;
+}
+
+.badge{
+  background:#FFE4ED;
+  border:2px solid var(--pink);
+  border-radius:999px;
+  padding:8px 14px;
+  font-weight:800;
+  box-shadow:0 3px 0 var(--pink);
+}
+
+.badge.purple{
+  background:#F1E6FF;
+  border-color:var(--purple);
+  box-shadow:0 3px 0 var(--purple);
+}
+
+.badge.cheese{
+  background:var(--cheese);
+  border-color:var(--cheese-dark);
+  box-shadow:0 3px 0 var(--cheese-dark);
+}
+
+.badge.blue{
+  background:#DCEBFF;
+  border-color:var(--blue);
+  box-shadow:0 3px 0 var(--blue);
+}
+
+.controls{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:18px 0;
+}
+
+button{
+  border:0;
+  color:white;
+  border-radius:999px;
+  padding:10px 15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease;
+  box-shadow:0 4px 0 rgba(0,0,0,.20);
+}
+
+button:hover{
+  transform:translateY(-2px);
+}
+
+button.pink{background:var(--pink)}
+button.purple{background:var(--purple)}
+button.blue{background:var(--blue)}
+button.cheese{background:var(--cheese-dark);color:#231900}
+
+.chart-box{
+  position:relative;
+  height:460px;
+  width:100%;
+  margin:14px 0 4px;
+}
+
+.note{
+  margin-top:24px;
+  padding:18px 20px;
+  border-left:7px solid var(--purple);
+  background:linear-gradient(90deg,#fff0f7,#fffdf2);
+  border-radius:16px;
+  line-height:1.65;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+  margin-top:24px;
+}
+
+.tile{
+  border:2px solid #E7C6FF;
+  background:#fffdf2;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+.tile strong{
+  display:block;
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.tile p{
+  margin:0;
+  color:#596275;
+  line-height:1.45;
+}
+
+.footer{
+  margin-top:28px;
+  text-align:center;
+  color:#6b7280;
+  font-size:14px;
+}
+
+.legend-mini{
+  text-align:center;
+  color:#596275;
+  font-size:14px;
+  margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+
+  <h1>Cheese v4 Development Recipe</h1>
+
+  <p class="subtitle">
+    A fun interactive doughnut chart showing the current development focus of Cheese v4 after the transition from the heavier v3 structure.
+  </p>
+
+  <div class="badges">
+    <span class="badge cheese">🧀 Cheese v4</span>
+    <span class="badge purple">Current Build</span>
+    <span class="badge pink">Engineering Focus</span>
+    <span class="badge blue">Interactive Chart</span>
+  </div>
+
+  <div class="controls">
+    <button class="purple" onclick="showV4()">Current v4 Recipe</button>
+    <button class="blue" onclick="showOpen()">Open Challenge Focus</button>
+    <button class="pink" onclick="showObstacle()">Obstacle Focus</button>
+    <button class="cheese" onclick="showTransition()">v3 → v4 Transition</button>
+  </div>
+
+  <div class="chart-box">
+    <canvas id="chart"></canvas>
+  </div>
+
+  <p class="legend-mini">
+    Click the buttons to switch between the current v4 focus areas.
+  </p>
+
+  <div class="note" id="note">
+    Cheese v4 focuses on making the robot lighter, lower, easier to calibrate, and more consistent. The current priorities are PID calibration, line counting, ultrasonic placement, camera angle, obstacle avoidance, recovery movement, parking verification, and documentation.
+  </div>
+
+  <div class="grid">
+    <div class="tile">
+      <strong>888 g → 666 g</strong>
+      <p>Cheese v4 reduced unnecessary weight from the previous v3 structure.</p>
+    </div>
+
+    <div class="tile">
+      <strong>3 Ultrasonics</strong>
+      <p>Left, right, and front ultrasonic sensors support wall and front-distance detection.</p>
+    </div>
+
+    <div class="tile">
+      <strong>SPIKE Front Wheels</strong>
+      <p>The front wheels were changed to improve grip, turning, and steering response.</p>
+    </div>
+  </div>
+
+  <p class="footer">Go!Cheese · WRO Future Engineers 2026 · Cheese v4</p>
+
+</div>
+
+<script>
+const cheesePalette = {
+  yellow: 'rgba(255, 212, 59, 0.78)',
+  yellowLine: 'rgba(244, 180, 0, 1)',
+  pink: 'rgba(255, 143, 171, 0.72)',
+  pinkLine: 'rgba(255, 143, 171, 1)',
+  purple: 'rgba(179, 136, 235, 0.72)',
+  purpleLine: 'rgba(179, 136, 235, 1)',
+  blue: 'rgba(74, 144, 226, 0.70)',
+  blueLine: 'rgba(74, 144, 226, 1)',
+  green: 'rgba(87, 199, 133, 0.70)',
+  greenLine: 'rgba(87, 199, 133, 1)',
+  orange: 'rgba(255, 174, 66, 0.74)',
+  ink: 'rgba(22, 33, 62, 1)'
+};
+
+Chart.defaults.font.family = "'Trebuchet MS', Arial, sans-serif";
+Chart.defaults.color = '#16213E';
+
+const ctx = document.getElementById('chart');
+const note = document.getElementById('note');
+
+let chart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: [
+      'PID calibration',
+      'Line and curve counting',
+      'Ultrasonic placement',
+      'Camera angle',
+      'Obstacle avoidance',
+      'Parking verification',
+      'Documentation'
+    ],
+    datasets: [{
+      label: 'Current v4 focus',
+      data: [20, 18, 14, 16, 16, 8, 8],
+      backgroundColor: [
+        cheesePalette.purple,
+        cheesePalette.pink,
+        cheesePalette.blue,
+        cheesePalette.yellow,
+        cheesePalette.green,
+        cheesePalette.orange,
+        'rgba(160,120,255,.60)'
+      ],
+      borderColor: '#ffffff',
+      borderWidth: 4,
+      hoverOffset: 18
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '58%',
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: 'Current Cheese v4 Development Recipe 🧀',
+        font: { size: 20 }
+      },
+      tooltip: {
+        callbacks: {
+          label: (context) => `${context.label}: ${context.parsed}% of the current development focus`
+        }
+      }
+    },
+    animation: {
+      animateRotate: true,
+      animateScale: true
+    }
+  }
+});
+
+function update(labels, data, title, newNote){
+  chart.data.labels = labels;
+  chart.data.datasets[0].data = data;
+  chart.options.plugins.title.text = title;
+  note.innerHTML = newNote;
+  chart.update();
+}
+
+function showV4(){
+  update(
+    ['PID calibration','Line and curve counting','Ultrasonic placement','Camera angle','Obstacle avoidance','Parking verification','Documentation'],
+    [20,18,14,16,16,8,8],
+    'Current Cheese v4 Development Recipe 🧀',
+    'Cheese v4 focuses on making the robot lighter, lower, easier to calibrate, and more consistent. The current priorities are PID calibration, line counting, ultrasonic placement, camera angle, obstacle avoidance, recovery movement, parking verification, and documentation.'
+  );
+}
+
+function showOpen(){
+  update(
+    ['PID movement','Curve count','Color sensor reliability','Wall correction','Open parking'],
+    [25,24,20,18,13],
+    'Open Challenge v4 Recipe 🏁',
+    'The Open Challenge focus is mostly about stable driving, correct line and curve counting, smooth PID behavior, and parking inside the final section. Parking works best when the line counter and robot alignment are correct.'
+  );
+}
+
+function showObstacle(){
+  update(
+    ['HuskyLens detection','Camera angle','Late obstacle reaction','Avoidance movement','Recovery after obstacle','Obstacle parking'],
+    [18,22,20,16,16,8],
+    'Obstacle Challenge v4 Recipe 🚧',
+    'The Obstacle Challenge focus is still under calibration. The HuskyLens can detect red and green, but the main issues are camera angle, late detection, avoiding early enough, and recovering position after the obstacle.'
+  );
+}
+
+function showTransition(){
+  update(
+    ['Weight reduction','Camera mount simplified','Ultrasonics lowered','SPIKE front wheels','Nano cable shortened','v3 lights removed'],
+    [28,18,16,14,10,14],
+    'v3 → v4 Transition Recipe 🔧',
+    'The v3 to v4 transition focused on removing unnecessary structure, reducing mass from about 888 g to 666 g, lowering sensors, simplifying the camera area, changing the front wheels to SPIKE wheels, shortening only the Nano USB cable, and removing the old v3 auxiliary lighting system.'
+  );
+}
+</script>
+</body>
+</html>
