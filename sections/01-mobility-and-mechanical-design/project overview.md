@@ -20,22 +20,21 @@ The current documented version is **Cheese v4**. This version became lighter, cl
 
 
 ---
-
 ────୨ৎ────────୨ৎ────
 
-<h2 align="center">Cheese v4 — Final Robot</h2>
+<h2 align="center">Cheese v4 — Current Competition Build</h2>
 
 <p align="center">
   <img src="../../v-photos/v4/hero_angle_v4.jpg" width="720">
 </p>
 
 <p align="center">
-  <i>Cheese v4 in its current competition configuration.</i>
+  <i>Cheese v4 in its current WRO Future Engineers configuration.</i>
 </p>
 
-Cheese v4 represents the current development stage of our WRO Future Engineers robot. The design integrates a lighter mechanical structure, Ackermann steering, EV3-based control, three ultrasonic sensors, floor-color detection, and a HuskyLens–Arduino Nano vision system.
+Cheese v4 represents the current stage of our autonomous vehicle development. The redesign combines a lighter chassis, Ackermann steering, EV3-based control, three ultrasonic sensors, floor-color detection, and a HuskyLens–Arduino Nano vision system.
 
-The complete system was developed around one main objective: **make every subsystem work together as a single reliable vehicle**, rather than treating mechanics, sensing, and software as independent parts.
+The goal of v4 was not simply to replace individual components, but to improve how the mechanical, sensing, communication, and software systems work together as one vehicle.
 
 ---
 
@@ -58,6 +57,20 @@ The complete system was developed around one main objective: **make every subsys
 </div>
 
 This overview works as the main index for the engineering documentation. Each section focuses on a different subsystem, but all sections connect to the same idea: **Cheese improves when mechanical design, sensors, software, wiring, and testing are treated as one complete system**.
+
+---
+
+<h3 align="center">Track Testing</h3>
+
+<p align="center">
+  <img src="../../v-photos/v4/v4_on_track_v4.jpg" width="720">
+</p>
+
+<p align="center">
+  <i>Cheese v4 during testing on the competition track.</i>
+</p>
+
+Real-track testing is used to validate steering response, wall distance control, curve detection, camera visibility, obstacle behavior, and final parking performance under the same conditions experienced during competition.
 
 ---
 
