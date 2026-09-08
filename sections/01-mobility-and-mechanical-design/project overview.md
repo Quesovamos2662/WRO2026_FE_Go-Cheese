@@ -17,6 +17,8 @@
 This repository documents how **Cheese** was designed, built, tested, tuned, and improved across multiple development versions. It explains not only what the robot is, but also **why each decision was made, how each system works, what problems appeared during testing, and how the design changed because of those problems**.
 
 The current documented version is **Cheese v4**. This version became lighter, cleaner, more compact, and easier to inspect after removing unnecessary upper structure, simplifying the camera mount, shortening cable routing, and keeping only the support needed for movement, sensors, stability, and wiring organization.
+
+
 ---
 
 ────୨ৎ────────୨ৎ────
