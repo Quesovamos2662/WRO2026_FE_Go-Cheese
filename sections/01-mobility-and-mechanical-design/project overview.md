@@ -17,6 +17,23 @@
 This repository documents how **Cheese** was designed, built, tested, tuned, and improved across multiple development versions. It explains not only what the robot is, but also **why each decision was made, how each system works, what problems appeared during testing, and how the design changed because of those problems**.
 
 The current documented version is **Cheese v4**. This version became lighter, cleaner, more compact, and easier to inspect after removing unnecessary upper structure, simplifying the camera mount, shortening cable routing, and keeping only the support needed for movement, sensors, stability, and wiring organization.
+---
+
+────୨ৎ────────୨ৎ────
+
+<h2 align="center">Cheese v4 — Final Robot</h2>
+
+<p align="center">
+  <img src="../../v-photos/v4/hero_angle_v4.jpg" width="720">
+</p>
+
+<p align="center">
+  <i>Cheese v4 in its current competition configuration.</i>
+</p>
+
+Cheese v4 represents the current development stage of our WRO Future Engineers robot. The design integrates a lighter mechanical structure, Ackermann steering, EV3-based control, three ultrasonic sensors, floor-color detection, and a HuskyLens–Arduino Nano vision system.
+
+The complete system was developed around one main objective: **make every subsystem work together as a single reliable vehicle**, rather than treating mechanics, sensing, and software as independent parts.
 
 ---
 
