@@ -1704,14 +1704,14 @@ It requires observing what the real system does and comparing that behavior with
 ## ❀ Caylee Rios ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Role-Documentation_&_Software_Analysis-57C785?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Age-16-FFD43B?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Role-Engineering Documentation_&_Systems_Analysis-57C785?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Age-17-FFD43B?style=for-the-badge">
 </p>
 
 <p align="center">
   <img src="t-photos/Caylee-photos/Caylee%20pic.jpg"
        alt="Caylee Rios"
-       width="45%">
+       width="50%">
 </p>
 
 <div align="center">
@@ -1732,15 +1732,13 @@ Hii! My name is **Caylee**, and this is my first time competing in WRO.
 
 I am really happy to be part of a competition that pushes us toward hard work, problem-solving, and personal growth.
 
-In Go!Cheese, my role focuses on documentation, software explanation, engineering reasoning, and project organization.
+Throughout these two regional competitions, I have grown a lot both as a person and in the way I approach my work as a software engineer. Every test, every good result, and every mistake has taught me something new about how to think, analyze problems, and improve the way we develop Cheese.
 
-I work on making the repository clear enough that someone reading it can understand not only **what Cheese does**, but also **why we made each decision**.
+We have had many exciting moments, but also many failures, unexpected problems, and difficult tests. Those moments have become some of the most important parts of the experience because we never stop learning from them. We are always curious, always asking questions, and always looking for new things to discover, test, build, and create around robotics.
 
-I enjoy asking questions, understanding how things work, and turning confusing testing problems into explanations that make sense.
+For me, working on Go!Cheese has been an exciting and very self-challenging experience. It has pushed me to become more patient, more analytical, more creative, and more confident when facing problems that do not have an immediate solution.
 
-For me, this project is not only about building a robot.
-
-It is also about showing the process behind it.
+One of the things I enjoy the most about robotics is that there is always something else to learn. Every improvement opens the door to another idea, another test, or another challenge, and that constant process of learning and creating is what has made this experience so meaningful to me.
 
 <p align="center">
   <a href="https://www.instagram.com/caymrr">
