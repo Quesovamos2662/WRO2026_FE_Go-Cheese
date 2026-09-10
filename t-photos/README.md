@@ -9,8 +9,8 @@
 <p align="center">
   <em>
     This folder contains the team photo documentation for Go!Cheese,
-    showing the people behind Cheese and the teamwork that supports
-    our WRO Future Engineers 2026 project.
+    showing the people behind Cheese and the teamwork behind our
+    WRO Future Engineers 2026 project.
   </em>
 </p>
 
@@ -23,14 +23,18 @@
 ## ❀ About This Folder ────୨ৎ────────୨ৎ────
 
 The `t-photos/` folder contains the photographic documentation used to present
-the Go!Cheese team.
+the **Go!Cheese Team**.
 
 While the technical folders document Cheese's mechanical design, electronics,
 software, testing, and engineering development, this folder presents the people
 behind that work.
 
-The photographs are used throughout the repository to support team identity,
-project presentation, and the **Meet the Team** documentation.
+The photographs are used throughout the repository to support:
+
+- team identity,
+- the Meet the Team section,
+- project presentation,
+- and the human side of the engineering process.
 
 ---
 
@@ -40,7 +44,7 @@ We are **Go!Cheese**, a two-member robotics team from San Miguelito, Panama,
 competing in **WRO Future Engineers 2026**.
 
 <p align="center">
-  <img src="team_photo.png"
+  <img src="team-photos/team_photo.png"
        alt="Go!Cheese Team — Caylee Rios and Romina Mora"
        width="88%">
 </p>
@@ -56,7 +60,7 @@ competing in **WRO Future Engineers 2026**.
 | Team Member | Main Role | Project Focus |
 | :--- | :--- | :--- |
 | **Caylee Rios** | Documentation & Engineering Analysis | Technical documentation, README organization, software analysis, testing observations, and engineering explanations |
-| **Romina Mora** | Programming & Robot Building | Programming, robot construction, mechanical changes, implementation, and testing |
+| **Romina Mora** | Programming & Robot Building | Programming, robot construction, mechanical changes, code implementation, and testing |
 
 </div>
 
@@ -68,80 +72,19 @@ competing in **WRO Future Engineers 2026**.
 
 ---
 
-## ❀ Meet Caylee ────୨ৎ────────୨ৎ────
-
-<p align="center">
-  <img src="Caylee-photos/caylee_picture.png"
-       alt="Caylee Rios — Go!Cheese"
-       width="48%">
-</p>
-
-<p align="center">
-  <strong>Caylee Rios</strong><br>
-  <em>Documentation & Engineering Analysis</em>
-</p>
-
-Caylee focuses on documenting and analyzing the engineering development of
-Cheese. Her work includes organizing the repository, explaining technical
-decisions, analyzing software behavior and testing results, and connecting
-the team's development process with the final documentation.
-
-Her main project contributions include:
-
-- technical and engineering documentation,
-- GitHub and README organization,
-- software behavior analysis,
-- testing observations,
-- engineering decision documentation,
-- and project presentation.
-
----
-
-## ❀ Meet Romina ────୨ৎ────────୨ৎ────
-
-<p align="center">
-  <img src="Romina-photos/romina_picture.png"
-       alt="Romina Mora — Go!Cheese"
-       width="48%">
-</p>
-
-<p align="center">
-  <strong>Romina Mora</strong><br>
-  <em>Programming & Robot Building</em>
-</p>
-
-Romina focuses on the implementation and physical development of Cheese.
-Her work connects the software directly with the robot's mechanical behavior
-during testing.
-
-Her main project contributions include:
-
-- programming,
-- robot construction,
-- mechanical modifications,
-- code implementation,
-- physical testing,
-- and system adjustments.
-
----
-
 ## ❀ Meet the Team ────୨ৎ────────୨ৎ────
 
 <div align="center">
 
 | Caylee Rios | Romina Mora |
 | :---: | :---: |
-| <img src="Caylee-photos/caylee_picture.png" alt="Caylee Rios" width="90%"> | <img src="Romina-photos/romina_picture.png" alt="Romina Mora" width="90%"> |
+| <img src="Caylee-photos/caylee_picture.png" alt="Caylee Rios — Go!Cheese" width="90%"> | <img src="Romina-photos/romina_picture.png" alt="Romina Mora — Go!Cheese" width="90%"> |
 | **Documentation & Engineering Analysis** | **Programming & Robot Building** |
 
 </div>
 
 Although each member has different primary responsibilities, the development
 of Cheese requires both roles to interact continuously.
-
-A mechanical adjustment can affect software behavior. A software change can
-require new physical testing. Testing results can reveal a new mechanical
-problem, and each major development must then be documented.
 
 <p align="center">
   <strong>
@@ -151,104 +94,237 @@ problem, and each major development must then be documented.
 
 ---
 
-## ❀ The Funny One ────୨ৎ────────୨ৎ────
+## ❀ Caylee Rios ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="funny_pic.jpeg"
-       alt="Go!Cheese Team Funny Photo"
+  <img src="Caylee-photos/caylee_picture.png"
+       alt="Caylee Rios — Go!Cheese"
+       width="46%">
+</p>
+
+<p align="center">
+  <strong>Caylee Rios</strong><br>
+  <em>Documentation & Engineering Analysis</em>
+</p>
+
+Caylee focuses on documenting and analyzing the engineering development of
+Cheese.
+
+Her work includes organizing the repository, explaining technical decisions,
+analyzing software behavior and testing results, and connecting the team's
+development process with the final engineering documentation.
+
+### Main Contributions
+
+- Technical and engineering documentation
+- GitHub and README organization
+- Software behavior analysis
+- Testing observations
+- Engineering decision documentation
+- Project structure and presentation
+
+Her role helps transform the team's experiments, changes, and testing results
+into a clear record of how Cheese developed throughout the season.
+
+---
+
+## ❀ Romina Mora ────୨ৎ────────୨ৎ────
+
+<p align="center">
+  <img src="Romina-photos/romina_picture.png"
+       alt="Romina Mora — Go!Cheese"
+       width="46%">
+</p>
+
+<p align="center">
+  <strong>Romina Mora</strong><br>
+  <em>Programming & Robot Building</em>
+</p>
+
+Romina focuses on the implementation and physical development of Cheese.
+
+Her work connects the software directly with the physical behavior of the
+robot during testing and development.
+
+### Main Contributions
+
+- Programming
+- Robot construction
+- Mechanical modifications
+- Code implementation
+- Physical testing
+- System adjustments
+
+Her role is especially important when converting an engineering idea into
+something that Cheese can physically perform on the field.
+
+---
+
+## ❀ Same Team, Bigger Dreams ────୨ৎ────────୨ৎ────
+
+<p align="center">
+  <img src="team-photos/funny_pic.jpeg"
+       alt="Go!Cheese Funny Team Photo"
        width="72%">
 </p>
 
 <p align="center">
   <em>
-    Because not every part of building a robot has to look serious.
+    Same Team. Bigger Dreams.
   </em>
 </p>
 
-This photograph is intentionally kept as part of the team documentation.
+Not every part of building Cheese happens in front of a computer or on the
+competition field.
 
-The repository contains a large amount of technical material, but Go!Cheese
-is also a team built around collaboration, personality, long testing sessions,
-failed runs, improvements, and enjoying the process together.
+This photo is intentionally kept as part of our documentation because it
+represents the personality behind Go!Cheese.
+
+The project has involved long testing sessions, failed runs, successful runs,
+mechanical changes, code changes, documentation work, and a lot of learning
+along the way.
+
+---
+
+## ❀ How We Work Together ────୨ৎ────────୨ৎ────
+
+Cheese was developed through a repeated collaborative process:
+
+<p align="center">
+  <strong>
+    Problem → Test → Observation → Discussion → Adjustment → Retest
+  </strong>
+</p>
+
+Different parts of the project required different responsibilities, but they
+were never completely independent.
+
+<div align="center">
+
+| If This Changes... | It Can Affect... |
+| :--- | :--- |
+| **Mechanical structure** | Sensor position and driving behavior |
+| **Steering geometry** | Corner trajectory and software tuning |
+| **Sensor placement** | Measurements and control decisions |
+| **Software parameters** | Physical movement of Cheese |
+| **Obstacle strategy** | Mechanical trajectory and recovery |
+| **Testing results** | The next engineering decision |
+| **Engineering decision** | Documentation and future testing |
+
+</div>
+
+This means communication between both team members is part of the engineering
+process itself.
+
+---
+
+## ❀ Our Development Cycle ────୨ৎ────────୨ৎ────
+
+Our work on Cheese generally follows this cycle:
+
+<p align="center">
+  <strong>
+    BUILD → PROGRAM → TEST → FAIL → ANALYZE → MODIFY → RETEST → DOCUMENT
+  </strong>
+</p>
+
+A failed test is not treated as the end of an idea.
+
+Instead, we try to determine:
+
+1. **What happened?**
+2. **Which subsystem caused it?**
+3. **Was the problem mechanical, electrical, sensing, or software-related?**
+4. **What variable should be changed?**
+5. **Did the change actually improve the next test?**
+
+This process is reflected throughout the technical documentation in the rest
+of the repository.
 
 ---
 
 ## ❀ Photo Directory ────୨ৎ────────୨ৎ────
 
-The current team-photo structure is:
+The current team-photo directory is organized as:
 
 ```text
 t-photos/
 │
 ├── Caylee-photos/
+│   ├── Caylee pic.jpg
 │   └── caylee_picture.png
 │
 ├── Romina-photos/
+│   ├── Romina pic.jpg
 │   └── romina_picture.png
 │
-├── funny_pic.jpeg
-├── team_photo.jpeg
-└── team_photo.png
+└── team-photos/
+    ├── funny_pic.jpeg
+    ├── team_photo.jpeg
+    └── team_photo.png
 ```
 
-The current images used by this README are:
+### Current Images Used
 
 <div align="center">
 
-| Image | Purpose |
-| :--- | :--- |
-| **`team_photo.png`** | Current main Go!Cheese team photo |
-| **`Caylee-photos/caylee_picture.png`** | Current Caylee individual photo |
-| **`Romina-photos/romina_picture.png`** | Current Romina individual photo |
-| **`funny_pic.jpeg`** | Funny / informal Go!Cheese team photo |
+| File | Purpose | Status |
+| :--- | :--- | :---: |
+| **`Caylee-photos/caylee_picture.png`** | Current Caylee profile photo | Current |
+| **`Romina-photos/romina_picture.png`** | Current Romina profile photo | Current |
+| **`team-photos/team_photo.png`** | Current Go!Cheese team photo | Current |
+| **`team-photos/funny_pic.jpeg`** | Informal / funny team photo | Kept |
 
 </div>
 
-The older image files can remain in the repository as historical team
-documentation, while the newer PNG files are used as the current presentation
-images.
+The older individual and team images remain in the repository as previous
+team documentation.
 
 ---
 
-## ❀ Why Team Documentation Matters ────୨ৎ────────୨ৎ────
+## ❀ Why These Photos Matter ────୨ৎ────────୨ৎ────
 
-Cheese was developed through repeated collaboration.
+The technical documentation explains the robot.
 
-Behind each software version or mechanical change was a process of testing,
-observing, discussing, changing, and testing again.
+These photographs document the people responsible for developing it.
 
-<p align="center">
-  <strong>
-    Problem → Test → Discussion → Adjustment → Retest
-  </strong>
-</p>
+Every major part of Cheese involved human decisions:
 
-The team photographs connect that engineering process to the people responsible
-for it.
+- choosing a design,
+- building it,
+- discovering that something did not work,
+- changing the code,
+- changing the structure,
+- testing again,
+- comparing results,
+- and documenting what was learned.
 
-They show that the final robot is not only the result of hardware and code,
-but also communication, persistence, experimentation, and teamwork.
+The final robot therefore represents much more than its LEGO components.
+
+It represents the complete development process of the team.
 
 ---
 
-## ❀ Human Side of Go!Cheese ────୨ৎ────────୨ৎ────
+## ❀ The Human Side of Engineering ────୨ৎ────────୨ৎ────
 
-WRO Future Engineers is ultimately an engineering challenge, but the process
-of developing Cheese also involved:
+WRO Future Engineers is an engineering challenge, but developing Cheese also
+required:
 
-- learning from failed tests,
-- rebuilding systems that did not work,
+- patience during unsuccessful tests,
+- communication between team members,
+- learning unfamiliar systems,
+- rebuilding parts of the robot,
 - debugging software,
-- making mechanical changes,
 - working under time pressure,
 - documenting many iterations,
-- and celebrating when an improvement finally worked.
+- and continuing to improve after failures.
 
-That process is part of the story of Cheese.
+Those experiences are part of the project too.
 
 <p align="center">
   <strong>
-    Same Team. Same Cheese. Bigger Ideas.
+    Engineering is not only about making something work.<br>
+    It is about understanding why it works — and why it sometimes doesn't.
   </strong>
 </p>
 
@@ -256,11 +332,17 @@ That process is part of the story of Cheese.
 
 ## ✦ Final Note ─── ⋆⋅☆⋅⋆ ───
 
-The `t-photos/` folder documents the people behind the robot.
+The `t-photos/` folder represents the people behind Cheese.
 
 The rest of this repository explains **how Cheese works**.
 
-These photographs show **who made it work**.
+These photographs show **who worked to make it work**.
+
+<p align="center">
+  <strong>
+    Same Team. Same Cheese. Bigger Dreams.
+  </strong>
+</p>
 
 <p align="center">
   ✦ ─── ⋆⋅☆⋅⋆ ─── (❁´◡`❁) ─── ⋆⋅☆⋅⋆ ─── ✦
