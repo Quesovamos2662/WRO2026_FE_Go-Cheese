@@ -1606,9 +1606,6 @@ The bottom view documents the lower chassis, wheel system, steering geometry, an
 | **Obstacle Parking** | 🟠 In progress | Final integration |
 
 </div>
-
----
-
 # ᯓ★ Meet the Team ᯓ★
 
 <p align="center">
@@ -1623,9 +1620,13 @@ The bottom view documents the lower chassis, wheel system, steering geometry, an
 </p>
 
 <p align="center">
-  <img src="t-photos/team-photos/team_photo.jpeg"
+  <img src="t-photos/team-photos/team_photo.png"
        alt="Go!Cheese Team Photo"
-       width="70%">
+       width="78%">
+</p>
+
+<p align="center">
+  <em>Go!Cheese Team — WRO Future Engineers 2026.</em>
 </p>
 
 <p align="center">
@@ -1635,9 +1636,9 @@ The bottom view documents the lower chassis, wheel system, steering geometry, an
 
 Our team is built around collaboration, testing, communication, and iteration.
 
-Romina focuses primarily on programming, robot building, and physical changes.
+**Romina** focuses primarily on programming, robot building, and physical changes.
 
-Caylee focuses primarily on documentation, software explanation, engineering analysis, and organizing the project so another person can understand how Cheese works.
+**Caylee** focuses primarily on documentation, software explanation, engineering analysis, and organizing the project so another person can understand how Cheese works.
 
 Neither role exists completely independently.
 
@@ -1704,14 +1705,18 @@ It requires observing what the real system does and comparing that behavior with
 ## ❀ Caylee Rios ────୨ৎ────────୨ৎ────
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Role-Engineering Documentation_&_Systems_Analysis-57C785?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Age-17-FFD43B?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Role-Engineering_Documentation_&_Systems_Analysis-57C785?style=for-the-badge">
 </p>
 
 <p align="center">
-  <img src="t-photos/Caylee-photos/Caylee%20pic.jpg"
-       alt="Caylee Rios"
-       width="50%">
+  <img src="t-photos/Caylee-photos/caylee_picture.png"
+       alt="Caylee Rios — Go!Cheese"
+       width="48%">
+</p>
+
+<p align="center">
+  <strong>Caylee Rios</strong><br>
+  <em>Engineering Documentation & Systems Analysis</em>
 </p>
 
 <div align="center">
@@ -1752,13 +1757,17 @@ One of the things I enjoy the most about robotics is that there is always someth
 
 <p align="center">
   <img src="https://img.shields.io/badge/Role-Programmer_&_Robot_Builder-FF8FAB?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Age-17-FFD43B?style=for-the-badge">
 </p>
 
 <p align="center">
-  <img src="t-photos/Romina-photos/Romina%20pic.jpg"
-       alt="Romina Mora"
-       width="45%">
+  <img src="t-photos/Romina-photos/romina_picture.png"
+       alt="Romina Mora — Go!Cheese"
+       width="48%">
+</p>
+
+<p align="center">
+  <strong>Romina Mora</strong><br>
+  <em>Programming & Robot Building</em>
 </p>
 
 <div align="center">
@@ -1815,21 +1824,11 @@ When Cheese fails, we do not want the result to disappear.
 
 Instead:
 
-```text
-OBSERVATION
-     ↓
-DISCUSSION
-     ↓
-POSSIBLE CAUSE
-     ↓
-CHANGE
-     ↓
-TEST
-     ↓
-RESULT
-     ↓
-DOCUMENTATION
-```
+<p align="center">
+  <strong>
+    OBSERVATION → DISCUSSION → POSSIBLE CAUSE → CHANGE → TEST → RESULT → DOCUMENTATION
+  </strong>
+</p>
 
 That cycle is the real development process behind Cheese.
 
@@ -1868,6 +1867,24 @@ Every version taught us something.
     with creativity, discipline, and teamwork.
   </strong>
 </p>
+
+---
+
+## ❀ Same Team, Bigger Dreams ────୨ৎ────────୨ৎ────
+
+<p align="center">
+  <img src="t-photos/team-photos/funny_pic.jpeg"
+       alt="Go!Cheese Funny Team Photo"
+       width="72%">
+</p>
+
+<p align="center">
+  <em>Same Team. Bigger Dreams.</em>
+</p>
+
+Not every part of the project happens in front of a computer or on the competition field.
+
+This photo is part of our documentation because Go!Cheese is also about the experience behind the engineering: long testing sessions, failed runs, successful improvements, learning together, and enjoying the process.
 
 ---
 
@@ -1940,3 +1957,5 @@ The idea is simple, and it became the heart of the project:
 <p align="center">
   ✦ ─── ⋆⋅☆⋅⋆ ─── (❁´◡`❁) ─── ⋆⋅☆⋅⋆ ─── ✦
 </p>
+---
+
